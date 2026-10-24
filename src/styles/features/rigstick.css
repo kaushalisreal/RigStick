@@ -1,0 +1,213 @@
+/* RigStick look: the fork's button style and interface motion.
+ *
+ * Buttons trade the upstream flat pills for leaf-shaped keys (two opposite
+ * corners round, two tight, a doodle-sticker silhouette): a 1px top
+ * highlight and a darker bottom lip make them read as pressable, hover lifts a
+ * key off the surface, press sinks it onto its lip. The main action (Export,
+ * a dialog's confirm) is an orange gradient key with a moving sheen.
+ *
+ * Ornament: Indian motifs drawn as colourless masks (tokens.css, made by
+ * scripts/rebrand/make_patterns.py) — a jaali lattice inside the orange keys, a
+ * block-print band across dialog and menu tops, a slowly turning mandala behind
+ * Home's title, bandhani dots marking the chosen layer, a rani-saffron-marigold
+ * edge on toasts. Patterns only; no lettering.
+ *
+ * Motion is keyframed: overlays (dialogs, menus, popovers, tooltips, toasts)
+ * spring in from their anchor, chosen tools and toggles pop, Home tiles rise in
+ * a stagger, and the play button breathes while playing. Everything stops
+ * under prefers-reduced-motion. Loaded last in app.css's `features` layer, so
+ * it restyles the components layer without editing it.
+ */
+@layer features {
+  :root {
+    --dr-spring: cubic-bezier(0.3, 1.5, 0.55, 1);      /* small overshoot: lifts, pops */
+    --dr-soft: cubic-bezier(0.22, 1, 0.36, 1);         /* long settle: entrances */
+    --dr-dur-press: 90ms;
+    --dr-dur-lift: 260ms;
+    --dr-dur-enter: 380ms;
+    --dr-radius: 16px 6px 16px 6px;                    /* leaf: round top-left and bottom-right */
+    --dr-radius-sm: 13px 5px 13px 5px;
+    --dr-radius-icon: 12px 5px 12px 5px;
+    --dr-radius-tool: 15px 6px 15px 6px;
+    --dr-lip: var(--key-lip);                          /* the key's bottom edge */
+    --dr-sheen: var(--key-sheen);
+    --dr-hi: var(--key-hi);                            /* the key's top highlight */
+    --dr-lift-shadow: var(--key-lift-shadow);
+    --dr-main: linear-gradient(180deg, var(--key-main-top) 0%, var(--accent) 55%, var(--accent-strong) 100%);
+    --dr-main-glow: 0 10px 22px -10px color-mix(in srgb, var(--accent) 75%, transparent);
+  }
+
+  /* ---------- Buttons: soft keys ---------- */
+  .ui-button {
+    --_key: inset 0 1px 0 var(--dr-hi), inset 0 -2px 0 var(--dr-lip);
+    border-radius: var(--dr-radius);
+    font-weight: 700;
+    box-shadow: var(--_key), var(--_shadow);
+    transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
+      box-shadow var(--dr-dur-lift) var(--dr-soft), translate var(--dr-dur-lift) var(--dr-spring), scale var(--dr-dur-lift) var(--dr-spring);
+  }
+  .ui-button[data-size="sm"] { border-radius: var(--dr-radius-sm); }
+  .ui-button:dir(rtl) { border-radius: 6px 16px 6px 16px; }
+  /* Segmented switches (Animate/Draw/Build, Simple/Advanced) take the same leaf. */
+  .ui-segmented { border-radius: var(--dr-radius); }
+  .ui-segmented-item { border-radius: var(--dr-radius-sm); }
+  .ui-button:where([data-variant="ghost"]) { --_key: none; }
+  .ui-button:where(:hover):not(:disabled, [aria-disabled="true"]) { translate: 0 -1px; box-shadow: var(--_key), var(--dr-lift-shadow), var(--_shadow); }
+  .ui-button:where(:active):not(:disabled, [aria-disabled="true"]) {
+    transform: none; translate: 0 1px; scale: 0.98;
+    box-shadow: inset 0 1px 2px var(--dr-lip);
+    transition-duration: var(--dr-dur-press);
+  }
+  .ui-button:focus-visible { outline-offset: 3px; transition: outline-offset var(--dur-base) var(--dr-spring); }
+
+  /* The main action: orange gradient key with ink words and a sheen that sweeps on hover. */
+  .ui-button:is([data-variant="primary"], .band-export) {
+    --_bg: var(--accent); --_bg-hover: var(--accent); --_bg-active: var(--accent-strong);
+    --_fg: var(--text-on-accent); --_shadow: var(--dr-main-glow);
+    --_key: inset 0 1px 0 var(--key-main-hi), inset 0 -2px 0 var(--key-main-lip);
+    overflow: hidden; isolation: isolate;
+  }
+  .ui-button:is([data-variant="primary"], .band-export)::after {
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(105deg, transparent 30%, var(--dr-sheen) 48%, transparent 66%);
+    translate: -120% 0;
+  }
+  .ui-button:is([data-variant="primary"], .band-export):where(:hover):not(:disabled)::after { animation: dr-sheen 700ms var(--dr-soft); }
+  .ui-button[data-variant="accent"] { background: var(--dr-main); --_fg: var(--text-on-accent); }
+
+  /* Icon and tool buttons: rounded squares whose glyph springs on hover. */
+  .ui-icon-button:not([data-shape="round"]) { --_r: var(--dr-radius-icon); }
+  .ui-tool-button { border-radius: var(--dr-radius-tool); }
+  .ui-icon-button, .ui-tool-button {
+    transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
+      box-shadow var(--dr-dur-lift) var(--dr-soft), scale var(--dr-dur-lift) var(--dr-spring);
+  }
+  .ui-icon-button > svg, .ui-tool-button > svg { transition: scale var(--dr-dur-lift) var(--dr-spring), rotate var(--dr-dur-lift) var(--dr-spring); }
+  .ui-icon-button:where(:hover):not(:disabled) > svg, .ui-tool-button:where(:hover):not(:disabled) > svg { scale: 1.1; rotate: -6deg; }
+  .ui-icon-button:where(:active):not(:disabled), .ui-tool-button:where(:active):not(:disabled) { transform: none; scale: 0.92; transition-duration: var(--dr-dur-press); }
+  .ui-tool-button[aria-pressed="true"] {
+    color: var(--text-on-accent);
+    box-shadow: inset 0 1px 0 var(--key-main-hi), inset 0 -2px 0 var(--key-main-lip), var(--dr-main-glow);
+  }
+  .ui-tool-button[aria-pressed="true"] > .ui-tool-tick { background: var(--text-on-accent); }
+  .ui-icon-button[aria-pressed="true"] { animation: dr-pop 380ms var(--dr-spring); }
+  .ui-segmented-item[aria-pressed="true"], .ui-segmented-item[aria-checked="true"], .ui-segmented-item[aria-selected="true"] { animation: dr-pop-soft 360ms var(--dr-spring); }
+
+  /* Play breathes while the animation plays. */
+  .tl-play[aria-pressed="true"], .tl-play.playing, .tl-play[data-playing="true"] { animation: dr-breathe 1.6s var(--ease-in-out) infinite; }
+
+  /* Six inspector tabs: the strip scrolls sideways instead of squeezing the labels together. */
+  /* The inspector's tab strip: the same full-width bar on every panel, roomy tabs that share the width
+     evenly, and sideways scrolling only when six tabs genuinely do not fit. */
+  .shell-island > .shell-tabs {
+    --tab-pad: var(--space-3); align-self: stretch; flex: none; display: flex;
+    inline-size: auto; max-inline-size: none; block-size: 40px; margin: var(--space-2) var(--space-2) var(--space-1);
+    overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; scroll-behavior: smooth;
+  }
+  .shell-tabs::-webkit-scrollbar { display: none; }
+  .shell-tabs > .ui-tab { flex: 1 0 auto; font-size: 13px; font-weight: 650; letter-spacing: -0.005em; }
+
+  /* ---------- Overlays: spring in from their anchor ---------- */
+  .ui-dialog[open] { animation: dr-dialog-in var(--dr-dur-enter) var(--dr-spring); transform-origin: 50% 40%; }
+  .ui-dialog[open]::backdrop { animation: dr-fade 240ms var(--dr-soft); }
+  /* Menus and popovers are measured the moment they open (src/ui/anchor-position.mjs), so their entrance
+     must not change their box: a clip-path reveal and a fade, never scale. */
+  .ui-menu:popover-open, .ui-popover:popover-open { animation: dr-drop-in 280ms var(--dr-soft); }
+  .ui-menu:popover-open > * { animation: dr-rise 300ms var(--dr-soft) both; }
+  .ui-menu:popover-open > :nth-child(2) { animation-delay: 15ms; }
+  .ui-menu:popover-open > :nth-child(3) { animation-delay: 30ms; }
+  .ui-menu:popover-open > :nth-child(4) { animation-delay: 45ms; }
+  .ui-menu:popover-open > :nth-child(5) { animation-delay: 60ms; }
+  .ui-menu:popover-open > :nth-child(n + 6) { animation-delay: 75ms; }
+  .ui-tooltip:popover-open { animation: dr-tip-in 200ms var(--dr-spring); }
+  .ui-toast { animation: dr-toast-in 520ms var(--dr-spring); }
+
+  /* ---------- Home: tiles rise in a stagger, lift with a spring ---------- */
+  .home-start-tile, .home-card { animation: dr-rise 520ms var(--dr-soft) both; }
+  .home-start-tile:nth-child(2) { animation-delay: 50ms; }
+  .home-start-tile:nth-child(3) { animation-delay: 100ms; }
+  .home-start-tile:nth-child(4) { animation-delay: 150ms; }
+  .home-card { animation-delay: 180ms; }
+  .home-start-tile { transition: box-shadow var(--dr-dur-lift) var(--dr-soft), translate var(--dr-dur-lift) var(--dr-spring); }
+  .home-start-tile:where(:hover) { translate: 0 -3px; }
+  .home-start-tile:where(:hover) .home-start-art { animation: dr-wiggle 520ms var(--dr-spring); }
+
+
+  /* ---------- Ornament ---------- */
+  /* Jaali lattice glowing through the orange keys and the chosen tool, drifting slowly. */
+  .ui-button:is([data-variant="primary"], .band-export), .ui-tool-button[aria-pressed="true"] {
+    background: var(--pattern-jaali-on-accent) 0 0 / 12px 12px repeat, var(--dr-main);
+    animation: dr-jaali-drift 14s linear infinite;
+  }
+  .ui-tool-button[aria-pressed="true"] { animation: dr-pop 420ms var(--dr-spring), dr-jaali-drift 14s linear infinite; }
+
+  /* Block-print band across the top of dialogs, menus and popovers. */
+  .ui-dialog[open]::after, .ui-menu:popover-open::before, .ui-popover:popover-open::before {
+    content: ""; position: absolute; inset-inline: 0; inset-block-start: 0; block-size: 12px; pointer-events: none;
+    background: var(--ornament-band);
+    mask: var(--pattern-border) 0 0 / 32px 12px repeat-x;
+    animation: dr-band-in 700ms var(--dr-soft) both;
+  }
+  .ui-menu:popover-open::before, .ui-popover:popover-open::before { block-size: 6px; mask-size: 16px 6px; opacity: 0.85; }
+  .ui-dialog[open], .ui-menu:popover-open, .ui-popover:popover-open { position: fixed; }
+  .ui-dialog[open] { padding-block-start: max(var(--space-2), 12px); }
+
+  /* A mandala turning very slowly behind Home's welcome, under a block-print rule. */
+  .home-head { position: relative; isolation: isolate; }
+  .home-head > * { position: relative; z-index: 1; }
+  .home-head::before {
+    content: ""; position: absolute; z-index: 0; pointer-events: none;
+    inset-block-start: -150px; inset-inline-end: -110px; inline-size: 360px; block-size: 360px;
+    background: var(--ornament-ink);
+    mask: var(--pattern-mandala) center / contain no-repeat;
+    animation: dr-spin 90s linear infinite, dr-fade 1.2s var(--dr-soft);
+  }
+  .home-title { position: relative; padding-block-end: 14px; }
+  .home-title::after {
+    content: ""; position: absolute; inset-inline-start: 0; inset-block-end: 0; inline-size: min(240px, 100%); block-size: 8px;
+    background: var(--ornament-band);
+    mask: var(--pattern-border) 0 0 / 21px 8px repeat-x;
+    animation: dr-band-in 900ms 200ms var(--dr-soft) both;
+  }
+
+  /* Bandhani dots on the chosen layer row and the chosen segmented item. */
+  .tl-layer-row[aria-selected="true"], .sheet-layer[aria-selected="true"] {
+    background-image: linear-gradient(90deg, var(--ornament-ink), transparent 70%);
+  }
+  .ui-segmented-item:is([aria-pressed="true"], [aria-checked="true"], [aria-selected="true"]) { position: relative; }
+  .ui-segmented-item:is([aria-pressed="true"], [aria-checked="true"], [aria-selected="true"])::after {
+    content: ""; position: absolute; inset-inline: 30%; inset-block-end: 2px; block-size: 4px; pointer-events: none;
+    background: var(--accent);
+    mask: var(--pattern-bandhani) center / 7px 7px repeat-x;
+    animation: dr-band-in 420ms var(--dr-spring) both;
+  }
+
+  /* Toasts keep the plain pill: a quiet hairline, no ornament ring. */
+  .ui-toast { border-color: var(--line-1); }
+
+  @keyframes dr-jaali-drift { from { background-position: 0 0, 0 0; } to { background-position: 24px 24px, 0 0; } }
+  @keyframes dr-band-in { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  @keyframes dr-spin { to { rotate: 360deg; } }
+
+  @keyframes dr-sheen { from { translate: -120% 0; } to { translate: 120% 0; } }
+  @keyframes dr-pop { 0% { scale: 0.86; } 55% { scale: 1.08; } 100% { scale: 1; } }
+  @keyframes dr-pop-soft { 0% { scale: 0.94; } 60% { scale: 1.04; } 100% { scale: 1; } }
+  @keyframes dr-breathe { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 0%, transparent); } }
+  @keyframes dr-dialog-in { 0% { opacity: 0; scale: 0.92; translate: 0 14px; filter: blur(4px); } 60% { opacity: 1; filter: blur(0); } 100% { opacity: 1; scale: 1; translate: 0 0; } }
+  @keyframes dr-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes dr-drop-in { 0% { opacity: 0; clip-path: inset(0 0 72% 0 round var(--radius-xl)); } 100% { opacity: 1; clip-path: inset(0 0 0 0 round var(--radius-xl)); } }
+  @keyframes dr-tip-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+  @keyframes dr-toast-in { 0% { opacity: 0; translate: 0 24px; scale: 0.9; } 100% { opacity: 1; translate: 0 0; scale: 1; } }
+  @keyframes dr-rise { 0% { opacity: 0; translate: 0 10px; } 100% { opacity: 1; translate: 0 0; } }
+  @keyframes dr-wiggle { 0% { rotate: 0deg; } 30% { rotate: -7deg; scale: 1.06; } 60% { rotate: 4deg; } 100% { rotate: 0deg; scale: 1; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ui-button, .ui-icon-button, .ui-tool-button, .ui-tool-button[aria-pressed="true"], .ui-icon-button[aria-pressed="true"],
+    .ui-segmented-item, .tl-play, .ui-dialog[open], .ui-dialog[open]::after, .ui-dialog[open]::backdrop,
+    .ui-menu:popover-open, .ui-menu:popover-open > *, .ui-menu:popover-open::before, .ui-popover:popover-open, .ui-popover:popover-open::before,
+    .ui-tooltip:popover-open, .ui-toast, .home-start-tile, .home-card, .home-head::before, .home-title::after,
+    .ui-segmented-item::after, .ui-button::after, .home-start-art { animation: none; }
+    .ui-button, .ui-icon-button, .ui-tool-button, .home-start-tile, .ui-icon-button > svg, .ui-tool-button > svg { transition: none; }
+  }
+
+}

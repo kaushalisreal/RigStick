@@ -1,0 +1,233 @@
+/* RigStick's panels: Moves, AI and Transcribe (src/ai/*, src/transcribe/*).
+ * Cards stack in the panel; rows wrap; code blocks scroll sideways rather than widening the dock. */
+@layer features {
+  .ai-panel { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-3); overflow: auto; }
+  .ai-panel[hidden] { display: none; }
+  .ai-card { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-4, 16px); border-radius: var(--radius-lg); background: var(--surface-2, var(--surface)); box-shadow: var(--elevation-1); }
+  .ai-title { margin: 0; font: var(--type-label, 600 13px/1.3 var(--font-ui)); font-weight: 700; color: var(--text-1); }
+  .ai-text, .ai-hint { margin: 0; font: var(--type-small); line-height: 1.5; color: var(--text-2); }
+  .ai-hint { color: var(--text-3); }
+  .ai-row, .ai-head, .ai-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  .ai-head .ai-switch { margin-inline-start: auto; }
+  .ai-state { display: inline-flex; align-items: center; gap: var(--space-1-5); font: var(--type-small); font-weight: 600; color: var(--text-2); }
+  .ai-state::before { content: ""; inline-size: 8px; block-size: 8px; border-radius: 50%; background: var(--text-3); }
+  .ai-state[data-state="on"] { color: var(--success-text); }
+  .ai-state[data-state="on"]::before { background: var(--success-text); animation: dr-breathe 2.4s ease-in-out infinite; }
+  .ai-state[data-state="error"] { color: var(--danger-text); }
+  .ai-state[data-state="error"]::before { background: var(--danger-text); }
+  .ai-field {
+    display: flex; align-items: center; gap: var(--space-1); padding: var(--space-1) var(--space-1) var(--space-1) var(--space-3); border-radius: var(--radius-md);
+    background: var(--surface-sunken, var(--control-soft)); box-shadow: inset 0 0 0 1px var(--line-2);
+  }
+  .ai-address { flex: 1 1 auto; min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: var(--type-mono, 12px/1.4 ui-monospace, monospace); color: var(--text-1); user-select: all; }
+
+  .ai-clients { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+  .ai-client {
+    display: flex; align-items: center; gap: var(--space-2); min-block-size: 40px; padding: var(--space-2) var(--space-3); border: 0; border-radius: var(--radius-md);
+    background: var(--control-soft); color: var(--text-1); font: var(--type-small); font-weight: 600; text-align: start; cursor: pointer;
+    box-shadow: inset 0 0 0 1px transparent;
+    transition: background-color var(--dur-fast), box-shadow var(--dur-fast), translate var(--dr-dur-lift, 200ms) var(--dr-spring, ease-out);
+  }
+  .ai-client > svg { flex: none; inline-size: 16px; block-size: 16px; color: var(--text-2); }
+  .ai-client:hover { background: var(--control-soft-hover); translate: 0 -1px; }
+  .ai-client[aria-checked="true"] { background: var(--accent-soft); color: var(--accent-text-strong); box-shadow: inset 0 0 0 1.5px var(--accent-line); }
+  .ai-client[aria-checked="true"] > svg { color: var(--accent-text); }
+  .ai-client:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+  .ai-steps { margin: 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: var(--space-1-5); }
+  .ai-steps li { counter-increment: step; display: grid; grid-template-columns: 20px 1fr; align-items: start; gap: var(--space-2); font: var(--type-small); line-height: 1.45; color: var(--text-2); }
+  .ai-steps li::before {
+    content: counter(step); display: grid; place-items: center; inline-size: 20px; block-size: 20px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-text); font-size: 11px; font-weight: 700;
+  }
+
+  .ai-code { position: relative; }
+  .ai-config {
+    margin: 0; max-block-size: 240px; overflow: auto; padding: var(--space-3); padding-block-end: 44px; border-radius: var(--radius-md);
+    background: var(--surface-sunken, var(--control-soft)); box-shadow: inset 0 0 0 1px var(--line-2); color: var(--text-1);
+    font: var(--type-mono, 11px/1.55 ui-monospace, monospace); white-space: pre-wrap; overflow-wrap: anywhere;
+  }
+  .ai-copy { position: absolute; inset-block-end: var(--space-2); inset-inline-end: var(--space-2); }
+  .ai-copy[data-copied], .ai-field .ui-icon-button[data-copied] { color: var(--success-text); }
+  .ai-foot { padding-block-start: var(--space-2); border-block-start: 1px solid var(--line-1, var(--line-2)); }
+
+  .ai-prompts { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--space-2); }
+  .ai-prompts li { display: grid; gap: 2px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); background: var(--surface); font: var(--type-small); color: var(--text-2); }
+  .ai-prompts code { color: var(--accent-text); font: var(--type-mono, 12px/1.4 ui-monospace, monospace); font-weight: 600; }
+  .ai-log { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--space-1-5); max-block-size: 320px; overflow: auto; }
+  .ai-entry { display: grid; grid-template-columns: 10px 1fr auto; align-items: center; gap: 2px var(--space-2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); background: var(--surface); animation: dr-rise 260ms var(--dr-soft, ease-out) both; }
+  .ai-dot { inline-size: 8px; block-size: 8px; border-radius: 50%; background: var(--text-3); }
+  .ai-entry[data-status="running"] .ai-dot { background: var(--accent); animation: dr-breathe 1s ease-in-out infinite; }
+  .ai-entry[data-status="done"] .ai-dot { background: var(--success-text); }
+  .ai-entry[data-status="error"] .ai-dot { background: var(--danger-text); }
+  .ai-what { font: var(--type-small); color: var(--text-1); font-weight: 600; }
+  .ai-when { font: var(--type-small); color: var(--text-3); font-variant-numeric: tabular-nums; }
+  .ai-summary { grid-column: 2 / -1; font: var(--type-small); color: var(--text-2); overflow-wrap: anywhere; }
+  .ai-empty { padding: var(--space-3); border-radius: var(--radius-sm); background: var(--surface); font: var(--type-small); color: var(--text-3); text-align: center; }
+
+  .moves-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: var(--space-1-5); }
+  .moves-move { flex-direction: column; block-size: auto; min-block-size: 58px; padding-block: var(--space-2); gap: var(--space-1); white-space: normal; text-align: center; }
+  .moves-move > svg { inline-size: 20px; block-size: 20px; }
+  .moves-options { display: grid; gap: var(--space-2); }
+  .moves-option { display: grid; grid-template-columns: 70px 1fr 48px; align-items: center; gap: var(--space-2); font: var(--type-small); color: var(--text-2); }
+  .moves-option output { text-align: end; font-variant-numeric: tabular-nums; color: var(--text-1); }
+  .moves-option .ui-segmented { grid-column: 2 / -1; }
+  .moves-target { color: var(--text-1); }
+  .moves-polish { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-2); }
+
+  .transcribe-tracks { display: grid; gap: var(--space-1); }
+  .transcribe-track { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 0 var(--space-2); padding: var(--space-1-5) var(--space-2); border-radius: var(--radius-sm); background: var(--surface); cursor: pointer; }
+  .transcribe-track .ai-hint { grid-column: 2; }
+  .transcribe-track-name { font: var(--type-small); font-weight: 600; color: var(--text-1); }
+  .transcribe-field { display: grid; grid-template-columns: 76px 1fr; align-items: center; gap: var(--space-2); font: var(--type-small); color: var(--text-2); }
+  .transcribe-field select { min-inline-size: 0; block-size: var(--control-sm); border-radius: var(--radius-sm); border: 1px solid var(--line-2); background: var(--surface); color: var(--text-1); padding-inline: var(--space-1-5); }
+  .transcribe-bar { inline-size: 100%; accent-color: var(--accent); }
+  .transcribe-phase { min-block-size: 1.2em; }
+  .transcribe-meters { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-1-5) var(--space-2); margin: 0; font: var(--type-small); }
+  .transcribe-meters dt { color: var(--text-2); }
+  .transcribe-meters dd { margin: 0; display: grid; gap: 3px; color: var(--text-1); font-variant-numeric: tabular-nums; }
+  .transcribe-meters meter { inline-size: 100%; block-size: 6px; }
+  .transcribe-words { display: flex; flex-wrap: wrap; gap: 3px; margin: 0; max-block-size: 300px; overflow: auto; }
+  .transcribe-word { border: 0; padding: 1px 4px; border-radius: var(--radius-2xs); background: transparent; color: var(--text-1); font: var(--type-small); cursor: pointer; }
+  .transcribe-word:hover { background: var(--accent-soft); color: var(--accent-text); }
+
+  /* Presets panel (src/presets/presets-panel.mjs): search and kind tabs stay on top; cards drag onto the canvas. */
+  .presets-panel { gap: var(--space-2); }
+  /* The panel ⋯ at an island's top-right (dock-host.mjs): over the icon button's own positioning (components layer). */
+  .shell-island > .shell-panel-more { position: absolute; inset-block-start: 10px; inset-inline-end: var(--space-2); z-index: 1; }
+  /* Inside the Library's scroll: no scroll or padding of its own. */
+  .library-presets.presets-panel { overflow: visible; padding: 0; }
+  .presets-group-title { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  .presets-group-title > span { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .presets-group-actions { display: flex; gap: var(--space-1); }
+  .presets-show-all { flex: none; padding: 2px var(--space-1-5); border: 0; border-radius: var(--radius-sm); background: none; font: var(--type-small); font-weight: var(--weight-semibold);
+    color: var(--accent-text); cursor: pointer; }
+  .presets-show-all:hover { background: var(--accent-soft); }
+  .presets-show-all:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+  /* A card's ⋯: its menu (add or apply, save as a .rigset / .rigobject file, remove). Shown on hover and focus. */
+  .preset-card { position: relative; }
+  .preset-more { position: absolute; inset-block-start: 2px; inset-inline-end: 2px; display: grid; place-items: center; inline-size: 20px; block-size: 20px;
+    padding: 0; border: 0; border-radius: var(--radius-sm); background: var(--surface-raised); color: var(--text-2); box-shadow: var(--elevation-1); opacity: 0; cursor: pointer; }
+  .preset-more > svg { inline-size: 14px; block-size: 14px; }
+  .preset-card:is(:hover, :focus-visible, :focus-within) > .preset-more { opacity: 1; }
+  .preset-more:hover { color: var(--text-1); }
+  /* Imported presets (src/presets/imported-presets.mjs): the import buttons, then one group per pack with Remove. */
+  .presets-import { display: flex; flex-wrap: wrap; gap: var(--space-1-5); }
+  .presets-import .ui-button > svg { inline-size: var(--icon-sm); block-size: var(--icon-sm); }
+  .presets-pack-title { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  .presets-pack-title > span { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .presets-head {
+    position: sticky; inset-block-start: calc(-1 * var(--space-3)); z-index: 1; display: grid; gap: var(--space-2);
+    margin: calc(-1 * var(--space-3)) calc(-1 * var(--space-3)) 0; padding: var(--space-3) var(--space-3) var(--space-2); background: var(--surface);
+    box-shadow: 0 1px 0 var(--line-1, var(--line-2));
+  }
+  .presets-search, .presets-text {
+    inline-size: 100%; min-inline-size: 0; block-size: var(--control-sm, 30px); padding-inline: var(--space-3); border: 1px solid var(--line-2); border-radius: var(--radius-md);
+    background: var(--surface-sunken, var(--control-soft)); color: var(--text-1); font: var(--type-small);
+  }
+  .presets-search:focus-visible, .presets-text:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+  .presets-tabs { display: flex; gap: var(--space-1); overflow-x: auto; scrollbar-width: thin; padding-block-end: 2px; }
+  .presets-tab {
+    flex: none; display: inline-flex; align-items: center; gap: var(--space-1); padding: var(--space-1) var(--space-2-5, 10px); border: 0; border-radius: var(--radius-pill, 999px);
+    background: var(--control-soft); color: var(--text-2); font: var(--type-small); font-weight: 600; cursor: pointer;
+    transition: background-color var(--dur-fast), color var(--dur-fast);
+  }
+  .presets-tab > svg { inline-size: 14px; block-size: 14px; }
+  .presets-tab:hover { background: var(--control-soft-hover); color: var(--text-1); }
+  .presets-tab[aria-selected="true"] { background: var(--accent-soft); color: var(--accent-text-strong); box-shadow: inset 0 0 0 1.5px var(--accent-line); }
+  .presets-tab:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .presets-target { margin: 0; }
+  .presets-body { display: grid; gap: var(--space-4, 16px); }
+  .presets-group { display: grid; gap: var(--space-2); }
+  .presets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: var(--space-1-5); }
+  .preset-card {
+    display: flex; flex-direction: column; align-items: center; gap: 4px; min-inline-size: 0; padding: var(--space-1-5) var(--space-1); border-radius: var(--radius-md);
+    background: var(--control-soft); color: var(--text-1); cursor: grab; user-select: none; touch-action: none;
+    transition: background-color var(--dur-fast), translate var(--dr-dur-lift, 200ms) var(--dr-spring, ease-out), box-shadow var(--dur-fast);
+  }
+  .preset-card:hover { background: var(--control-soft-hover); translate: 0 -1px; }
+  .preset-card:active { cursor: grabbing; }
+  .preset-card:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .preset-card.library-dragging { opacity: 0.5; }
+  /* .library-thumbnail (for the canvas drag ghost) brings the Library's absolute, fade-in image rules: */
+  /* anchor them to the thumbnail and show the image at once. */
+  .preset-thumb { position: relative; display: grid; place-items: center; inline-size: 64px; block-size: 64px; overflow: hidden; border-radius: var(--radius-sm); background: var(--surface); }
+  .preset-thumb > img { opacity: 1; padding: 4px; object-fit: contain; pointer-events: none; }
+  .preset-thumb[data-kind="sticker"] { background: var(--scene3d-screen); }
+  /* Effect icons draw in currentColor, like the Effects panel's tinted tiles. */
+  .preset-thumb[data-kind="effect"] { background: var(--accent-soft); color: var(--accent-text); }
+  .preset-thumb[data-kind="effect"] > svg { inline-size: 30px; block-size: 30px; stroke-width: 1.6; }
+  .preset-label { max-inline-size: 100%; font-size: 11px; line-height: 1.2; text-align: center; color: var(--text-2); overflow-wrap: anywhere; }
+  .presets-text-row { grid-template-columns: 70px 1fr; }
+
+  /* 3D Shot studio (src/scene3d/shot-studio.mjs): a large modal, preview on the left, controls on the right. */
+  .shot-card-art { aspect-ratio: 16 / 7; border-radius: var(--radius-md); background:
+    radial-gradient(circle at 78% 26%, var(--scene3d-moon) 0 4%, transparent 5%),
+    linear-gradient(transparent 58%, var(--scene3d-roof) 58% 100%),
+    repeating-linear-gradient(90deg, var(--scene3d-tower-a) 0 9%, transparent 9% 12%, var(--scene3d-tower-b) 12% 19%, transparent 19% 23%),
+    linear-gradient(var(--scene3d-sky-top), var(--scene3d-sky-mid) 70%, var(--scene3d-sky-horizon)); position: relative; overflow: hidden; }
+  .shot-card-art::after { content: ""; position: absolute; left: 46%; bottom: 30%; inline-size: 6%; block-size: 34%; border-radius: 40% 40% 4px 4px; background: var(--accent); box-shadow: 0 0 18px var(--accent); }
+
+  .shot-studio {
+    container: shot-studio / inline-size;
+    inline-size: min(1240px, calc(100vw - 48px)); max-block-size: calc(100vh - 48px); padding: 0; border: 0; border-radius: var(--radius-xl, 18px);
+    background: var(--surface); color: var(--text-1); box-shadow: var(--elevation-3); overflow: hidden;
+  }
+  .shot-studio[open] { display: flex; flex-direction: column; animation: dr-rise 280ms var(--dr-soft, ease-out) both; }
+  .shot-studio::backdrop { background: var(--surface-backdrop); backdrop-filter: blur(3px); }
+  .shot-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3); padding: var(--space-4, 16px) var(--space-5, 20px); border-block-end: 1px solid var(--line-1, var(--line-2)); }
+  .shot-title { margin: 0 0 2px; font-size: 18px; font-weight: 750; }
+  .shot-body { display: grid; grid-template-columns: minmax(0, 1fr) 320px; min-block-size: 0; overflow: auto; }
+  .shot-stage { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-4, 16px); min-inline-size: 0; }
+  .shot-screen { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; background: var(--scene3d-screen); box-shadow: inset 0 0 0 1px var(--line-2); }
+  .shot-canvas { display: block; inline-size: 100%; block-size: 100%; }
+  .shot-busy { position: absolute; inset: 0; display: grid; place-items: center; padding: var(--space-4, 16px); color: var(--scene3d-ink); font: var(--type-small); text-align: center; background: var(--scene3d-veil); }
+  .shot-busy[hidden] { display: none; }
+  .shot-transport { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-3); }
+  .shot-scrub, .shot-controls input[type="range"] { inline-size: 100%; accent-color: var(--accent); }
+  .shot-clock, .shot-value { font: var(--type-small); font-variant-numeric: tabular-nums; color: var(--text-2); white-space: nowrap; }
+  .shot-controls { display: flex; flex-direction: column; gap: var(--space-4, 16px); padding: var(--space-4, 16px); background: var(--surface-2, var(--surface)); border-inline-start: 1px solid var(--line-1, var(--line-2)); overflow: auto; }
+  .shot-field { display: grid; gap: var(--space-1-5); }
+  .shot-label { font: var(--type-small); font-weight: 700; color: var(--text-2); }
+  .shot-inline { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+  .shot-inline > input[type="range"] { flex: 1 1 120px; inline-size: auto; }
+  .shot-segmented { display: flex; }
+  .shot-segmented > .ui-segmented-item { flex: 1 1 0; }
+  .shot-cameras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-1-5); }
+  .shot-choice {
+    display: grid; justify-items: start; align-content: start; gap: 2px; min-inline-size: 0; padding: var(--space-2) var(--space-2-5, 10px); border: 0; border-radius: var(--radius-md);
+    text-align: start; white-space: normal; cursor: pointer;
+    background: var(--control-soft); color: var(--text-1); box-shadow: inset 0 0 0 1px transparent; transition: background-color var(--dur-fast), box-shadow var(--dur-fast);
+  }
+  .shot-choice b { font: var(--type-small); font-weight: 700; }
+  .shot-choice span { font-size: 11px; line-height: 1.3; color: var(--text-3); }
+  .shot-choice:hover { background: var(--control-soft-hover); }
+  .shot-choice[aria-pressed="true"] { background: var(--accent-soft); box-shadow: inset 0 0 0 1.5px var(--accent-line); }
+  .shot-choice[aria-pressed="true"] b { color: var(--accent-text-strong); }
+  .shot-choice:focus-visible, .shot-swatch:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .shot-swatches { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1-5); }
+  .shot-swatch { inline-size: 26px; block-size: 26px; padding: 0; border: 0; border-radius: 50%; background: var(--swatch); cursor: pointer; box-shadow: inset 0 0 0 1px var(--scene3d-swatch-edge); }
+  .shot-swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--surface-2, var(--surface)), 0 0 0 4px var(--accent); }
+  .shot-color { inline-size: 34px; block-size: 28px; padding: 0; border: 0; border-radius: var(--radius-sm); background: none; cursor: pointer; }
+  .shot-render { display: grid; gap: var(--space-2); padding-block-start: var(--space-3); border-block-start: 1px solid var(--line-1, var(--line-2)); }
+  .shot-render [data-variant="primary"] { flex: 1 1 auto; }
+  .shot-progress { inline-size: 100%; accent-color: var(--accent); }
+  .shot-progress[hidden], .shot-after[hidden] { display: none; }
+  .shot-status { overflow-wrap: anywhere; }
+  .shot-after { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .shot-place { display: grid; gap: var(--space-1-5); padding-block-start: var(--space-2); }
+  /* "Use your AI to make 3D shots": an accent card with the example prompt to copy. */
+  .shot-ai { padding: var(--space-2-5); border-radius: var(--radius-md); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent-line); }
+  .shot-ai > .shot-label { color: var(--accent-text-strong); }
+  .shot-ai-prompt { margin: 0; font: var(--type-small); font-style: italic; color: var(--text-1); }
+  @container shot-studio (inline-size < 860px) {
+    .shot-body { grid-template-columns: 1fr; }
+    .shot-controls { border-inline-start: 0; border-block-start: 1px solid var(--line-1, var(--line-2)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shot-studio[open] { animation: none; }
+    .ai-entry, .ai-entry[data-status="running"] .ai-dot, .ai-state[data-state="on"]::before { animation: none; }
+    .ai-client:hover { translate: none; }
+  }
+}

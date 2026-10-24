@@ -1,0 +1,104 @@
+import assert from 'node:assert/strict';
+import {chromium} from './support/playwright.mjs';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {pcmWave} from '../src/audio-pcm.mjs';
+const out='artifacts/audio'; await mkdir(out,{recursive:true});
+const waveform=Float32Array.from({length:48000*4},(_,i)=>Math.sin(i*2*Math.PI*440/48000)*(.12+.24*Math.sin(i/1800)**2));
+await writeFile(`${out}/Dialogue.wav`,new Uint8Array(await pcmWave([waveform]).arrayBuffer()));
+const browser=await chromium.launch({channel:'chrome',headless:true,args:['--autoplay-policy=no-user-gesture-required']}),page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
+page.on('pageerror',error=>errors.push(error.message));
+const settle=()=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+try {
+  await page.goto(process.env.RIGS_URL??'http://127.0.0.1:47831'); await page.waitForFunction(()=>window.rigs?.ready);
+  await page.getByRole('button',{name:'Audio',exact:true}).click();
+  assert.equal(await page.getByRole('button',{name:'Import audio',exact:true}).count(),1);
+  assert.ok((await page.locator('body').innerText()).includes('Untitled animation'));
+  assert.deepEqual(errors,[]);
+  await page.screenshot({path:`${out}/initial.png`});
+  console.log('Dev server verified: application and audio controls render.');
+  await page.evaluate(async()=>{
+    const {emptyDocument,createFrame,createObject}=await import('/src/demo.mjs'),report=emptyDocument(); report.fps=12;
+    report.keyframes=Array.from({length:5},(_,i)=>createFrame([createObject(report.figure_types[0],1,220+i*25,250)],24));
+    rigs.settingsUI.commit({timelineMode:'advanced'}); rigs.editor.load(report); rigs.fit();
+  });
+  await page.getByLabel('Choose audio recording').setInputFiles(`${out}/Dialogue.wav`);
+  await page.waitForFunction(()=>rigs.editor.report._rigs.audio?.tracks[0]?.clips.length===1);
+  await settle(); const clip=page.locator('.audio-clip').first(); await clip.click({position:{x:30,y:23}});
+  const before=await page.evaluate(()=>({start:rigs.editor.report._rigs.audio.tracks[0].clips[0].start,undo:rigs.editor._undo.length,poses:JSON.stringify(rigs.editor.report.keyframes)}));
+  const box=await clip.boundingBox(); await page.mouse.move(box.x+30,box.y+23);await page.mouse.down();await page.mouse.move(box.x+72,box.y+23,{steps:8});await page.mouse.up();await settle();
+  assert.equal(await page.evaluate(()=>rigs.editor.report._rigs.audio.tracks[0].clips[0].start),before.start+.25);
+  assert.equal(await page.evaluate(()=>rigs.editor._undo.length),before.undo+1);
+  assert.equal(await page.evaluate(()=>JSON.stringify(rigs.editor.report.keyframes)),before.poses);
+  await page.locator('.audio-body').press('Control+z'); await settle();
+  assert.equal(await page.evaluate(()=>rigs.editor.report._rigs.audio.tracks[0].clips[0].start),before.start);
+  await page.getByRole('button',{name:'Audio clip controls',exact:true}).click();
+  await page.getByRole('button',{name:'Audio clip properties',exact:true}).click();
+  await page.getByLabel('Clip volume · %',{exact:true}).fill('65'); await page.getByLabel('Clip volume · %',{exact:true}).press('Tab');
+  await page.getByLabel('Fade in · seconds',{exact:true}).fill('0.25'); await page.getByLabel('Fade in · seconds',{exact:true}).press('Tab');
+  await page.screenshot({path:`${out}/properties.png`}); await page.getByRole('button',{name:'Close audio properties'}).click();
+  await page.evaluate(()=>rigs.editor.seek(24));await page.getByRole('button',{name:'Audio clip controls',exact:true}).click();await page.getByRole('button',{name:'Split audio at playhead (S)'}).click();await settle();
+  assert.equal(await page.evaluate(()=>rigs.editor.report._rigs.audio.tracks[0].clips.length),2);
+  await page.getByRole('button',{name:'Mute Dialogue'}).click();assert.equal(await page.evaluate(()=>rigs.editor.report._rigs.audio.tracks[0].mute),true);
+  await page.getByRole('button',{name:'Mute Dialogue'}).click();
+  await page.screenshot({path:`${out}/advanced.png`});
+  const audio=await page.evaluate(()=>JSON.stringify(rigs.editor.report._rigs.audio));
+  await page.evaluate(()=>rigs.settingsUI.commit({timelineMode:'simple'}));await settle();
+  assert.equal(await page.evaluate(()=>JSON.stringify(rigs.editor.report._rigs.audio)),audio);
+  assert.equal(await page.locator('.audio-clip').count(),2);
+  await page.screenshot({path:`${out}/simple.png`});
+  await page.locator('.audio-clip').first().click({position:{x:18,y:23}}); await page.locator('.audio-body').press('Control+d');await settle();
+  assert.equal(await page.evaluate(()=>rigs.editor.report._rigs.audio.tracks[0].clips.length),3);
+  await page.locator('.audio-body').press('Control+z'); await settle();
+  // Native binary project save/reopen uses original embedded bytes, then a cold
+  // worker reconstructs PCM without a link to the input file.
+  const persistence=await page.evaluate(async()=>{
+    const {DocumentExporter}=await import('/src/document-export.mjs'),{decodeDocument}=await import('/src/native-container.mjs');
+    const exporter=new DocumentExporter(),blob=await exporter.export(rigs.editor.report,{format:'rigs',name:'Audio test'});
+    const {document}=await decodeDocument(new Uint8Array(await blob.arrayBuffer()),'rigs');exporter.dispose();
+    const before=JSON.stringify(rigs.editor.report._rigs.audio);rigs.editor.load(document);await rigs.audioEngine.clear();await rigs.audioEngine.prepare(rigs.editor.report,{start:0,end:4});
+    return {equal:JSON.stringify(rigs.editor.report._rigs.audio)===before,bytes:blob.size,prepared:rigs.audioEngine.hasAudio};
+  });assert.equal(persistence.equal,true);assert.equal(persistence.prepared,true);
+  await settle();assert.equal(await page.getByRole('button',{name:'Audio',exact:true}).getAttribute('aria-expanded'),'false','Opening a project does not open audio controls');
+  await page.evaluate(()=>{rigs.editor.seek(0);rigs.actions.play();});
+  await page.waitForFunction(()=>rigs.audioEngine.running&&rigs.editor.tick>=10,null,{timeout:30000});
+  const sync=await page.evaluate(()=>({tick:rigs.editor.tick,time:rigs.audioEngine.position,fps:rigs.editor.report.fps}));
+  assert.ok(Math.abs(sync.tick/sync.fps-sync.time)<.2,JSON.stringify(sync));
+  await page.evaluate(()=>{window.audioReadyOriginal=rigs.state.renderer.backgroundsReady;rigs.state.renderer.backgroundsReady=()=>false;});
+  await page.waitForFunction(()=>rigs.state.buffering&&!rigs.audioEngine.running);
+  const held=await page.evaluate(()=>rigs.editor.tick);await page.waitForTimeout(160);assert.equal(await page.evaluate(()=>rigs.editor.tick),held);
+  await page.evaluate(()=>{rigs.state.renderer.backgroundsReady=window.audioReadyOriginal;delete window.audioReadyOriginal;});
+  await page.waitForFunction(tick=>rigs.audioEngine.running&&rigs.editor.tick>tick,held);
+  await page.evaluate(()=>rigs.actions.play());assert.equal(await page.evaluate(()=>rigs.audioEngine.running),false);
+  await page.evaluate(()=>{
+    rigs.state.loopRange={startTick:0,endTick:12};rigs.state.loop=true;rigs.editor.seek(0);window.audioLoops=0;let previous=0;
+    window.audioLoopListener=event=>{if(event.detail.kind==='seek'){if(rigs.editor.tick<previous)window.audioLoops++;previous=rigs.editor.tick;}};
+    rigs.editor.addEventListener('change',window.audioLoopListener);rigs.actions.play();
+  });
+  await page.waitForFunction(()=>window.audioLoops>=2,null,{timeout:12000});
+  const loopSync=await page.evaluate(()=>({tick:rigs.editor.tick,time:rigs.audioEngine.position}));
+  await page.evaluate(()=>{rigs.actions.play();rigs.state.loopRange=null;rigs.editor.removeEventListener('change',window.audioLoopListener);});
+  await page.getByRole('button',{name:'Audio',exact:true}).click();
+  await page.getByRole('button', {name:'Audio options', exact:true}).click(); await page.getByLabel('Hear audio while scrubbing').check(); await page.keyboard.press('Escape');
+  const scrub=await page.locator('.audio-lanes').boundingBox();await page.mouse.move(scrub.x+40,scrub.y+10);await page.mouse.down();
+  await page.waitForFunction(()=>rigs.audioEngine.running);await page.mouse.up();assert.equal(await page.evaluate(()=>rigs.audioEngine.running),false);
+  await page.evaluate(()=>rigs.settingsUI.commit({theme:'dark'}));await settle();await page.screenshot({path:`${out}/dark.png`});
+  await page.evaluate(()=>rigs.settingsUI.commit({theme:'light'}));
+  await page.setViewportSize({width:960,height:720});await settle();await page.screenshot({path:`${out}/compact.png`});
+  assert.equal(await page.locator('.audio-timeline').evaluate(node=>node.scrollWidth<=node.clientWidth+1),true);
+  assert.equal(await page.locator('.sheet-filmstrip-controls').evaluate(node=>node.scrollHeight<=node.clientHeight+1),true);
+  const empty=await page.evaluate(()=>{rigs.editor.newDocument();return JSON.stringify(rigs.editor.serialize());});
+  await page.getByLabel('Choose audio recording').setInputFiles(`${out}/Dialogue.wav`);
+  await page.waitForFunction(()=>rigs.editor.report._rigs.audio?.tracks.length===1&&rigs.editor.totalTicks>=96);
+  assert.equal(await page.evaluate(()=>rigs.editor._undo.length),1);
+  await page.evaluate(()=>rigs.editor.undo());assert.equal(await page.evaluate(()=>JSON.stringify(rigs.editor.serialize())),empty);
+  await page.evaluate(()=>{window.audioDecodeOriginal=rigs.audioEngine.decode;rigs.audioEngine.decode=async function(...args){await new Promise(resolve=>window.audioDecodeRelease=resolve);return window.audioDecodeOriginal.apply(this,args);};});
+  await page.getByLabel('Choose audio recording').setInputFiles(`${out}/Dialogue.wav`);
+  await page.getByRole('button',{name:'Cancel audio import',exact:true}).click();
+  await page.evaluate(()=>{rigs.audioEngine.decode=window.audioDecodeOriginal;window.audioDecodeRelease();});
+  await page.waitForFunction(()=>!rigs.timeline.audio.importController);
+  assert.equal(await page.evaluate(()=>JSON.stringify(rigs.editor.serialize())),empty);
+  if(process.env.RIGS_AUDIO_MP3){await page.getByLabel('Choose audio recording').setInputFiles(process.env.RIGS_AUDIO_MP3);await page.waitForFunction(()=>rigs.editor.report._rigs.audio?.tracks.length===1);}
+  assert.deepEqual(errors,[]);await writeFile(`${out}/browser.json`,JSON.stringify({persistence,sync,loopSync,held,errors},null,2));
+  console.log('PASS audio UI, isolated undo, properties, split, mute, both timelines, native persistence, cold playback and synchronization',persistence,sync);
+} catch(error) { await page.screenshot({path:`${out}/failure.png`});throw error; }
+finally {await browser.close();}

@@ -1,0 +1,330 @@
+{
+  "name": "rigstick-webapp",
+  "productName": "RigStick",
+  "version": "1.3.1",
+  "description": "Stick figure animator with AI control, a drag-and-drop preset library and 3D shots.",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://rigstick.example",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaushalisreal/Rigstick.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kaushalisreal/Rigstick/issues"
+  },
+  "private": true,
+  "type": "module",
+  "main": "desktop/main.cjs",
+  "desktopName": "rigstick.desktop",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "serve": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "locales:build": "node scripts/build-locales.mjs",
+    "locales:check": "node scripts/build-locales.mjs --check",
+    "locales:validate": "node scripts/build-locales.mjs --validate-only",
+    "test:localization:browser": "node tests/localization-settings.browser.mjs && node tests/localization-app.browser.mjs && node tests/localization-native-app.browser.mjs && node tests/localization-foundation.browser.mjs && node tests/localization-packs.browser.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:hotkeys": "node --test tests/hotkeys.test.mjs",
+    "test:hotkeys:ui": "node tests/hotkeys-timeline.browser.mjs",
+    "test:hotkeys:desktop": "node scripts/smoke-hotkeys.mjs",
+    "test:drawing:desktop": "node scripts/smoke-drawing.mjs",
+    "benchmark:drawing-load": "node scripts/benchmark-drawing-load.mjs",
+    "test:ui": "node tests/app.browser.mjs",
+    "test:renderer": "node tests/renderer-gpu-smoke.mjs",
+    "test:timeline": "node tests/timeline.browser.mjs",
+    "test:recovery": "node --test scripts/recovery.test.mjs",
+    "test:streams": "node --test scripts/file-streams.test.mjs",
+    "test:streams:desktop": "node scripts/smoke-native-streams.mjs",
+    "test:preferences": "node --test scripts/preferences.test.mjs",
+    "test:telemetry": "node --test tests/telemetry*.test.mjs",
+    "benchmark:telemetry": "node scripts/benchmark-telemetry.mjs",
+    "web:build": "node scripts/build-web.mjs",
+    "web:verify": "node scripts/verify-web.mjs",
+    "web:preview": "node scripts/build-web.mjs && node scripts/serve-web.mjs",
+    "web:deploy": "node scripts/deploy-web.mjs",
+    "test:web": "node tests/web-build.browser.mjs && node tests/web-offline.browser.mjs",
+    "test:pinch": "node tests/canvas-pinch.browser.mjs",
+    "test:touch": "node tests/touch.browser.mjs",
+    "test:web:browsers": "node tests/browser-save-recovery.browser.mjs && node tests/web-autosave.browser.mjs && node tests/web-library.browser.mjs && node tests/web-library-engine.browser.mjs && node tests/web-support.browser.mjs",
+    "test:preferences:desktop": "node scripts/smoke-preferences.mjs",
+    "test:project-files": "node --test scripts/project-files.test.mjs",
+    "test:project-files:desktop": "node scripts/smoke-project-files.mjs",
+    "test:project-tabs:desktop": "node scripts/smoke-project-tabs.mjs",
+    "test:home": "node tests/home.browser.mjs && node tests/tutorials.browser.mjs",
+    "test:home:desktop": "node scripts/smoke-home.mjs",
+    "test:project-library": "node --test scripts/project-library.test.mjs",
+    "test:recovery:desktop": "node scripts/smoke-recovery.mjs",
+    "benchmark:native-import": "node scripts/benchmark-native-import.mjs",
+    "benchmark:dense": "node scripts/benchmark-dense-scene.mjs",
+    "benchmark:animation-modes": "node --expose-gc scripts/benchmark-animation-modes.mjs",
+    "benchmark:animation-memory": "node --expose-gc scripts/benchmark-animation-memory.mjs",
+    "test:animation-performance": "node --test tests/animation-performance.test.mjs",
+    "test:animation-performance:browser": "node tests/animation-mode-performance.browser.mjs",
+    "test:desktop": "node scripts/smoke-desktop.mjs",
+    "test:desktop:packaged": "node scripts/smoke-desktop.mjs --packaged",
+    "test:boot": "node scripts/smoke-boot.mjs",
+    "test:boot:packaged": "node scripts/smoke-boot.mjs --packaged",
+    "test:export:desktop": "node scripts/smoke-video-export.mjs",
+    "test:export:packaged": "node scripts/smoke-video-export.mjs --packaged",
+    "test:library": "node --test scripts/library-store.test.mjs scripts/public-library.test.mjs tests/user-library.test.mjs",
+    "test:library:desktop": "node scripts/smoke-library.mjs",
+    "build:sidecar": "node scripts/run-python.mjs scripts/build-sidecar.py",
+    "build:video-encoder": "node scripts/run-python.mjs scripts/stage-video-encoder.py",
+    "build:vfw": "node scripts/run-python.mjs scripts/build-vfw-bridge.py",
+    "build:frame-scan": "node scripts/run-python.mjs scripts/build-frame-scan.py",
+    "build:brand": "node scripts/build-brand-assets.mjs",
+    "test:clipboard": "node --test tests/editor-frame-clipboard.test.mjs tests/frame-clipboard-authored.test.mjs",
+    "test:clipboard:desktop": "node scripts/smoke-frame-clipboard.mjs",
+    "verify:sidecar": "node scripts/verify-sidecar.mjs",
+    "pack": "electron-builder --dir",
+    "verify:package": "node scripts/verify-package.mjs",
+    "mark:release": "node scripts/mark-release.mjs",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux",
+    "test:updates": "node --test tests/updates.test.mjs tests/appimage-updater.test.mjs tests/release-assets.test.mjs",
+    "test:updates:linux": "node scripts/verify-appimage-update.mjs",
+    "test:updates:desktop": "node scripts/smoke-updates.mjs",
+    "release:prepare": "node scripts/prepare-release.mjs",
+    "changelog:check": "node scripts/check-changelog.mjs",
+    "release:verify": "node scripts/release-assets.mjs",
+    "release:publish": "node scripts/publish-release.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.1",
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@mozilla/readability": "0.6.0",
+    "electron-updater": "6.6.2",
+    "pidusage": "4.1.0",
+    "systeminformation": "5.33.16",
+    "three": "0.186.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "electron": "39.8.10",
+    "electron-builder": "26.15.3",
+    "playwright": "1.63.0",
+    "pyodide": "314.0.7",
+    "ws": "8.22.0"
+  },
+  "build": {
+    "beforePack": "scripts/before-pack.cjs",
+    "appId": "app.rigstick.desktop",
+    "protocols": [
+      {
+        "name": "RigStick",
+        "schemes": [
+          "rigstick"
+        ]
+      }
+    ],
+    "productName": "RigStick",
+    "artifactName": "RigStick-${version}-${os}-${arch}.${ext}",
+    "toolsets": {
+      "appimage": "1.0.3"
+    },
+    "directories": {
+      "output": "release",
+      "buildResources": "packaging"
+    },
+    "files": [
+      "desktop/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": ".",
+        "to": "web",
+        "filter": [
+          "index.html",
+          "*.css",
+          "*.svg",
+          "*.png",
+          "src/**/*",
+          "assets/**/*",
+          "vendor/**/*"
+        ]
+      },
+      {
+        "from": "backend",
+        "to": "backend",
+        "filter": [
+          "**/*.py"
+        ]
+      },
+      {
+        "from": "codecs",
+        "to": "tools",
+        "filter": [
+          "*.py"
+        ]
+      },
+      {
+        "from": "codecs/codec_bridge.py",
+        "to": "codec_bridge.py"
+      },
+      {
+        "from": "build/sidecar",
+        "to": "sidecar",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "build/video-encoder",
+        "to": "video-encoder",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "fileAssociations": [
+      {
+        "ext": "nodes",
+        "mimeType": "application/x-sticknodes-figure",
+        "name": "Stick Nodes figure",
+        "role": "Viewer"
+      },
+      {
+        "ext": "nodemc",
+        "mimeType": "application/x-sticknodes-movieclip",
+        "name": "Stick Nodes movie clip",
+        "role": "Viewer"
+      },
+      {
+        "ext": "stknds",
+        "mimeType": "application/x-sticknodes-project",
+        "name": "Stick Nodes project",
+        "role": "Viewer"
+      },
+      {
+        "ext": "piv",
+        "mimeType": "application/x-pivot-animation",
+        "name": "Pivot animation",
+        "role": "Editor"
+      },
+      {
+        "ext": "stk",
+        "mimeType": "application/x-pivot-figure",
+        "name": "Pivot stick figure",
+        "role": "Editor"
+      },
+      {
+        "ext": "rigs",
+        "mimeType": "application/vnd.rigstick.project",
+        "name": "RigStick project",
+        "role": "Editor",
+        "icon": "desktop/assets/rigstick-document"
+      },
+      {
+        "ext": "rigsmov",
+        "mimeType": "application/vnd.rigstick.movieclip",
+        "name": "RigStick movieclip",
+        "role": "Editor",
+        "icon": "desktop/assets/rigstick-document"
+      },
+      {
+        "ext": "stykmov",
+        "mimeType": "application/vnd.rigstick.movieclip",
+        "name": "RigStick movieclip (older format)",
+        "role": "Editor",
+        "icon": "desktop/assets/rigstick-document"
+      },
+      {
+        "ext": "stkz",
+        "mimeType": "application/vnd.rigstick.figure",
+        "name": "RigStick figure",
+        "role": "Editor",
+        "icon": "desktop/assets/rigstick-document"
+      },
+      {
+        "ext": "styk",
+        "mimeType": "application/vnd.rigstick.project",
+        "name": "RigStick project (older format)",
+        "role": "Editor",
+        "icon": "desktop/assets/rigstick-document"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "desktop/assets/rigstick.ico",
+      "signExecutable": false,
+      "extraResources": [
+        {
+          "from": "native/bin",
+          "to": "vfw",
+          "filter": [
+            "build-info.json",
+            "x86/*.exe",
+            "x64/*.exe"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "installerIcon": "desktop/assets/rigstick.ico",
+      "uninstallerIcon": "desktop/assets/rigstick.ico",
+      "installerHeaderIcon": "desktop/assets/rigstick.ico",
+      "include": "desktop/installer.nsh",
+      "artifactName": "RigStick-${version}-Setup-${arch}.${ext}",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "portable": {
+      "artifactName": "RigStick-${version}-Portable-${arch}.${ext}"
+    },
+    "mac": {
+      "icon": "desktop/assets/rigstick.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.graphics-design",
+      "hardenedRuntime": true
+    },
+    "linux": {
+      "icon": "desktop/assets/rigstick.png",
+      "target": [
+        "AppImage"
+      ],
+      "category": "Graphics",
+      "executableName": "rigstick",
+      "syncDesktopName": true,
+      "synopsis": "Stick figure animation"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "kaushalisreal",
+        "repo": "Rigstick",
+        "private": false,
+        "releaseType": "draft"
+      }
+    ],
+    "releaseInfo": {
+      "releaseNotesFile": "release-notes.md"
+    },
+    "appx": {
+      "applicationId": "RigStick",
+      "identityName": "Rigstick.Rigstick",
+      "publisher": "CN=9D125C91-A17C-4DDB-9EAC-BD97BBE25E7B",
+      "publisherDisplayName": "Rigstick",
+      "displayName": "Rigstick",
+      "backgroundColor": "transparent",
+      "showNameOnTiles": true,
+      "languages": [
+        "en-US"
+      ],
+      "artifactName": "RigStick-${version}-${arch}.${ext}",
+      "minVersion": "10.0.17763.0",
+      "maxVersionTested": "10.0.26100.0"
+    }
+  }
+}

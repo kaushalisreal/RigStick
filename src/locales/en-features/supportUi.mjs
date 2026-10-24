@@ -1,0 +1,20 @@
+export default Object.freeze({
+  "supportUi.rigstick": "RigStick",
+  "supportUi.closeWelcomeScreen": "Close welcome screen",
+  "supportUi.whatSNewIn": "What’s new in",
+  "supportUi.rigstick2": "Rigstick.",
+  "supportUi.releaseVersion": "Release version",
+  "supportUi.recentReleases": "Recent releases",
+  "supportUi.releaseNotes": "Release notes",
+  "supportUi.supportOnKoFi": "Support on Ko-fi",
+  "supportUi.startAnimating": "Start animating",
+  "supportUi.versionInstalled": "Version {version} installed",
+  "supportUi.installed": "Installed",
+  "supportUi.noReleaseNotesAvailable": "No release notes available.",
+  "supportUi.refresh": "Refresh",
+  "supportUi.installed2": " · Installed",
+  "supportUi.couldnTLoadReleasesTryAgain": "Couldn’t load releases. Try again.",
+  "supportUi.couldnTOpenTheMicrosoftStore": "Couldn’t open the Microsoft Store. Try again.",
+  "supportUi.couldnTOpenKoFiTryAgain": "Couldn’t open Ko-fi. Try again.",
+  "supportUi.rigstickVersion": "RigStick {version}"
+});

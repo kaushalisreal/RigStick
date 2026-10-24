@@ -1,0 +1,31 @@
+{
+  "comment": "RigStick brand colours and logo inputs. Edit, then run: python scripts/rebrand/make_logo.py && python scripts/rebrand/make_patterns.py && node scripts/build-brand-assets.mjs && node scripts/build-web-icons.mjs",
+  "current": {
+    "name": "RigStick",
+    "slug": "rigstick",
+    "domain": "rigstick.example",
+    "github_owner": "kaushalisreal",
+    "app_id": "com.rigstick.app"
+  },
+  "accent": {
+    "50": "#fff1e8",
+    "100": "#ffe4d3",
+    "400": "#ff8f52",
+    "500": "#ff6a1a",
+    "550": "#ec5a0b",
+    "600": "#c94a00",
+    "700": "#a33b00",
+    "850": "#4a2a17",
+    "900": "#3b2214"
+  },
+  "logo": {
+    "text_color": "#111418",
+    "wordmark_weight": 700,
+    "source": "assets/brand/source/rigstick-logo.svg"
+  },
+  "ornament": {
+    "marigold": "#f7b32b",
+    "rani": "#e4007c",
+    "peacock": "#0f6e73"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  // The RigStick editor: `npm run web:build`, then `npm run web:deploy`. Cloudflare serves the built
+  // files and applies _headers; there is no Worker script (docs/WEB.md).
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "rigstick-app",
+  "compatibility_date": "2026-09-10",
+  "workers_dev": true,
+  "routes": [{ "pattern": "app.rigstick.example", "custom_domain": true }],
+  "assets": {
+    "directory": "../build/web",
+    "not_found_handling": "404-page"
+  },
+  "observability": { "enabled": false }
+}

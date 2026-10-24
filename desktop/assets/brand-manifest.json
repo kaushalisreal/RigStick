@@ -1,0 +1,26 @@
+{
+  "source": "assets/brand/svg/rigstick-app-icon-blue.svg",
+  "sourceSHA256": "5e20fe00c84667a202f6a1971dba889cdae3d336453b14771af7e4778d875942",
+  "color": "#ff6a1a",
+  "transparentCorners": true,
+  "icoSizes": [
+    16,
+    20,
+    24,
+    32,
+    40,
+    48,
+    64,
+    128,
+    256
+  ],
+  "icnsSizes": [
+    16,
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ]
+}

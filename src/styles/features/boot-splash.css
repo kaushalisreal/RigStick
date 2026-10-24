@@ -1,0 +1,49 @@
+/* The startup splash (#boot-splash in index.html): the RigStick badge with its stickman running in a
+ * loop, shown from first paint until app.mjs marks the editor ready and fades it out. Pure SVG + CSS so
+ * it animates before any script loads. Limb groups rotate about their joints (each is drawn hanging
+ * straight down from its own origin); the far leg runs half a cycle behind the near one. */
+@layer features {
+  .boot-splash {
+    --run: 640ms;
+    position: fixed; inset: 0; z-index: var(--z-floating);
+    display: grid; place-content: center; justify-items: center; gap: var(--space-4, 16px);
+    background: var(--surface-well, var(--surface)); color: var(--text-1);
+    transition: opacity 420ms var(--dr-soft, ease-out), visibility 0s linear 420ms;
+  }
+  .boot-splash.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+  .boot-badge { inline-size: clamp(120px, 18vmin, 180px); block-size: auto; overflow: visible; filter: drop-shadow(0 18px 30px rgb(0 0 0 / 0.35)); /* artwork */ }
+  .boot-name { font: 800 22px/1 var(--font-ui, system-ui, sans-serif); letter-spacing: -0.02em; }
+  .boot-bar { position: relative; inline-size: 120px; block-size: 3px; border-radius: var(--radius-pill); background: var(--control-soft); overflow: hidden; }
+  .boot-bar::after { content: ""; position: absolute; inset-block: 0; inline-size: 40%; border-radius: inherit; background: var(--ornament-band, var(--accent)); animation: boot-bar 1.1s var(--ease-in-out) infinite; }
+
+  .boot-badge :is(.boot-thigh, .boot-shin, .boot-arm-back, .boot-forearm-back, .boot-band, .boot-sword-arm, .boot-runner) { transform-box: view-box; }
+  .boot-thigh, .boot-shin, .boot-arm-back, .boot-forearm-back { transform-origin: 0 0; }
+  .boot-runner { animation: boot-bob calc(var(--run) / 2) var(--ease-in-out) infinite; }
+  .boot-thigh { animation: boot-thigh var(--run) linear infinite; }
+  .boot-shin { animation: boot-shin var(--run) linear infinite; }
+  .boot-leg-b { animation-delay: calc(var(--run) / -2); }
+  .boot-arm-back { animation: boot-arm var(--run) linear infinite; }
+  .boot-forearm-back { rotate: -70deg; }
+  .boot-sword-arm { transform-origin: 268px 206px; animation: boot-sword calc(var(--run) / 2) var(--ease-in-out) infinite; }
+  .boot-band { transform-origin: 268px 145px; animation: boot-band calc(var(--run) / 2) var(--ease-in-out) infinite; }
+  .boot-slash { animation: boot-slash calc(var(--run) * 2) var(--ease-in-out) infinite; }
+  .boot-speed line { animation: boot-speed calc(var(--run) * 0.8) linear infinite; }
+  .boot-speed .boot-speed-2 { animation-delay: -0.2s; }
+  .boot-speed .boot-speed-3 { animation-delay: -0.35s; }
+  .boot-speed .boot-speed-4 { animation-delay: -0.5s; }
+
+  /* Angles: 0 hangs straight down; positive swings the limb back (the runner faces right). */
+  @keyframes boot-thigh { 0% { rotate: -55deg; } 50% { rotate: 38deg; } 100% { rotate: -55deg; } }
+  @keyframes boot-shin { 0% { rotate: 18deg; } 30% { rotate: 8deg; } 55% { rotate: 70deg; } 80% { rotate: 105deg; } 100% { rotate: 18deg; } }
+  @keyframes boot-arm { 0% { rotate: 40deg; } 50% { rotate: -45deg; } 100% { rotate: 40deg; } }
+  @keyframes boot-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -9px; } }
+  @keyframes boot-sword { 0%, 100% { rotate: 0deg; } 50% { rotate: -6deg; } }
+  @keyframes boot-band { 0%, 100% { rotate: 0deg; } 50% { rotate: 7deg; } }
+  @keyframes boot-slash { 0%, 100% { opacity: 0.55; } 50% { opacity: 0.95; } }
+  @keyframes boot-speed { from { translate: 60px 0; opacity: 0; } 25% { opacity: 0.6; } to { translate: -90px 0; opacity: 0; } }
+  @keyframes boot-bar { from { translate: -100% 0; } to { translate: 260% 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .boot-runner, .boot-thigh, .boot-shin, .boot-arm-back, .boot-sword-arm, .boot-band, .boot-slash, .boot-speed line, .boot-bar::after { animation: none; }
+  }
+}

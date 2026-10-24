@@ -1,0 +1,3798 @@
+{
+ "format": "rigstick-preset-library",
+ "version": 1,
+ "files": [
+  {
+   "path": "Objects/Sports & games/ball.rigobject",
+   "kind": "object",
+   "id": "ball",
+   "name": "ball",
+   "group": "Sports & games",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/sword.rigobject",
+   "kind": "object",
+   "id": "sword",
+   "name": "sword",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Money & treasure/coin.rigobject",
+   "kind": "object",
+   "id": "coin",
+   "name": "coin",
+   "group": "Money & treasure",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/heart.rigobject",
+   "kind": "object",
+   "id": "heart",
+   "name": "heart",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/star.rigobject",
+   "kind": "object",
+   "id": "star",
+   "name": "star",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/tree.rigobject",
+   "kind": "object",
+   "id": "tree",
+   "name": "tree",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/house.rigobject",
+   "kind": "object",
+   "id": "house",
+   "name": "house",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/car.rigobject",
+   "kind": "object",
+   "id": "car",
+   "name": "car",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/sign.rigobject",
+   "kind": "object",
+   "id": "sign",
+   "name": "sign",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/bubble.rigobject",
+   "kind": "object",
+   "id": "bubble",
+   "name": "bubble",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/cloud.rigobject",
+   "kind": "object",
+   "id": "cloud",
+   "name": "cloud",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/sun.rigobject",
+   "kind": "object",
+   "id": "sun",
+   "name": "sun",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/rock.rigobject",
+   "kind": "object",
+   "id": "rock",
+   "name": "rock",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/laptop.rigobject",
+   "kind": "object",
+   "id": "laptop",
+   "name": "laptop",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/bomb.rigobject",
+   "kind": "object",
+   "id": "bomb",
+   "name": "bomb",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/moon.rigobject",
+   "kind": "object",
+   "id": "moon",
+   "name": "moon",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Scenery/skyline.rigobject",
+   "kind": "object",
+   "id": "skyline",
+   "name": "skyline",
+   "group": "Scenery",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Scenery/rooftop.rigobject",
+   "kind": "object",
+   "id": "rooftop",
+   "name": "rooftop",
+   "group": "Scenery",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/katana.rigobject",
+   "kind": "object",
+   "id": "katana",
+   "name": "katana",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/dagger.rigobject",
+   "kind": "object",
+   "id": "dagger",
+   "name": "dagger",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/axe.rigobject",
+   "kind": "object",
+   "id": "axe",
+   "name": "axe",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/hammer.rigobject",
+   "kind": "object",
+   "id": "hammer",
+   "name": "hammer",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/spear.rigobject",
+   "kind": "object",
+   "id": "spear",
+   "name": "spear",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/bow.rigobject",
+   "kind": "object",
+   "id": "bow",
+   "name": "bow",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/arrow.rigobject",
+   "kind": "object",
+   "id": "arrow",
+   "name": "arrow",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/shield.rigobject",
+   "kind": "object",
+   "id": "shield",
+   "name": "shield",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/staff.rigobject",
+   "kind": "object",
+   "id": "staff",
+   "name": "staff",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/gun.rigobject",
+   "kind": "object",
+   "id": "gun",
+   "name": "gun",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/wrench.rigobject",
+   "kind": "object",
+   "id": "wrench",
+   "name": "wrench",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Weapons & tools/pickaxe.rigobject",
+   "kind": "object",
+   "id": "pickaxe",
+   "name": "pickaxe",
+   "group": "Weapons & tools",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/phone.rigobject",
+   "kind": "object",
+   "id": "phone",
+   "name": "phone",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/mug.rigobject",
+   "kind": "object",
+   "id": "mug",
+   "name": "mug",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/book.rigobject",
+   "kind": "object",
+   "id": "book",
+   "name": "book",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/backpack.rigobject",
+   "kind": "object",
+   "id": "backpack",
+   "name": "backpack",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/umbrella.rigobject",
+   "kind": "object",
+   "id": "umbrella",
+   "name": "umbrella",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/chair.rigobject",
+   "kind": "object",
+   "id": "chair",
+   "name": "chair",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/table.rigobject",
+   "kind": "object",
+   "id": "table",
+   "name": "table",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/lamp.rigobject",
+   "kind": "object",
+   "id": "lamp",
+   "name": "lamp",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/tv.rigobject",
+   "kind": "object",
+   "id": "tv",
+   "name": "tv",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/clock.rigobject",
+   "kind": "object",
+   "id": "clock",
+   "name": "clock",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/key.rigobject",
+   "kind": "object",
+   "id": "key",
+   "name": "key",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/camera.rigobject",
+   "kind": "object",
+   "id": "camera",
+   "name": "camera",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/guitar.rigobject",
+   "kind": "object",
+   "id": "guitar",
+   "name": "guitar",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/balloon.rigobject",
+   "kind": "object",
+   "id": "balloon",
+   "name": "balloon",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/gift.rigobject",
+   "kind": "object",
+   "id": "gift",
+   "name": "gift",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/envelope.rigobject",
+   "kind": "object",
+   "id": "envelope",
+   "name": "envelope",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/pencil.rigobject",
+   "kind": "object",
+   "id": "pencil",
+   "name": "pencil",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/trophy.rigobject",
+   "kind": "object",
+   "id": "trophy",
+   "name": "trophy",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/magnifier.rigobject",
+   "kind": "object",
+   "id": "magnifier",
+   "name": "magnifier",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Everyday/battery.rigobject",
+   "kind": "object",
+   "id": "battery",
+   "name": "battery",
+   "group": "Everyday",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Food/apple.rigobject",
+   "kind": "object",
+   "id": "apple",
+   "name": "apple",
+   "group": "Food",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Food/banana.rigobject",
+   "kind": "object",
+   "id": "banana",
+   "name": "banana",
+   "group": "Food",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Food/burger.rigobject",
+   "kind": "object",
+   "id": "burger",
+   "name": "burger",
+   "group": "Food",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Food/pizza.rigobject",
+   "kind": "object",
+   "id": "pizza",
+   "name": "pizza",
+   "group": "Food",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Food/icecream.rigobject",
+   "kind": "object",
+   "id": "icecream",
+   "name": "icecream",
+   "group": "Food",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Food/donut.rigobject",
+   "kind": "object",
+   "id": "donut",
+   "name": "donut",
+   "group": "Food",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Food/cake.rigobject",
+   "kind": "object",
+   "id": "cake",
+   "name": "cake",
+   "group": "Food",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/pine.rigobject",
+   "kind": "object",
+   "id": "pine",
+   "name": "pine",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/bush.rigobject",
+   "kind": "object",
+   "id": "bush",
+   "name": "bush",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/flower.rigobject",
+   "kind": "object",
+   "id": "flower",
+   "name": "flower",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/grass.rigobject",
+   "kind": "object",
+   "id": "grass",
+   "name": "grass",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/mountain.rigobject",
+   "kind": "object",
+   "id": "mountain",
+   "name": "mountain",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/lightning.rigobject",
+   "kind": "object",
+   "id": "lightning",
+   "name": "lightning",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/raindrop.rigobject",
+   "kind": "object",
+   "id": "raindrop",
+   "name": "raindrop",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/fire.rigobject",
+   "kind": "object",
+   "id": "fire",
+   "name": "fire",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/snowflake.rigobject",
+   "kind": "object",
+   "id": "snowflake",
+   "name": "snowflake",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/rainbow.rigobject",
+   "kind": "object",
+   "id": "rainbow",
+   "name": "rainbow",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Nature & weather/leaf.rigobject",
+   "kind": "object",
+   "id": "leaf",
+   "name": "leaf",
+   "group": "Nature & weather",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/skyscraper.rigobject",
+   "kind": "object",
+   "id": "skyscraper",
+   "name": "skyscraper",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/shop.rigobject",
+   "kind": "object",
+   "id": "shop",
+   "name": "shop",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/castle.rigobject",
+   "kind": "object",
+   "id": "castle",
+   "name": "castle",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/door.rigobject",
+   "kind": "object",
+   "id": "door",
+   "name": "door",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/window.rigobject",
+   "kind": "object",
+   "id": "window",
+   "name": "window",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/fence.rigobject",
+   "kind": "object",
+   "id": "fence",
+   "name": "fence",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/bench.rigobject",
+   "kind": "object",
+   "id": "bench",
+   "name": "bench",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/streetlamp.rigobject",
+   "kind": "object",
+   "id": "streetlamp",
+   "name": "streetlamp",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Buildings & places/tent.rigobject",
+   "kind": "object",
+   "id": "tent",
+   "name": "tent",
+   "group": "Buildings & places",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/bike.rigobject",
+   "kind": "object",
+   "id": "bike",
+   "name": "bike",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/bus.rigobject",
+   "kind": "object",
+   "id": "bus",
+   "name": "bus",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/truck.rigobject",
+   "kind": "object",
+   "id": "truck",
+   "name": "truck",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/plane.rigobject",
+   "kind": "object",
+   "id": "plane",
+   "name": "plane",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/rocket.rigobject",
+   "kind": "object",
+   "id": "rocket",
+   "name": "rocket",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/boat.rigobject",
+   "kind": "object",
+   "id": "boat",
+   "name": "boat",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/ufo.rigobject",
+   "kind": "object",
+   "id": "ufo",
+   "name": "ufo",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Vehicles/motorbike.rigobject",
+   "kind": "object",
+   "id": "motorbike",
+   "name": "motorbike",
+   "group": "Vehicles",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Money & treasure/cash.rigobject",
+   "kind": "object",
+   "id": "cash",
+   "name": "cash",
+   "group": "Money & treasure",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Money & treasure/moneybag.rigobject",
+   "kind": "object",
+   "id": "moneybag",
+   "name": "moneybag",
+   "group": "Money & treasure",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Money & treasure/gem.rigobject",
+   "kind": "object",
+   "id": "gem",
+   "name": "gem",
+   "group": "Money & treasure",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Money & treasure/chest.rigobject",
+   "kind": "object",
+   "id": "chest",
+   "name": "chest",
+   "group": "Money & treasure",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Money & treasure/crown.rigobject",
+   "kind": "object",
+   "id": "crown",
+   "name": "crown",
+   "group": "Money & treasure",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Sports & games/football.rigobject",
+   "kind": "object",
+   "id": "football",
+   "name": "football",
+   "group": "Sports & games",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Sports & games/basketball.rigobject",
+   "kind": "object",
+   "id": "basketball",
+   "name": "basketball",
+   "group": "Sports & games",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Sports & games/bat.rigobject",
+   "kind": "object",
+   "id": "bat",
+   "name": "bat",
+   "group": "Sports & games",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Sports & games/racket.rigobject",
+   "kind": "object",
+   "id": "racket",
+   "name": "racket",
+   "group": "Sports & games",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Sports & games/dice.rigobject",
+   "kind": "object",
+   "id": "dice",
+   "name": "dice",
+   "group": "Sports & games",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Sports & games/controller.rigobject",
+   "kind": "object",
+   "id": "controller",
+   "name": "controller",
+   "group": "Sports & games",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Sports & games/goal.rigobject",
+   "kind": "object",
+   "id": "goal",
+   "name": "goal",
+   "group": "Sports & games",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/exclamation.rigobject",
+   "kind": "object",
+   "id": "exclamation",
+   "name": "exclamation",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/question.rigobject",
+   "kind": "object",
+   "id": "question",
+   "name": "question",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/thought.rigobject",
+   "kind": "object",
+   "id": "thought",
+   "name": "thought",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/check.rigobject",
+   "kind": "object",
+   "id": "check",
+   "name": "check",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/cross.rigobject",
+   "kind": "object",
+   "id": "cross",
+   "name": "cross",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/pointer.rigobject",
+   "kind": "object",
+   "id": "pointer",
+   "name": "pointer",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/anger.rigobject",
+   "kind": "object",
+   "id": "anger",
+   "name": "anger",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/sweat.rigobject",
+   "kind": "object",
+   "id": "sweat",
+   "name": "sweat",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/zzz.rigobject",
+   "kind": "object",
+   "id": "zzz",
+   "name": "zzz",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/music.rigobject",
+   "kind": "object",
+   "id": "music",
+   "name": "music",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/idea.rigobject",
+   "kind": "object",
+   "id": "idea",
+   "name": "idea",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/skull.rigobject",
+   "kind": "object",
+   "id": "skull",
+   "name": "skull",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/target.rigobject",
+   "kind": "object",
+   "id": "target",
+   "name": "target",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/burst.rigobject",
+   "kind": "object",
+   "id": "burst",
+   "name": "burst",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/speedlines.rigobject",
+   "kind": "object",
+   "id": "speedlines",
+   "name": "speedlines",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Objects/Symbols & reactions/heartbreak.rigobject",
+   "kind": "object",
+   "id": "heartbreak",
+   "name": "heartbreak",
+   "group": "Symbols & reactions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Walk.rigset",
+   "kind": "move",
+   "id": "walk",
+   "name": "Walk",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Run.rigset",
+   "kind": "move",
+   "id": "run",
+   "name": "Run",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Jump.rigset",
+   "kind": "move",
+   "id": "jump",
+   "name": "Jump",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Wave.rigset",
+   "kind": "move",
+   "id": "wave",
+   "name": "Wave",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Cheer.rigset",
+   "kind": "move",
+   "id": "cheer",
+   "name": "Cheer",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Everyday & fun/Sit down.rigset",
+   "kind": "move",
+   "id": "sit",
+   "name": "Sit down",
+   "group": "Everyday & fun",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Everyday & fun/Fall over.rigset",
+   "kind": "move",
+   "id": "fall",
+   "name": "Fall over",
+   "group": "Everyday & fun",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Breathe.rigset",
+   "kind": "move",
+   "id": "idle",
+   "name": "Breathe",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Nod.rigset",
+   "kind": "move",
+   "id": "nod",
+   "name": "Nod",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Punch.rigset",
+   "kind": "move",
+   "id": "punch",
+   "name": "Punch",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Kick.rigset",
+   "kind": "move",
+   "id": "kick",
+   "name": "Kick",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Shrug.rigset",
+   "kind": "move",
+   "id": "shrug",
+   "name": "Shrug",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Bow.rigset",
+   "kind": "move",
+   "id": "bow",
+   "name": "Bow",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Raise sword.rigset",
+   "kind": "move",
+   "id": "raise",
+   "name": "Raise sword",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Hover.rigset",
+   "kind": "move",
+   "id": "hover",
+   "name": "Hover",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Sneak.rigset",
+   "kind": "move",
+   "id": "sneak",
+   "name": "Sneak",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Dash.rigset",
+   "kind": "move",
+   "id": "dash",
+   "name": "Dash",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Climb.rigset",
+   "kind": "move",
+   "id": "climb",
+   "name": "Climb",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Fly.rigset",
+   "kind": "move",
+   "id": "fly",
+   "name": "Fly",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Swim.rigset",
+   "kind": "move",
+   "id": "swim",
+   "name": "Swim",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Roll.rigset",
+   "kind": "move",
+   "id": "roll",
+   "name": "Roll",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Getting around/Backflip.rigset",
+   "kind": "move",
+   "id": "backflip",
+   "name": "Backflip",
+   "group": "Getting around",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Sword slash.rigset",
+   "kind": "move",
+   "id": "slash",
+   "name": "Sword slash",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Uppercut.rigset",
+   "kind": "move",
+   "id": "uppercut",
+   "name": "Uppercut",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Combo.rigset",
+   "kind": "move",
+   "id": "combo",
+   "name": "Combo",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Block.rigset",
+   "kind": "move",
+   "id": "block",
+   "name": "Block",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Dodge.rigset",
+   "kind": "move",
+   "id": "dodge",
+   "name": "Dodge",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Flying kick.rigset",
+   "kind": "move",
+   "id": "jumpkick",
+   "name": "Flying kick",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Get hit.rigset",
+   "kind": "move",
+   "id": "hit",
+   "name": "Get hit",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Shoot.rigset",
+   "kind": "move",
+   "id": "shoot",
+   "name": "Shoot",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Throw.rigset",
+   "kind": "move",
+   "id": "throw",
+   "name": "Throw",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Cast spell.rigset",
+   "kind": "move",
+   "id": "cast",
+   "name": "Cast spell",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Combat/Power up.rigset",
+   "kind": "move",
+   "id": "charge",
+   "name": "Power up",
+   "group": "Combat",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Point.rigset",
+   "kind": "move",
+   "id": "point",
+   "name": "Point",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Point up.rigset",
+   "kind": "move",
+   "id": "pointup",
+   "name": "Point up",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Clap.rigset",
+   "kind": "move",
+   "id": "clap",
+   "name": "Clap",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Salute.rigset",
+   "kind": "move",
+   "id": "salute",
+   "name": "Salute",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Think.rigset",
+   "kind": "move",
+   "id": "think",
+   "name": "Think",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Facepalm.rigset",
+   "kind": "move",
+   "id": "facepalm",
+   "name": "Facepalm",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Stretch.rigset",
+   "kind": "move",
+   "id": "stretch",
+   "name": "Stretch",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Wave for help.rigset",
+   "kind": "move",
+   "id": "help",
+   "name": "Wave for help",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Look around.rigset",
+   "kind": "move",
+   "id": "lookaround",
+   "name": "Look around",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Kneel.rigset",
+   "kind": "move",
+   "id": "kneel",
+   "name": "Kneel",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Pray.rigset",
+   "kind": "move",
+   "id": "pray",
+   "name": "Pray",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Push.rigset",
+   "kind": "move",
+   "id": "push",
+   "name": "Push",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Pull.rigset",
+   "kind": "move",
+   "id": "pull",
+   "name": "Pull",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Gestures/Lift.rigset",
+   "kind": "move",
+   "id": "lift",
+   "name": "Lift",
+   "group": "Gestures",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Laugh.rigset",
+   "kind": "move",
+   "id": "laugh",
+   "name": "Laugh",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Cry.rigset",
+   "kind": "move",
+   "id": "cry",
+   "name": "Cry",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Scared.rigset",
+   "kind": "move",
+   "id": "scared",
+   "name": "Scared",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Angry stomp.rigset",
+   "kind": "move",
+   "id": "angry",
+   "name": "Angry stomp",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Sad.rigset",
+   "kind": "move",
+   "id": "sad",
+   "name": "Sad",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Tired.rigset",
+   "kind": "move",
+   "id": "tired",
+   "name": "Tired",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Emotions/Victory.rigset",
+   "kind": "move",
+   "id": "victory",
+   "name": "Victory",
+   "group": "Emotions",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Everyday & fun/Lie down.rigset",
+   "kind": "move",
+   "id": "sleep",
+   "name": "Lie down",
+   "group": "Everyday & fun",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Everyday & fun/Get up.rigset",
+   "kind": "move",
+   "id": "getup",
+   "name": "Get up",
+   "group": "Everyday & fun",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Everyday & fun/Dance.rigset",
+   "kind": "move",
+   "id": "dance",
+   "name": "Dance",
+   "group": "Everyday & fun",
+   "builtin": true
+  },
+  {
+   "path": "Characters/Everyday & fun/Groove.rigset",
+   "kind": "move",
+   "id": "groove",
+   "name": "Groove",
+   "group": "Everyday & fun",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Pop in.rigset",
+   "kind": "motion",
+   "id": "pop-in",
+   "name": "Pop in",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Fade in.rigset",
+   "kind": "motion",
+   "id": "fade-in",
+   "name": "Fade in",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Slide in from left.rigset",
+   "kind": "motion",
+   "id": "slide-in-left",
+   "name": "Slide in from left",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Slide in from right.rigset",
+   "kind": "motion",
+   "id": "slide-in-right",
+   "name": "Slide in from right",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Slide in from top.rigset",
+   "kind": "motion",
+   "id": "slide-in-top",
+   "name": "Slide in from top",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Slide in from bottom.rigset",
+   "kind": "motion",
+   "id": "slide-in-bottom",
+   "name": "Slide in from bottom",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Drop in and bounce.rigset",
+   "kind": "motion",
+   "id": "drop-in",
+   "name": "Drop in and bounce",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Zoom in.rigset",
+   "kind": "motion",
+   "id": "zoom-in",
+   "name": "Zoom in",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Spin in.rigset",
+   "kind": "motion",
+   "id": "spin-in",
+   "name": "Spin in",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Grow in.rigset",
+   "kind": "motion",
+   "id": "grow-in",
+   "name": "Grow in",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Entrances/Swing in.rigset",
+   "kind": "motion",
+   "id": "swing-in",
+   "name": "Swing in",
+   "group": "Entrances",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Pop out.rigset",
+   "kind": "motion",
+   "id": "pop-out",
+   "name": "Pop out",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Fade out.rigset",
+   "kind": "motion",
+   "id": "fade-out",
+   "name": "Fade out",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Slide out to left.rigset",
+   "kind": "motion",
+   "id": "slide-out-left",
+   "name": "Slide out to left",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Slide out to right.rigset",
+   "kind": "motion",
+   "id": "slide-out-right",
+   "name": "Slide out to right",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Fly away up.rigset",
+   "kind": "motion",
+   "id": "fly-away",
+   "name": "Fly away up",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Fall away.rigset",
+   "kind": "motion",
+   "id": "fall-away",
+   "name": "Fall away",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Shrink away.rigset",
+   "kind": "motion",
+   "id": "shrink-out",
+   "name": "Shrink away",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Spin out.rigset",
+   "kind": "motion",
+   "id": "spin-out",
+   "name": "Spin out",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Exits/Zoom out (towards camera).rigset",
+   "kind": "motion",
+   "id": "zoom-out",
+   "name": "Zoom out (towards camera)",
+   "group": "Exits",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Bounce.rigset",
+   "kind": "motion",
+   "id": "bounce",
+   "name": "Bounce",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Pulse.rigset",
+   "kind": "motion",
+   "id": "pulse",
+   "name": "Pulse",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Heartbeat.rigset",
+   "kind": "motion",
+   "id": "heartbeat",
+   "name": "Heartbeat",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Shake.rigset",
+   "kind": "motion",
+   "id": "shake",
+   "name": "Shake",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Wobble.rigset",
+   "kind": "motion",
+   "id": "wobble",
+   "name": "Wobble",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Ta-da!.rigset",
+   "kind": "motion",
+   "id": "tada",
+   "name": "Ta-da!",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Flash.rigset",
+   "kind": "motion",
+   "id": "flash",
+   "name": "Flash",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Jump up.rigset",
+   "kind": "motion",
+   "id": "jump-up",
+   "name": "Jump up",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Emphasis/Nudge.rigset",
+   "kind": "motion",
+   "id": "nudge",
+   "name": "Nudge",
+   "group": "Emphasis",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Loops/Float.rigset",
+   "kind": "motion",
+   "id": "float",
+   "name": "Float",
+   "group": "Loops",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Loops/Spin.rigset",
+   "kind": "motion",
+   "id": "spin",
+   "name": "Spin",
+   "group": "Loops",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Loops/Pendulum swing.rigset",
+   "kind": "motion",
+   "id": "swing",
+   "name": "Pendulum swing",
+   "group": "Loops",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Loops/Blink.rigset",
+   "kind": "motion",
+   "id": "blink",
+   "name": "Blink",
+   "group": "Loops",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Loops/Flicker.rigset",
+   "kind": "motion",
+   "id": "flicker",
+   "name": "Flicker",
+   "group": "Loops",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Loops/Breathe (scale).rigset",
+   "kind": "motion",
+   "id": "breathe",
+   "name": "Breathe (scale)",
+   "group": "Loops",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Loops/Hover and tilt.rigset",
+   "kind": "motion",
+   "id": "hover-bob",
+   "name": "Hover and tilt",
+   "group": "Loops",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Loops/Orbit.rigset",
+   "kind": "motion",
+   "id": "orbit",
+   "name": "Orbit",
+   "group": "Loops",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Paths/Thrown in an arc.rigset",
+   "kind": "motion",
+   "id": "arc-throw",
+   "name": "Thrown in an arc",
+   "group": "Paths",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Paths/Zigzag.rigset",
+   "kind": "motion",
+   "id": "zigzag",
+   "name": "Zigzag",
+   "group": "Paths",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Paths/Hop across.rigset",
+   "kind": "motion",
+   "id": "hop-across",
+   "name": "Hop across",
+   "group": "Paths",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Paths/Fly across.rigset",
+   "kind": "motion",
+   "id": "fly-across",
+   "name": "Fly across",
+   "group": "Paths",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Paths/Circle around.rigset",
+   "kind": "motion",
+   "id": "circle-path",
+   "name": "Circle around",
+   "group": "Paths",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Motions/Type on.rigset",
+   "kind": "motion",
+   "id": "type-on",
+   "name": "Type on",
+   "group": "Motions",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Motions/Rise in.rigset",
+   "kind": "motion",
+   "id": "slide-in-bottom-short",
+   "name": "Rise in",
+   "group": "Motions",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Motions/Drop in.rigset",
+   "kind": "motion",
+   "id": "drop-in-short",
+   "name": "Drop in",
+   "group": "Motions",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Motions/Hop.rigset",
+   "kind": "motion",
+   "id": "jump-up-short",
+   "name": "Hop",
+   "group": "Motions",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Effect stickers/Hit pop.rigset",
+   "kind": "motion",
+   "id": "hit-pop",
+   "name": "Hit pop",
+   "group": "Effect stickers",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Effect stickers/Swoosh.rigset",
+   "kind": "motion",
+   "id": "swoosh",
+   "name": "Swoosh",
+   "group": "Effect stickers",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Effect stickers/Ring out.rigset",
+   "kind": "motion",
+   "id": "ring-out",
+   "name": "Ring out",
+   "group": "Effect stickers",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Effect stickers/Spin and glow.rigset",
+   "kind": "motion",
+   "id": "spin-glow",
+   "name": "Spin and glow",
+   "group": "Effect stickers",
+   "builtin": true
+  },
+  {
+   "path": "Motion/Paths/Boomerang.rigset",
+   "kind": "motion",
+   "id": "boomerang",
+   "name": "Boomerang",
+   "group": "Paths",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Push in.rigset",
+   "kind": "camera",
+   "id": "push-in",
+   "name": "Push in",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Pull out.rigset",
+   "kind": "camera",
+   "id": "pull-out",
+   "name": "Pull out",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Crash zoom.rigset",
+   "kind": "camera",
+   "id": "crash-zoom",
+   "name": "Crash zoom",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Pan left.rigset",
+   "kind": "camera",
+   "id": "pan-left",
+   "name": "Pan left",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Pan right.rigset",
+   "kind": "camera",
+   "id": "pan-right",
+   "name": "Pan right",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Tilt up.rigset",
+   "kind": "camera",
+   "id": "tilt-up",
+   "name": "Tilt up",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Tilt down.rigset",
+   "kind": "camera",
+   "id": "tilt-down",
+   "name": "Tilt down",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Whip pan.rigset",
+   "kind": "camera",
+   "id": "whip-pan",
+   "name": "Whip pan",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Dutch tilt.rigset",
+   "kind": "camera",
+   "id": "dutch-tilt",
+   "name": "Dutch tilt",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Slow drift.rigset",
+   "kind": "camera",
+   "id": "drift",
+   "name": "Slow drift",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Crane reveal.rigset",
+   "kind": "camera",
+   "id": "reveal-up",
+   "name": "Crane reveal",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Zoom punch.rigset",
+   "kind": "camera",
+   "id": "zoom-punch",
+   "name": "Zoom punch",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera moves/Roll in.rigset",
+   "kind": "camera",
+   "id": "roll-in",
+   "name": "Roll in",
+   "group": "Camera moves",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera effects/Shake.rigset",
+   "kind": "camera",
+   "id": "shake",
+   "name": "Shake",
+   "group": "Camera effects",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera effects/Handheld.rigset",
+   "kind": "camera",
+   "id": "handheld",
+   "name": "Handheld",
+   "group": "Camera effects",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera effects/Impact punch.rigset",
+   "kind": "camera",
+   "id": "impact",
+   "name": "Impact punch",
+   "group": "Camera effects",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera effects/Zoom pulse.rigset",
+   "kind": "camera",
+   "id": "pulse",
+   "name": "Zoom pulse",
+   "group": "Camera effects",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera effects/Wobble.rigset",
+   "kind": "camera",
+   "id": "wobble",
+   "name": "Wobble",
+   "group": "Camera effects",
+   "builtin": true
+  },
+  {
+   "path": "Camera/Camera effects/Follow figure.rigset",
+   "kind": "camera",
+   "id": "follow",
+   "name": "Follow figure",
+   "group": "Camera effects",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Power up.rigset",
+   "kind": "effect",
+   "id": "Power up",
+   "name": "Power up",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Teleport.rigset",
+   "kind": "effect",
+   "id": "Teleport",
+   "name": "Teleport",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Impact.rigset",
+   "kind": "effect",
+   "id": "Impact",
+   "name": "Impact",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Hologram.rigset",
+   "kind": "effect",
+   "id": "Hologram",
+   "name": "Hologram",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Ice.rigset",
+   "kind": "effect",
+   "id": "Ice",
+   "name": "Ice",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Poison.rigset",
+   "kind": "effect",
+   "id": "Poison",
+   "name": "Poison",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Neon.rigset",
+   "kind": "effect",
+   "id": "Neon",
+   "name": "Neon",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Golden hour.rigset",
+   "kind": "effect",
+   "id": "Golden hour",
+   "name": "Golden hour",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Retro screen.rigset",
+   "kind": "effect",
+   "id": "Retro screen",
+   "name": "Retro screen",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Energy.rigset",
+   "kind": "effect",
+   "id": "Energy",
+   "name": "Energy",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Hit flash.rigset",
+   "kind": "effect",
+   "id": "Hit flash",
+   "name": "Hit flash",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Ghost.rigset",
+   "kind": "effect",
+   "id": "Ghost",
+   "name": "Ghost",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Looks/Retro.rigset",
+   "kind": "effect",
+   "id": "Retro",
+   "name": "Retro",
+   "group": "Looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Afterimages.rigset",
+   "kind": "effect",
+   "id": "Afterimages",
+   "name": "Afterimages",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Fire trail.rigset",
+   "kind": "effect",
+   "id": "Fire trail",
+   "name": "Fire trail",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Speed lines.rigset",
+   "kind": "effect",
+   "id": "Speed lines",
+   "name": "Speed lines",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Impact burst.rigset",
+   "kind": "effect",
+   "id": "Impact burst",
+   "name": "Impact burst",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Hit sparks.rigset",
+   "kind": "effect",
+   "id": "Hit sparks",
+   "name": "Hit sparks",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Dust kick.rigset",
+   "kind": "effect",
+   "id": "Dust kick",
+   "name": "Dust kick",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Air burst.rigset",
+   "kind": "effect",
+   "id": "Air burst",
+   "name": "Air burst",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Ground crack.rigset",
+   "kind": "effect",
+   "id": "Ground crack",
+   "name": "Ground crack",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Footsteps dust.rigset",
+   "kind": "effect",
+   "id": "Footsteps dust",
+   "name": "Footsteps dust",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Action/Motion smear.rigset",
+   "kind": "effect",
+   "id": "Motion smear",
+   "name": "Motion smear",
+   "group": "Action",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Fire aura.rigset",
+   "kind": "effect",
+   "id": "Fire aura",
+   "name": "Fire aura",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Electric aura.rigset",
+   "kind": "effect",
+   "id": "Electric aura",
+   "name": "Electric aura",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Shadow aura.rigset",
+   "kind": "effect",
+   "id": "Shadow aura",
+   "name": "Shadow aura",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Holy aura.rigset",
+   "kind": "effect",
+   "id": "Holy aura",
+   "name": "Holy aura",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Ice aura.rigset",
+   "kind": "effect",
+   "id": "Ice aura",
+   "name": "Ice aura",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Wind aura.rigset",
+   "kind": "effect",
+   "id": "Wind aura",
+   "name": "Wind aura",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Super aura.rigset",
+   "kind": "effect",
+   "id": "Super aura",
+   "name": "Super aura",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Spirit aura.rigset",
+   "kind": "effect",
+   "id": "Spirit aura",
+   "name": "Spirit aura",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Charge up.rigset",
+   "kind": "effect",
+   "id": "Charge up",
+   "name": "Charge up",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Power glow.rigset",
+   "kind": "effect",
+   "id": "Power glow",
+   "name": "Power glow",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Energy beam.rigset",
+   "kind": "effect",
+   "id": "Energy beam",
+   "name": "Energy beam",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Laser.rigset",
+   "kind": "effect",
+   "id": "Laser",
+   "name": "Laser",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Lightning bolt.rigset",
+   "kind": "effect",
+   "id": "Lightning bolt",
+   "name": "Lightning bolt",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Fire breath.rigset",
+   "kind": "effect",
+   "id": "Fire breath",
+   "name": "Fire breath",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Power/Spiral beam.rigset",
+   "kind": "effect",
+   "id": "Spiral beam",
+   "name": "Spiral beam",
+   "group": "Power",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Magic/Sparkles.rigset",
+   "kind": "effect",
+   "id": "Sparkles",
+   "name": "Sparkles",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Magic/Magic dust.rigset",
+   "kind": "effect",
+   "id": "Magic dust",
+   "name": "Magic dust",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Magic/Healing.rigset",
+   "kind": "effect",
+   "id": "Healing",
+   "name": "Healing",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Magic/Poison cloud.rigset",
+   "kind": "effect",
+   "id": "Poison cloud",
+   "name": "Poison cloud",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Magic/Hearts.rigset",
+   "kind": "effect",
+   "id": "Hearts",
+   "name": "Hearts",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Magic/Teleport flash.rigset",
+   "kind": "effect",
+   "id": "Teleport flash",
+   "name": "Teleport flash",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Magic/Portal swirl.rigset",
+   "kind": "effect",
+   "id": "Portal swirl",
+   "name": "Portal swirl",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Burning.rigset",
+   "kind": "effect",
+   "id": "Burning",
+   "name": "Burning",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Campfire.rigset",
+   "kind": "effect",
+   "id": "Campfire",
+   "name": "Campfire",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Embers.rigset",
+   "kind": "effect",
+   "id": "Embers",
+   "name": "Embers",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Smoke (soft).rigset",
+   "kind": "effect",
+   "id": "Smoke (soft)",
+   "name": "Smoke (soft)",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Smoke (thick).rigset",
+   "kind": "effect",
+   "id": "Smoke (thick)",
+   "name": "Smoke (thick)",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Steam.rigset",
+   "kind": "effect",
+   "id": "Steam",
+   "name": "Steam",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Cartoon smoke.rigset",
+   "kind": "effect",
+   "id": "Cartoon smoke",
+   "name": "Cartoon smoke",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Water splash.rigset",
+   "kind": "effect",
+   "id": "Water splash",
+   "name": "Water splash",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Bubbles.rigset",
+   "kind": "effect",
+   "id": "Bubbles",
+   "name": "Bubbles",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Elements/Lightning flash.rigset",
+   "kind": "effect",
+   "id": "Lightning flash",
+   "name": "Lightning flash",
+   "group": "Elements",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Rain.rigset",
+   "kind": "effect",
+   "id": "Rain",
+   "name": "Rain",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Storm.rigset",
+   "kind": "effect",
+   "id": "Storm",
+   "name": "Storm",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Snow.rigset",
+   "kind": "effect",
+   "id": "Snow",
+   "name": "Snow",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Blizzard.rigset",
+   "kind": "effect",
+   "id": "Blizzard",
+   "name": "Blizzard",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Falling leaves.rigset",
+   "kind": "effect",
+   "id": "Falling leaves",
+   "name": "Falling leaves",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Cherry petals.rigset",
+   "kind": "effect",
+   "id": "Cherry petals",
+   "name": "Cherry petals",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Wind streaks.rigset",
+   "kind": "effect",
+   "id": "Wind streaks",
+   "name": "Wind streaks",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Fireflies.rigset",
+   "kind": "effect",
+   "id": "Fireflies",
+   "name": "Fireflies",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Weather/Dust motes.rigset",
+   "kind": "effect",
+   "id": "Dust motes",
+   "name": "Dust motes",
+   "group": "Weather",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Celebrate/Confetti.rigset",
+   "kind": "effect",
+   "id": "Confetti",
+   "name": "Confetti",
+   "group": "Celebrate",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Celebrate/Confetti rain.rigset",
+   "kind": "effect",
+   "id": "Confetti rain",
+   "name": "Confetti rain",
+   "group": "Celebrate",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Celebrate/Fireworks.rigset",
+   "kind": "effect",
+   "id": "Fireworks",
+   "name": "Fireworks",
+   "group": "Celebrate",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Celebrate/Star burst.rigset",
+   "kind": "effect",
+   "id": "Star burst",
+   "name": "Star burst",
+   "group": "Celebrate",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Celebrate/Money rain.rigset",
+   "kind": "effect",
+   "id": "Money rain",
+   "name": "Money rain",
+   "group": "Celebrate",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Fireball.rigset",
+   "kind": "effect",
+   "id": "Explosion: Fireball",
+   "name": "Explosion: Fireball",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Cartoon.rigset",
+   "kind": "effect",
+   "id": "Explosion: Cartoon",
+   "name": "Explosion: Cartoon",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Plasma.rigset",
+   "kind": "effect",
+   "id": "Explosion: Plasma",
+   "name": "Explosion: Plasma",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Smoke bomb.rigset",
+   "kind": "effect",
+   "id": "Explosion: Smoke bomb",
+   "name": "Explosion: Smoke bomb",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Mushroom cloud.rigset",
+   "kind": "effect",
+   "id": "Explosion: Mushroom cloud",
+   "name": "Explosion: Mushroom cloud",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Electric.rigset",
+   "kind": "effect",
+   "id": "Explosion: Electric",
+   "name": "Explosion: Electric",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Magic.rigset",
+   "kind": "effect",
+   "id": "Explosion: Magic",
+   "name": "Explosion: Magic",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Dust.rigset",
+   "kind": "effect",
+   "id": "Explosion: Dust",
+   "name": "Explosion: Dust",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Explosions/Explosion- Pixel.rigset",
+   "kind": "effect",
+   "id": "Explosion: Pixel",
+   "name": "Explosion: Pixel",
+   "group": "Explosions",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Dream.rigset",
+   "kind": "effect",
+   "id": "Dream",
+   "name": "Dream",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Old film.rigset",
+   "kind": "effect",
+   "id": "Old film",
+   "name": "Old film",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Noir.rigset",
+   "kind": "effect",
+   "id": "Noir",
+   "name": "Noir",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Night vision.rigset",
+   "kind": "effect",
+   "id": "Night vision",
+   "name": "Night vision",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Glitch.rigset",
+   "kind": "effect",
+   "id": "Glitch",
+   "name": "Glitch",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Heat haze.rigset",
+   "kind": "effect",
+   "id": "Heat haze",
+   "name": "Heat haze",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Underwater.rigset",
+   "kind": "effect",
+   "id": "Underwater",
+   "name": "Underwater",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Cold blue.rigset",
+   "kind": "effect",
+   "id": "Cold blue",
+   "name": "Cold blue",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Warm sunset.rigset",
+   "kind": "effect",
+   "id": "Warm sunset",
+   "name": "Warm sunset",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Comic outline.rigset",
+   "kind": "effect",
+   "id": "Comic outline",
+   "name": "Comic outline",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Drop shadow.rigset",
+   "kind": "effect",
+   "id": "Drop shadow",
+   "name": "Drop shadow",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Flash white.rigset",
+   "kind": "effect",
+   "id": "Flash white",
+   "name": "Flash white",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Effects/Screen looks/Shockwave.rigset",
+   "kind": "effect",
+   "id": "Shockwave",
+   "name": "Shockwave",
+   "group": "Screen looks",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Streak 1.rigobject",
+   "kind": "sticker",
+   "id": "swoosh-1",
+   "name": "Streak 1",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Streak 2.rigobject",
+   "kind": "sticker",
+   "id": "swoosh-2",
+   "name": "Streak 2",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Streak 3.rigobject",
+   "kind": "sticker",
+   "id": "swoosh-3",
+   "name": "Streak 3",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Streak 4.rigobject",
+   "kind": "sticker",
+   "id": "swoosh-4",
+   "name": "Streak 4",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Streak 5.rigobject",
+   "kind": "sticker",
+   "id": "swoosh-5",
+   "name": "Streak 5",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Streak 6.rigobject",
+   "kind": "sticker",
+   "id": "swoosh-6",
+   "name": "Streak 6",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Streak 7.rigobject",
+   "kind": "sticker",
+   "id": "swoosh-7",
+   "name": "Streak 7",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Slash 1.rigobject",
+   "kind": "sticker",
+   "id": "slash-1",
+   "name": "Slash 1",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Slash 2.rigobject",
+   "kind": "sticker",
+   "id": "slash-2",
+   "name": "Slash 2",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Slash 3.rigobject",
+   "kind": "sticker",
+   "id": "slash-3",
+   "name": "Slash 3",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Slash 4.rigobject",
+   "kind": "sticker",
+   "id": "slash-4",
+   "name": "Slash 4",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Slashes & swooshes/Claw scratch.rigobject",
+   "kind": "sticker",
+   "id": "scratch",
+   "name": "Claw scratch",
+   "group": "Slashes & swooshes",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Impact star.rigobject",
+   "kind": "sticker",
+   "id": "impact-star",
+   "name": "Impact star",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Impact star 2.rigobject",
+   "kind": "sticker",
+   "id": "impact-star-2",
+   "name": "Impact star 2",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Starburst.rigobject",
+   "kind": "sticker",
+   "id": "impact-star-3",
+   "name": "Starburst",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Spark.rigobject",
+   "kind": "sticker",
+   "id": "spark-1",
+   "name": "Spark",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Spark burst.rigobject",
+   "kind": "sticker",
+   "id": "spark-2",
+   "name": "Spark burst",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Spark lines.rigobject",
+   "kind": "sticker",
+   "id": "spark-3",
+   "name": "Spark lines",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Spark spray.rigobject",
+   "kind": "sticker",
+   "id": "spark-4",
+   "name": "Spark spray",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Muzzle flash.rigobject",
+   "kind": "sticker",
+   "id": "muzzle-1",
+   "name": "Muzzle flash",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Muzzle flash 2.rigobject",
+   "kind": "sticker",
+   "id": "muzzle-2",
+   "name": "Muzzle flash 2",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Blast.rigobject",
+   "kind": "sticker",
+   "id": "muzzle-3",
+   "name": "Blast",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Shock ring.rigobject",
+   "kind": "sticker",
+   "id": "shock-ring",
+   "name": "Shock ring",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Shock ring 2.rigobject",
+   "kind": "sticker",
+   "id": "shock-ring-2",
+   "name": "Shock ring 2",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Soft ring.rigobject",
+   "kind": "sticker",
+   "id": "shock-ring-3",
+   "name": "Soft ring",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Lens flare.rigobject",
+   "kind": "sticker",
+   "id": "flare",
+   "name": "Lens flare",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Light burst.rigobject",
+   "kind": "sticker",
+   "id": "light-1",
+   "name": "Light burst",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Impacts/Light beams.rigobject",
+   "kind": "sticker",
+   "id": "light-2",
+   "name": "Light beams",
+   "group": "Impacts",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Magic circle.rigobject",
+   "kind": "sticker",
+   "id": "magic-1",
+   "name": "Magic circle",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Magic sigil.rigobject",
+   "kind": "sticker",
+   "id": "magic-2",
+   "name": "Magic sigil",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Magic burst.rigobject",
+   "kind": "sticker",
+   "id": "magic-3",
+   "name": "Magic burst",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Twirl.rigobject",
+   "kind": "sticker",
+   "id": "twirl-1",
+   "name": "Twirl",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Vortex.rigobject",
+   "kind": "sticker",
+   "id": "twirl-2",
+   "name": "Vortex",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Whirl.rigobject",
+   "kind": "sticker",
+   "id": "twirl-3",
+   "name": "Whirl",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Rune.rigobject",
+   "kind": "sticker",
+   "id": "rune-1",
+   "name": "Rune",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Rune 2.rigobject",
+   "kind": "sticker",
+   "id": "rune-2",
+   "name": "Rune 2",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Magic/Twinkle.rigobject",
+   "kind": "sticker",
+   "id": "twinkle",
+   "name": "Twinkle",
+   "group": "Magic",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Fire.rigobject",
+   "kind": "sticker",
+   "id": "fire",
+   "name": "Fire",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Flame.rigobject",
+   "kind": "sticker",
+   "id": "flame-1",
+   "name": "Flame",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Flame tongue.rigobject",
+   "kind": "sticker",
+   "id": "flame-2",
+   "name": "Flame tongue",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Smoke.rigobject",
+   "kind": "sticker",
+   "id": "smoke-1",
+   "name": "Smoke",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Smoke puff.rigobject",
+   "kind": "sticker",
+   "id": "smoke-2",
+   "name": "Smoke puff",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Smoke cloud.rigobject",
+   "kind": "sticker",
+   "id": "smoke-3",
+   "name": "Smoke cloud",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Scorch mark.rigobject",
+   "kind": "sticker",
+   "id": "scorch-1",
+   "name": "Scorch mark",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Burn mark.rigobject",
+   "kind": "sticker",
+   "id": "scorch-2",
+   "name": "Burn mark",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Dirt splash.rigobject",
+   "kind": "sticker",
+   "id": "dirt-1",
+   "name": "Dirt splash",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Fire & smoke/Dirt burst.rigobject",
+   "kind": "sticker",
+   "id": "dirt-2",
+   "name": "Dirt burst",
+   "group": "Fire & smoke",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Animated/Explosion.rigobject",
+   "kind": "sticker",
+   "id": "explosion",
+   "name": "Explosion",
+   "group": "Animated",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Animated/Flash.rigobject",
+   "kind": "sticker",
+   "id": "flash",
+   "name": "Flash",
+   "group": "Animated",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Animated/White puff.rigobject",
+   "kind": "sticker",
+   "id": "puff",
+   "name": "White puff",
+   "group": "Animated",
+   "builtin": true
+  },
+  {
+   "path": "Stickers/Animated/Black smoke.rigobject",
+   "kind": "sticker",
+   "id": "black-smoke",
+   "name": "Black smoke",
+   "group": "Animated",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Titles/Bold title.rigobject",
+   "kind": "textLook",
+   "id": "title",
+   "name": "Bold title",
+   "group": "Titles",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Titles/White title.rigobject",
+   "kind": "textLook",
+   "id": "title-white",
+   "name": "White title",
+   "group": "Titles",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Titles/Cinematic.rigobject",
+   "kind": "textLook",
+   "id": "cinematic",
+   "name": "Cinematic",
+   "group": "Titles",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Titles/Headline.rigobject",
+   "kind": "textLook",
+   "id": "headline",
+   "name": "Headline",
+   "group": "Titles",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Titles/Subtitle.rigobject",
+   "kind": "textLook",
+   "id": "subtitle",
+   "name": "Subtitle",
+   "group": "Titles",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Comic & fun/Comic.rigobject",
+   "kind": "textLook",
+   "id": "comic",
+   "name": "Comic",
+   "group": "Comic & fun",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Comic & fun/BOOM!.rigobject",
+   "kind": "textLook",
+   "id": "boom",
+   "name": "BOOM!",
+   "group": "Comic & fun",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Comic & fun/Bubble.rigobject",
+   "kind": "textLook",
+   "id": "bubble",
+   "name": "Bubble",
+   "group": "Comic & fun",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Comic & fun/Candy.rigobject",
+   "kind": "textLook",
+   "id": "candy",
+   "name": "Candy",
+   "group": "Comic & fun",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Comic & fun/Retro.rigobject",
+   "kind": "textLook",
+   "id": "retro",
+   "name": "Retro",
+   "group": "Comic & fun",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Glow & neon/Neon pink.rigobject",
+   "kind": "textLook",
+   "id": "neon-pink",
+   "name": "Neon pink",
+   "group": "Glow & neon",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Glow & neon/Neon blue.rigobject",
+   "kind": "textLook",
+   "id": "neon-blue",
+   "name": "Neon blue",
+   "group": "Glow & neon",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Glow & neon/Orange glow.rigobject",
+   "kind": "textLook",
+   "id": "glow-orange",
+   "name": "Orange glow",
+   "group": "Glow & neon",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Glow & neon/Tech.rigobject",
+   "kind": "textLook",
+   "id": "tech",
+   "name": "Tech",
+   "group": "Glow & neon",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Glow & neon/Hologram.rigobject",
+   "kind": "textLook",
+   "id": "hologram",
+   "name": "Hologram",
+   "group": "Glow & neon",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Metal & elements/Gold.rigobject",
+   "kind": "textLook",
+   "id": "gold",
+   "name": "Gold",
+   "group": "Metal & elements",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Metal & elements/Silver.rigobject",
+   "kind": "textLook",
+   "id": "silver",
+   "name": "Silver",
+   "group": "Metal & elements",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Metal & elements/Fire.rigobject",
+   "kind": "textLook",
+   "id": "fire",
+   "name": "Fire",
+   "group": "Metal & elements",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Metal & elements/Ice.rigobject",
+   "kind": "textLook",
+   "id": "ice",
+   "name": "Ice",
+   "group": "Metal & elements",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Metal & elements/Toxic.rigobject",
+   "kind": "textLook",
+   "id": "toxic",
+   "name": "Toxic",
+   "group": "Metal & elements",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Metal & elements/Horror.rigobject",
+   "kind": "textLook",
+   "id": "horror",
+   "name": "Horror",
+   "group": "Metal & elements",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Clean/Clean dark.rigobject",
+   "kind": "textLook",
+   "id": "clean-dark",
+   "name": "Clean dark",
+   "group": "Clean",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Clean/Clean light.rigobject",
+   "kind": "textLook",
+   "id": "clean-light",
+   "name": "Clean light",
+   "group": "Clean",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Clean/Caption.rigobject",
+   "kind": "textLook",
+   "id": "caption",
+   "name": "Caption",
+   "group": "Clean",
+   "builtin": true
+  },
+  {
+   "path": "Text looks/Clean/Label.rigobject",
+   "kind": "textLook",
+   "id": "label",
+   "name": "Label",
+   "group": "Clean",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Letter by letter/Typewriter.rigset",
+   "kind": "textAnimation",
+   "id": "typewriter",
+   "name": "Typewriter",
+   "group": "Letter by letter",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Letter by letter/Letters rise.rigset",
+   "kind": "textAnimation",
+   "id": "letter-rise",
+   "name": "Letters rise",
+   "group": "Letter by letter",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Letter by letter/Letters drop.rigset",
+   "kind": "textAnimation",
+   "id": "letter-drop",
+   "name": "Letters drop",
+   "group": "Letter by letter",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Letter by letter/Wave.rigset",
+   "kind": "textAnimation",
+   "id": "letter-wave",
+   "name": "Wave",
+   "group": "Letter by letter",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Letter by letter/Fade across.rigset",
+   "kind": "textAnimation",
+   "id": "letter-fade",
+   "name": "Fade across",
+   "group": "Letter by letter",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Letter by letter/Spin in.rigset",
+   "kind": "textAnimation",
+   "id": "letter-spin",
+   "name": "Spin in",
+   "group": "Letter by letter",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Pop in.rigset",
+   "kind": "textAnimation",
+   "id": "pop-in",
+   "name": "Pop in",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Zoom in.rigset",
+   "kind": "textAnimation",
+   "id": "zoom-in",
+   "name": "Zoom in",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Slide up.rigset",
+   "kind": "textAnimation",
+   "id": "slide-up",
+   "name": "Slide up",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Slide in from right.rigset",
+   "kind": "textAnimation",
+   "id": "slide-left",
+   "name": "Slide in from right",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Drop and bounce.rigset",
+   "kind": "textAnimation",
+   "id": "drop-bounce",
+   "name": "Drop and bounce",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Swing in.rigset",
+   "kind": "textAnimation",
+   "id": "swing-in",
+   "name": "Swing in",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Shake.rigset",
+   "kind": "textAnimation",
+   "id": "shake",
+   "name": "Shake",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Pulse.rigset",
+   "kind": "textAnimation",
+   "id": "pulse",
+   "name": "Pulse",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Ta-da!.rigset",
+   "kind": "textAnimation",
+   "id": "tada",
+   "name": "Ta-da!",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Neon flicker.rigset",
+   "kind": "textAnimation",
+   "id": "neon-flicker",
+   "name": "Neon flicker",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Glitch.rigset",
+   "kind": "textAnimation",
+   "id": "glitch",
+   "name": "Glitch",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Text animations/Whole text/Fade out.rigset",
+   "kind": "textAnimation",
+   "id": "fade-out",
+   "name": "Fade out",
+   "group": "Whole text",
+   "builtin": true
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Bam.rigobject",
+   "kind": "sticker",
+   "id": "ninja-sfx-baan",
+   "name": "バーン! Bam",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Hit.rigobject",
+   "kind": "sticker",
+   "id": "ninja-sfx-doka",
+   "name": "ドカッ! Hit",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Boom.rigobject",
+   "kind": "sticker",
+   "id": "ninja-sfx-don",
+   "name": "ドーン! Boom",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Menacing.rigobject",
+   "kind": "sticker",
+   "id": "ninja-sfx-gogo",
+   "name": "ゴゴゴゴ Menacing",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Sword clang.rigobject",
+   "kind": "sticker",
+   "id": "ninja-sfx-kakiin",
+   "name": "カキーン! Sword clang",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Whoosh.rigobject",
+   "kind": "sticker",
+   "id": "ninja-sfx-shu",
+   "name": "シュッ Whoosh",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Cut.rigobject",
+   "kind": "sticker",
+   "id": "ninja-sfx-zan",
+   "name": "斬! Cut",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Slash.rigobject",
+   "kind": "sticker",
+   "id": "ninja-sfx-zuba",
+   "name": "ズバッ! Slash",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/It s settled.rigobject",
+   "kind": "sticker",
+   "id": "ninja-title-kecchaku",
+   "name": "決着 It’s settled",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Manga sound effects/Duel.rigobject",
+   "kind": "sticker",
+   "id": "ninja-title-shoubu",
+   "name": "勝負! Duel",
+   "group": "Manga sound effects",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Ground dust.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-dust",
+   "name": "Ground dust",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Explosion.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-explosion",
+   "name": "Explosion",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Blade gleam.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-gleam",
+   "name": "Blade gleam",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Impact burst.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-impact",
+   "name": "Impact burst",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Impact burst (blue).rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-impact-blue",
+   "name": "Impact burst (blue)",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Shockwave ring.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-shockwave",
+   "name": "Shockwave ring",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Slash arc (cyan).rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-slash-cyan",
+   "name": "Slash arc (cyan)",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Slash arc (red).rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-slash-red",
+   "name": "Slash arc (red)",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Slash arc (white).rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-slash-white",
+   "name": "Slash arc (white)",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Ninja smoke puff.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-smoke",
+   "name": "Ninja smoke puff",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Clash sparks.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-sparks",
+   "name": "Clash sparks",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Anime speed lines.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-speedlines",
+   "name": "Anime speed lines",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja VFX (animated)/Wind gust.rigobject",
+   "kind": "sticker",
+   "id": "ninja-fx-wind",
+   "name": "Wind gust",
+   "group": "Ninja VFX (animated)",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja props/Shuriken.rigobject",
+   "kind": "sticker",
+   "id": "ninja-shuriken",
+   "name": "Shuriken",
+   "group": "Ninja props",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Ninja props/Shuriken trail.rigobject",
+   "kind": "sticker",
+   "id": "ninja-shuriken-trail",
+   "name": "Shuriken trail",
+   "group": "Ninja props",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Bus (facing left).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-bus-l",
+   "name": "Bus (facing left)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Bus (facing right).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-bus-r",
+   "name": "Bus (facing right)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Kei car (facing left).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-kei-l",
+   "name": "Kei car (facing left)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Kei car (facing right).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-kei-r",
+   "name": "Kei car (facing right)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Red car (facing left).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-red-l",
+   "name": "Red car (facing left)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Red car (facing right).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-red-r",
+   "name": "Red car (facing right)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Taxi (facing left).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-taxi-l",
+   "name": "Taxi (facing left)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Taxi (facing right).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-taxi-r",
+   "name": "Taxi (facing right)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Teal car (facing left).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-teal-l",
+   "name": "Teal car (facing left)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Teal car (facing right).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-teal-r",
+   "name": "Teal car (facing right)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Delivery van (facing left).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-van-l",
+   "name": "Delivery van (facing left)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/Delivery van (facing right).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-van-r",
+   "name": "Delivery van (facing right)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/White car (facing left).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-white-l",
+   "name": "White car (facing left)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Japanese traffic/White car (facing right).rigobject",
+   "kind": "sticker",
+   "id": "ninja-car-white-r",
+   "name": "White car (facing right)",
+   "group": "Japanese traffic",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 1 Sky.rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-sky",
+   "name": "Golden-hour Tokyo: 1 Sky",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 2 Clouds.rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-clouds",
+   "name": "Golden-hour Tokyo: 2 Clouds",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 3 Mountains (Fuji).rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-mountains",
+   "name": "Golden-hour Tokyo: 3 Mountains (Fuji)",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 4 Far city.rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-farcity",
+   "name": "Golden-hour Tokyo: 4 Far city",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 5 Mid city.rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-midcity",
+   "name": "Golden-hour Tokyo: 5 Mid city",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 6 Near town.rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-neartown",
+   "name": "Golden-hour Tokyo: 6 Near town",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 7 Highway.rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-highway",
+   "name": "Golden-hour Tokyo: 7 Highway",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 8 Rooftops.rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-rooftops",
+   "name": "Golden-hour Tokyo: 8 Rooftops",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  },
+  {
+   "path": "Ninja VFX Pack/Tokyo backgrounds/Golden-hour Tokyo- 9 Foreground.rigobject",
+   "kind": "sticker",
+   "id": "ninja-plate-foreground",
+   "name": "Golden-hour Tokyo: 9 Foreground",
+   "group": "Tokyo backgrounds",
+   "pack": "Ninja VFX Pack"
+  }
+ ]
+}
