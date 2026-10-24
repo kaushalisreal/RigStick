@@ -1,7 +1,7 @@
 /**
- * Stick Nodes laboratory: version-aware .nodes reader + container inspection.
+ * .nodes laboratory: version-aware .nodes reader + container inspection.
  * Format research based on sticknodes-rs (MIT), copyright 2025 vinceTheProgrammer.
- * See THIRD_PARTY_NOTICES.md. No Stick Nodes application code is included.
+ * See THIRD_PARTY_NOTICES.md. No .nodes application code is included.
  * All ranges use zero-based, half-open byte offsets in the decoded payload.
  */
 export const DECODER_VERSION = '0.4.0';

@@ -2,7 +2,7 @@ export default Object.freeze({
   "appDialogs.saveChangesTo": "Save changes to {value}?",
   "appDialogs.donTSave": "Don't save",
   "appDialogs.theAssetIsReadyToEditTheseSource": "The asset is ready to edit. These source features may look or behave differently:",
-  "appDialogs.chooseAStickNodesAsset": "Choose a Stick Nodes asset",
+  "appDialogs.chooseAStickNodesAsset": "Choose a .nodes asset",
   "appDialogs.thisPackContains": {
     "one": "This pack contains {count} asset.",
     "other": "This pack contains {count} assets."
@@ -22,8 +22,8 @@ export default Object.freeze({
   "appDialogs.restore": "Restore",
   "appDialogs.yourChangesWillBeLostIfYouDon": "Your changes will be lost if you don't save them.",
   "appDialogs.restoreTheFrameToItsSavedPoseYou": "Restore the frame to its saved pose? You can undo this change.",
-  "appDialogs.pivotImportNotes": "Pivot import notes",
-  "appDialogs.stickNodesImportNotes": "Stick Nodes import notes",
+  "appDialogs.pivotImportNotes": ".piv import notes",
+  "appDialogs.stickNodesImportNotes": ".nodes import notes",
   "appDialogs.assets": "Assets",
   "appDialogs.renderer": "Renderer",
   "appDialogs.initializing": "Initializing",

@@ -107,7 +107,7 @@ Layer folders, camera follow and smoother editing
 
 - Repeated Save commands no longer start overlapping writes, and newer edits keep the project open when closing.
 - Successful saves no longer show a failure if an old recovery copy cannot be removed.
-- Imported Pivot originals stay available after other imports, and saving stops if an original cannot be retrieved.
+- Imported .piv originals stay available after other imports, and saving stops if an original cannot be retrieved.
 - Recovery copies are scheduled more reliably during frequent editing.
 - Fixed multiple layer selections and searches being lost during editing.
 - Fixed figures and text staying blurry when zooming far into the canvas.
@@ -123,7 +123,7 @@ Layer folders, camera follow and smoother editing
 - Clicking a frame in the Simple timeline keeps your current selection instead of selecting every figure.
 - Copying, pasting or duplicating a figure now keeps its effects.
 - Bending a connector now follows your pointer smoothly, and also works with Move joint in Build.
-- Adding parts to a figure in an imported Stick Nodes project no longer stops the saved project from opening.
+- Adding parts to a figure in an imported .nodes project no longer stops the saved project from opening.
 
 ### Performance
 
@@ -196,14 +196,14 @@ A new workspace, particle effects, Linux and the browser
 - Fixed What's new and the privacy prompt overlapping at startup.
 - Fixed Enter not confirming a new project name.
 - Fixed RigStick staying open in the background after an unexpected close.
-- Fixed adding figures being refused in some Pivot animations.
+- Fixed adding figures being refused in some .piv animations.
 
 ### Performance
 
 - Fewer pauses when first adding particle effects or opening their previews.
 - Faster property adjustments in long animations and smoother editing in scenes with many images.
 - 3D figures pose, scrub and play more smoothly, use less memory and save to smaller files.
-- Older Pivot animations open faster, and large ones scrub and zoom more smoothly.
+- Older .piv animations open faster, and large ones scrub and zoom more smoothly.
 - Smoother playback and editing in busy scenes, especially on laptops and in Compatibility mode.
 
 ## [1.1.0]
@@ -217,7 +217,7 @@ Drawing layers and smoother editing
 ### Changed
 
 - Better drawing tablet support: pen taps no longer nudge joints, holding the pen still no longer opens the right-click menu, and you can zoom or rotate the view with the pen.
-- Scaling and rotating several figures at once now works like in Pivot, around the figure you drag.
+- Scaling and rotating several figures at once now works around the figure you drag.
 - Frame counts now match between the Simple timeline, the Advanced timeline and Export.
 - More compact onion skin settings and a clearer audio timeline.
 - Adding and editing effects in the VFX panel is easier.
@@ -232,7 +232,7 @@ Drawing layers and smoother editing
 
 ### Performance
 
-- Large animations open, play and edit faster and use less memory, especially freshly imported Pivot files.
+- Large animations open, play and edit faster and use less memory, especially freshly imported .piv files.
 - Posing detailed figures is smoother.
 - Cancelling an import or export no longer delays the next one.
 
@@ -282,7 +282,7 @@ Effects with their own timing, and editing refinements
 - Fixed dragging empty timeline cells creating blank frames.
 - Dragging keyframes onto other keyframes now replaces them.
 - New lines in Build now take the color and thickness of the part they grow from.
-- Fixed Pivot projects with damaged or missing images failing to import.
+- Fixed .piv projects with damaged or missing images failing to import.
 - Fixed figures with very long hidden parts looking blurry.
 - Fixed empty edges showing around background images when the camera moves.
 
@@ -307,7 +307,7 @@ New animation tools, refined editing and smoother playback
 - Camera shake, handheld motion, wobble, impacts and zoom pulses.
 - Editable motion paths.
 - Connectors that link two points, with sliding joints and Smart Stretch.
-- Join and unjoin figures with J, just like in Pivot. Showing handles moved to Shift+J.
+- Join and unjoin figures with J, just like classic stick-figure editors. Showing handles moved to Shift+J.
 - A redesigned Figure builder: what you select is what you edit, with new tools to go with it.
 - A color palette for the selected figure that lets you replace colors in bulk.
 - An eyedropper with a magnified preview to pick colors from the canvas.
@@ -332,8 +332,8 @@ New animation tools, refined editing and smoother playback
 - Fixed Flip ignoring the selected parts and branches.
 - Fixed Simple timeline thumbnails.
 - Fixed Add Frame in the Advanced timeline adding the key on the wrong frame.
-- Figures keep their colors when copied between projects or Pivot versions.
-- Double-clicking a RigStick, Pivot or Stick Nodes file now opens it in the app.
+- Figures keep their colors when copied between projects or .piv versions.
+- Double-clicking a Rigstick, .piv, .stk or .nodes file now opens it in the app.
 - The app now recovers when the graphics driver resets, and exports keep going.
 
 ### Performance
@@ -368,7 +368,7 @@ Effects, dark mode and smoother animation
 - Fixed the canvas going blank after a graphics reset or when replaying after edits.
 - Fixed arranging figures from the toolbar for single-part figures and selected branches.
 - Advanced timeline: dragging now selects keys, clicking keeps your selection, and deleting keys no longer shifts later frames.
-- More reliable Pivot imports.
+- More reliable .piv imports.
 - Various other bug fixes.
 
 ### Performance

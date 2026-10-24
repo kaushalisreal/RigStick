@@ -1,8 +1,8 @@
-# Stick Nodes import in RigStick
+# .nodes import in RigStick
 
 Implemented and verified on 10 September 2026. The importer converts supported
-Stick Nodes assets into editable native RigStick documents and movie clips.
-It does not promise identical output from every Stick Nodes version or reproduce
+.nodes assets into editable native RigStick documents and movie clips.
+It does not promise identical output from every .nodes version or reproduce
 all of the original application's procedural behavior.
 
 ## Opening files
@@ -25,7 +25,7 @@ expand every instance into a separate copy of its animation.
 Save projects as `.rigs`, reusable figures as `.stkz`, and movie clips as
 `.rigsmov` (the existing `.stkz` container also retains clips). These formats
 preserve import metadata and shape extensions. Importing never overwrites the
-source Stick Nodes file. PIV/STK export rejects imported shape/sprite extensions
+source .nodes file. PIV/STK export rejects imported shape/sprite extensions
 that those formats cannot represent, instead of silently changing their artwork.
 The extensions render through the shared GPU, Canvas and SVG geometry path.
 
@@ -92,7 +92,7 @@ The adapter returns the existing `{kind, document, warnings, timings}` contract:
 `sticknodes-archive` for archive selection. Native file dialogs, drag/drop,
 desktop file opening, recent files and packaged extension associations are wired.
 Packaged resources already include `src/**/*`, so no new runtime dependency or
-network service is required for Stick Nodes decoding.
+network service is required for .nodes decoding.
 
 Decoder limits include 256 MiB project input, 512 MiB expanded project payload,
 20,000 assets, 100,000 frames, one million instances, five million poses and

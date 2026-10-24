@@ -100,7 +100,7 @@ async function startBackend({ appRoot, resourcesPath, packaged = false, onError 
     child.on('error', (error) => { startupError = error; terminated = true; });
     child.on('exit', (code, signal) => {
       terminated = true;
-      if (child.rigsReady && !intentionalStop) onError(`The Pivot codec stopped (${signal || code}). ${output.slice(-1600)}`);
+      if (child.rigsReady && !intentionalStop) onError(`The .piv codec stopped (${signal || code}). ${output.slice(-1600)}`);
     });
     for (const stream of [child.stdout, child.stderr]) stream.on('data', (chunk) => {
       const message = chunk.toString();

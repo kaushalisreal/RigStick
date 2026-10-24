@@ -26,7 +26,7 @@ try {
     const check = (value, message) => { if (!value) throw new Error(message); };
     const geometry = (report, index) => buildGeometry(report, evaluatedFrame(report, index, 0)).drawables.map(shape => ({type: shape.type,
       x: Math.round(shape.start.x * 1000) / 1000, y: Math.round(shape.start.y * 1000) / 1000, rgb: shape.rgb}));
-    for (const fixture of ['Pivot Animator v5/Animations/text_bike.piv', 'Pivot Animator v5/Animations/Legacy/sprite_demo.piv', 'Pivot Animator v5/Animations/tween_NY_day-night.piv']) {
+    for (const fixture of ['.piv v5/Animations/text_bike.piv', '.piv v5/Animations/Legacy/sprite_demo.piv', '.piv v5/Animations/tween_NY_day-night.piv']) {
       const source = await importer.openSample(fixture), editor = new Editor({demo: false}).load(source.document);
       const indices = [...new Set([0, source.document.keyframes.length - 1])];
       const expected = indices.map(index => geometry(editor.report, index));
@@ -44,7 +44,7 @@ try {
       results.push({fixture, copiedFrames: indices.length, rigsBytes: rigs.size, pivBytes: piv.size,
         figures: reopened.document.figure_types.length, backgrounds: reopened.document.backgrounds.length});
     }
-    const nativeText = await importer.openSample('Pivot Animator v5/Animations/text_bike.piv');
+    const nativeText = await importer.openSample('.piv v5/Animations/text_bike.piv');
     const authoredEditor = new Editor({demo: false}).load(nativeText.document); authoredEditor.copyFrames([0]);
     const authored = emptyDocument(); authored.keyframes = [0, 40, 80].map((x, index) => createFrame([createObject(authored.figure_types[0], 1, x, 250)], index === 2 ? 1 : 4));
     authoredEditor.load(authored); authoredEditor.adoptNativePoseTrack({kind: 'layer', id: 'layer-1'});
@@ -64,7 +64,7 @@ try {
     window.clipboardEditor = new Editor({demo: false});
     window.clipboardStore = installNativeFrameClipboard(clipboardEditor, window.rigsDesktop, {onError: error => { window.clipboardError = error.message; }});
     await clipboardStore.ready;
-    const text = await importer.openSample('Pivot Animator v5/Animations/text_bike.piv');
+    const text = await importer.openSample('.piv v5/Animations/text_bike.piv');
     clipboardEditor.load(text.document); clipboardEditor.copyFrames([0]);
     await clipboardStore.flush(); check(!window.clipboardError, window.clipboardError);
     window.clipboardExpected = geometry(text.document, 0);

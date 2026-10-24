@@ -12,7 +12,7 @@ RigStick is licensed under the GNU GPL, version 3 or later (see [LICENSE](LICENS
 | [Noto Sans](https://fonts.google.com/noto) | Default text font | SIL OFL 1.1 | [vendor/text/OFL.txt](vendor/text/OFL.txt) |
 | [zstd-wasm](https://github.com/bokuweb/zstd-wasm) | Compressed project sections | MIT (bindings), BSD-2-Clause (Zstandard) | [vendor/zstd/LICENSE](vendor/zstd/LICENSE) |
 | [Inter and Inter Tight](https://rsms.me/inter/) | Interface fonts and the logo wordmark | SIL OFL 1.1 | [assets/fonts/OFL-Inter.txt](assets/fonts/OFL-Inter.txt), [assets/fonts/OFL-InterTight.txt](assets/fonts/OFL-InterTight.txt), [assets/brand/Inter-LICENSE.txt](assets/brand/Inter-LICENSE.txt) |
-| [sticknodes-rs](https://github.com/vinceTheProgrammer/sticknodes-rs) | Adapted Stick Nodes format-reading logic | MIT | [src/sticknodes/decoder/THIRD_PARTY_NOTICES.md](src/sticknodes/decoder/THIRD_PARTY_NOTICES.md) |
+| [sticknodes-rs](https://github.com/vinceTheProgrammer/sticknodes-rs) | Adapted .nodes format-reading logic | MIT | [src/sticknodes/decoder/THIRD_PARTY_NOTICES.md](src/sticknodes/decoder/THIRD_PARTY_NOTICES.md) |
 
 ## Bundled in desktop releases
 
@@ -27,4 +27,4 @@ npm dependencies are listed with their licenses in [package-lock.json](package-l
 
 ## Compatibility
 
-Pivot Animator and Stick Nodes are the property of their respective owners. RigStick reads and writes their file formats for interoperability and is not affiliated with or endorsed by them.
+RigStick reads and writes some third-party stick-figure file formats (.piv, .stk, .nodes) for interoperability only; it is not affiliated with or endorsed by their owners.

@@ -951,7 +951,7 @@ export function* buildGeometrySteps(report, frame, incremental = null) {
     let local = g.drawables;
     if (!local) {
       // One pass in the same order as polys, meshes, then visible segments with
-      // their Stick Nodes expansions; no intermediate array per primitive.
+      // their .nodes expansions; no intermediate array per primitive.
       local = [];
       for (const p of g.polys) if (!p.culled) local.push(p);
       if (g.meshDrawables) for (const m of g.meshDrawables) local.push(m);

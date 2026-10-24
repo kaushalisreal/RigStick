@@ -882,7 +882,7 @@ async function createWindow() {
     },
   });
   window.webContents.setWindowOpenHandler(({ url }) => {
-    if (/^https:\/\/(?:github\.com|pivotanimator\.net)\//.test(url)) shell.openExternal(url);
+    if (/^https:\/\/(?:github\.com)\//.test(url)) shell.openExternal(url);
     return { action: 'deny' };
   });
   window.webContents.on('will-navigate', (event, url) => {

@@ -13,7 +13,7 @@ Before adding a bullet, read existing pending notes and the relevant history. Up
 Release notes should read like a polished consumer app's changelog, not a commit log.
 
 - One short sentence per bullet, two at most. Lead with the feature or the result: "Command palette: press Ctrl+P or F1 to find any command, setting, layer, figure or frame."
-- Added: name the new thing and what it lets people do. Changed: say what is different now. Fixed: "Fixed …" followed by the problem people saw, such as "Fixed error messages appearing behind open dialogs." Performance: the effect people notice, such as "Older Pivot animations open several times faster."
+- Added: name the new thing and what it lets people do. Changed: say what is different now. Fixed: "Fixed …" followed by the problem people saw, such as "Fixed error messages appearing behind open dialogs." Performance: the effect people notice, such as "Older .piv animations open several times faster."
 - Mention a shortcut or where to find a feature at most. Do not walk through every button, option, color, edge case, or undo behavior; the app and the documentation cover that. When extending an existing entry, rewrite it to stay short instead of appending clauses.
 - Never mention internals: rendering, GPU, workers, caches, textures, memory budgets, engines, file-format internals, code names, tests, fixtures, or regressions in our own tooling. Say "Smoother playback", not how it was achieved.
 - Use correct grammar, sentence case, consistent spelling (color, not colour), and end every bullet with a period. Titles are short, plain phrases with no trailing period, and never all capitals.

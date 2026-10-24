@@ -14,9 +14,9 @@ Selecting an explicit scalar row in the timeline turns off branch scope and edit
 
 ## Native chooser distinction
 
-The supplied Pivot executable exposes a combined color-and-alpha chooser. It assigns the chosen RGB to each target; when the chosen alpha differs from the selected segment's initial alpha, it also assigns that alpha. Color-only changes preserve each member's alpha. Its gradient chooser can create gradients on members without one. The [native branch evidence](../artifacts/native-static/builder-branch-rules.md) records these paths and their limits.
+The supplied .piv executable exposes a combined color-and-alpha chooser. It assigns the chosen RGB to each target; when the chosen alpha differs from the selected segment's initial alpha, it also assigns that alpha. Color-only changes preserve each member's alpha. Its gradient chooser can create gradients on members without one. The [native branch evidence](../artifacts/native-static/builder-branch-rules.md) records these paths and their limits.
 
-The separate numeric opacity fields described here are an intentional convenience: they preserve each endpoint's existing RGB. They are not presented as an identical copy of Pivot's combined chooser. The combined Builder color controls retain their own native branch behavior.
+The separate numeric opacity fields described here are an intentional convenience: they preserve each endpoint's existing RGB. They are not presented as an identical copy of the .piv format's combined chooser. The combined Builder color controls retain their own native branch behavior.
 
 ## Implementation and verification
 

@@ -512,7 +512,7 @@ dirty rect; WebGPU uploads those dirty regions and Canvas draws the scratch
 once. Mip levels escalate to 8 (256×) so coverage of any span fits the
 texture limit, and the scratch clamps to that limit around the visible span
 as a final guarantee — a drawing is never rejected for size. Overlays contain only cursor and selection
-feedback. Canvas and SVG use smooth drawing filtering; imported Pivot sprites
+feedback. Canvas and SVG use smooth drawing filtering; imported .piv sprites
 retain their existing sampling.
 
 The retained WebGPU layout refreshes drawing entries by pixel stamp and view,

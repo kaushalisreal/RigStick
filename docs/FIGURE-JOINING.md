@@ -42,7 +42,7 @@ geometry through weak maps. Hover retains the visible-handle path. Picking reuse
 the spatial index; the target traversal runs once per join gesture, not once per
 node. Temporary selection data is neither saved nor added to document history.
 
-## Pivot evidence
+## .piv evidence
 
 The parent `tools/pivot_decoder.py` decodes static status from flag bit `0x0100`
 (the low bit of the auxiliary byte in modern segments). The parent's
@@ -51,7 +51,7 @@ resolving persistent UIDs before serialization. Origin handle zero is distinct
 from a segment array index.
 
 `python scripts/inspect-pivot-joining.py` uses the parent's Capstone/PE tools and
-asserts seven instructions against the supplied Pivot 5.2.11 executable, SHA-256
+asserts seven instructions against the supplied .piv 5.2.11 executable, SHA-256
 `2c7911d3303cc28de2ac016c3f7575082aa47680e63a0fe8930ce8799de3df98`:
 
 - J at `0xB1E0FD` calls the button handler `0xB24248`.
@@ -61,9 +61,9 @@ asserts seven instructions against the supplied Pivot 5.2.11 executable, SHA-256
 - The existing `artifacts/native-static/joined-handle-routing.md` describes static
   drag filtering and suppression of attached origins.
 
-This is static executable analysis, not a new interactive native Pivot capture.
-Pivot's [joining reference](https://www.pivotanimator.net/help5-2/joining_figures.htm)
-and [selection reference](https://www.pivotanimator.net/help5-2/multi_figure_selection.htm)
+This is static executable analysis, not a new interactive native .piv capture.
+the .piv format's joining reference
+and selection reference
 also describe origin attachment, static targets, single-figure joining and
 double-click joined selection. The app retains its existing whole-connected-group
 and dynamic-branch double-click semantics.

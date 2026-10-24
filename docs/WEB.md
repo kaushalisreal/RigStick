@@ -1,7 +1,7 @@
 # Web build (Cloudflare)
 
 The editor also runs as a static website. It is the same code as the desktop app
-plus an in-browser Pivot codec; nothing about a project is sent to a server.
+plus an in-browser .piv codec; nothing about a project is sent to a server.
 
 ```bash
 npm ci
@@ -66,7 +66,7 @@ localhost and 5.9 s at 50 ms latency and 20 Mbps. Over a local HTTP/2 server at
 with `modulepreload` did not change that (3.21 s): loading is transfer-bound, not
 waterfall-bound, so the page carries no preload list. Brotli level 5 estimates
 what Cloudflare sends: 5.5 MiB for the editor and assets on first load, and,
-only when a Pivot file is first opened, 5.8 MiB for the runtime plus 0.1 MiB for
+only when a .piv file is first opened, 5.8 MiB for the runtime plus 0.1 MiB for
 the codec sources (25.4 MiB raw in total). If cold load ever matters more than
 simplicity, content-hashed bundles are a build-only change.
 
@@ -92,13 +92,13 @@ the web page by `build-web.mjs` and never reach the desktop app's page:
   the cache.
 - Each version has one cache. Installing stores the editor (12 MiB) and every
   request is then answered from it, so the app always runs one consistent version.
-  The Pivot runtime (13 MiB) is stored right after, unless the browser asks to save
+  The .piv runtime (13 MiB) is stored right after, unless the browser asks to save
   data, and is kept the first time it is used either way.
 - A new build installs in the background and takes over when every window of the
   old one has been closed, so an open project is never swapped under its owner;
   the open app shows a short notice. Files whose hash did not change are copied
   from the previous cache instead of downloaded, so an update costs what changed
-  (the Pivot runtime is never fetched again). The old cache is deleted when the new
+  (the .piv runtime is never fetched again). The old cache is deleted when the new
   version takes over.
 - `_headers` serves `/sw.js` and the manifest with `no-cache`, which is how an
   installed app finds out about a new version. An installed app also asks the
@@ -107,7 +107,7 @@ the web page by `build-web.mjs` and never reach the desktop app's page:
 
 `tests/web-offline.browser.mjs` (part of `npm run test:web`) installs the built site
 in Chrome, stops the server, and checks that the app starts, saves, exports and
-reopens a Pivot file and an MP4 with no network; then that a changed build
+reopens a .piv file and an MP4 with no network; then that a changed build
 downloads only its changed file, waits for the old window to close and replaces the
 old cache. Chrome's own installability check reports no errors for the served
 site. Not verified: install and offline use in Safari or Firefox, and installing on a phone.
@@ -185,7 +185,7 @@ The 1.2 candidate workflow runs real browsers through
 | Editor starts and unsupported features are explained | yes | yes | yes |
 | Autosave, restore, clear on save, flush on hide, blocked storage | yes | yes | yes |
 | My library and community catalogue, verified downloads and previews | yes | yes | yes |
-| Native/Pivot round trips, images and video export | yes | not covered by this suite | not covered by this suite |
+| Native/.piv round trips, images and video export | yes | not covered by this suite | not covered by this suite |
 | Offline startup, saving, export and safe version replacement | yes | not covered by this suite | not covered by this suite |
 
 Windows must encode MP4 with real AAC sound. The Linux run checks an explicit
@@ -213,9 +213,9 @@ camera, microphone, geolocation and payment off. The browser build sends no
 telemetry and has no feedback channel, update check or server codec.
 Never deploy `backend/server.py` publicly: it can read the folder it runs in.
 
-## The in-browser Pivot codec
+## The in-browser .piv codec
 
-Pivot (`.piv`, `.stk`) files use a binary format whose reader and writer are the
+.piv (`.piv`, `.stk`) files use a binary format whose reader and writer are the
 Python codec in `codecs/` and `backend/`. In the browser that same code runs in
 [Pyodide](https://pyodide.org) (CPython on WebAssembly) in a worker:
 
@@ -231,19 +231,19 @@ Python codec in `codecs/` and `backend/`. In the browser that same code runs in
   server and through it, and check that WebAssembly and native CPython return the
   same document.
 
-The runtime (about 13 MiB) loads on the first Pivot import or export, never at
+The runtime (about 13 MiB) loads on the first .piv import or export, never at
 startup, and is then cached by the browser. Native projects (`.rigs`, `.stkz`,
-`.rigsmov`), Stick Nodes files and every image, GIF and WebM export do not need it.
+`.rigsmov`), .nodes files and every image, GIF and WebM export do not need it.
 
 Differences from the desktop codec, all deliberate:
 
 - Limits are lower because WebAssembly memory is shared and 32-bit: 96 MiB for a
-  Pivot source, 128 MiB for a native document, a 160 MiB cache (the desktop
+  .piv source, 128 MiB for a native document, a 160 MiB cache (the desktop
   allows 128, 256 and 384 MiB).
 - One request runs at a time. Python cannot be interrupted, so cancelling the
   running import stops the interpreter and the next request starts a fresh one,
   which drops the imported-source cache exactly as restarting the desktop codec
-  does; exporting a Pivot file imported before that asks to reopen it. If other
+  does; exporting a .piv file imported before that asks to reopen it. If other
   jobs are waiting on the interpreter, the cancelled job is skipped instead, so
   nobody else's request is lost.
 - There is no workspace: no sample listing and no opening by path.
@@ -257,13 +257,13 @@ Differences from the desktop codec, all deliberate:
 | Editing, animating, drawing, timeline, undo, IK, effects | Same code as the desktop app |
 | Rendering | WebGPU, or the Canvas 2D compatibility renderer |
 | `.rigs` / `.stkz` / `.rigsmov` save and open | Yes (a download on save, the file dialog on open) |
-| Pivot `.piv` / `.stk` import and export | Yes, in-browser codec; an unchanged import re-exports byte for byte |
-| Stick Nodes import | Yes |
+| .piv `.piv` / `.stk` import and export | Yes, in-browser codec; an unchanged import re-exports byte for byte |
+| .nodes import | Yes |
 | PNG, SVG, GIF, APNG, PNG/JPEG/GIF/SVG sequences | Yes |
 | WebM video | Yes, WebCodecs VP8/VP9 with Opus sound (opaque background) |
 | MP4 video | Yes, WebCodecs H.264 with AAC sound, where the browser can encode them (opaque background) |
 | AVI, WMV, installed Windows codecs | Desktop only, offered with a reason |
-| Install as an app, start with no network | Yes, a service worker stores the editor and the Pivot runtime |
+| Install as an app, start with no network | Yes, a service worker stores the editor and the .piv runtime |
 | Autosave and crash recovery | Yes, IndexedDB (see [below](#autosave-and-the-libraries-in-the-browser)) |
 | My library | Yes, in the browser's own storage (IndexedDB) |
 | Community library | Yes, through the editor's own origin |
@@ -273,8 +273,8 @@ Differences from the desktop codec, all deliberate:
 
 `tests/web-build.browser.mjs` runs the built site in a real browser, including
 under Cloudflare's own runtime (`wrangler dev`), and covers boot and rendering,
-native save and open, the Pivot export/reopen/re-export round trip, the PNG, SVG,
+native save and open, the .piv export/reopen/re-export round trip, the PNG, SVG,
 GIF, WebM and sequence exports, and the desktop-only formats being offered with a
-reason. It fails on any console error, page error or CSP violation. Stick Nodes
+reason. It fails on any console error, page error or CSP violation. .nodes
 import, crash recovery and local fonts use the same code as before in the browser
 and are not part of that test.

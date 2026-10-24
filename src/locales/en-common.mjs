@@ -72,7 +72,7 @@ export default Object.freeze({
   'settings.close': 'Close settings',
   'settings.sections': 'Settings sections',
   'settings.advancedDescription': 'Keyframes and animation channels for selected figures.',
-  'settings.simpleDescription': 'Pivot-style frame thumbnails and inbetweens.',
+  'settings.simpleDescription': 'Classic frame thumbnails and inbetweens.',
   'settings.workspace': 'Workspace',
   'settings.resetPanels': 'Reset panel layout',
   'menu.newAnimation': 'New animation',

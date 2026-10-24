@@ -29,13 +29,13 @@ Unpinning bakes the displayed solution, including stretched lengths, without a j
 
 ## Persistence and boundaries
 
-RIGS/STKZ preserve controller metadata and rest lengths. Pivot PIV cannot store these constraints, so its existing export materializer bakes constrained output ticks into ordinary angles/lengths and removes IK metadata. The editable source is preserved. STK is a Pivot figure-definition format and does not carry IK controllers; use STKZ for editable IK figures.
+RIGS/STKZ preserve controller metadata and rest lengths. .piv PIV cannot store these constraints, so its existing export materializer bakes constrained output ticks into ordinary angles/lengths and removes IK metadata. The editable source is preserved. STK is a .piv figure-definition format and does not carry IK controllers; use STKZ for editable IK figures.
 
 Chains cross native figure joins and stop at the connected assembly's root. Joined roots and outgoing attachments behave like ordinary vertices and branches. Multiple IK limbs may share an origin, but may not share bones; conflicting setup is rejected across joins as well as within a figure. Movieclip internals remain a separate sampled hierarchy. This version does not add joint limits, weighted constraints, pole-target objects, or a general rigging graph. RIGS projects retain complete joined assemblies; the existing STKZ export still extracts an individual selected figure.
 
 ## Verification
 
-- `node --test tests/ik.test.mjs`: solver edge cases, circular and folded Both trajectories, subpixel extension jitter, longer-chain continuity, deterministic seeks, dual pins, orientation, unpinning, FK edits, interpolation and Pivot baking, authored channels, no-op/cancel/undo, native figure placement, rig edits, Simple drafts, and joined roots.
+- `node --test tests/ik.test.mjs`: solver edge cases, circular and folded Both trajectories, subpixel extension jitter, longer-chain continuity, deterministic seeks, dual pins, orientation, unpinning, FK edits, interpolation and .piv baking, authored channels, no-op/cancel/undo, native figure placement, rig edits, Simple drafts, and joined roots.
 - `node --test tests/ik-joined.test.mjs`: equivalence with single-figure rigs, constant target-space angles and polygon vertex distances during repeated drags, complete planted feet through root and ancestor rotation, cross-join chains, stretch, unpinning, foot articulation/bend edits, copy remapping, shared-chain rejection, topology undo and persistence.
 - `node --test tests/ik-evaluation.test.mjs`: appearance-only solution reuse, exact pose-dependency invalidation, document isolation and deterministic seeks. The joined suite also checks thickness/color/opacity edits with pins enabled and disabled, both with and without property channels, through rebuilds, undo/redo and reload.
 - `node tests/ik.browser.mjs`: actual inspector controls and pointer gestures, live dual-foot root dragging, rotation, pin toggling, recovering an unreachable target, and real worker/backend RIGS/STKZ/PIV export/reopen. Screenshot and report: `artifacts/ik/`.

@@ -83,7 +83,7 @@ Use **Test rig**, choose Turn, and change Angle. In Animate, drag Turn to rotate
 
 For a complete animated spin, create successive pose keys with Turn angles **0°, 90°, 180°, 270°, 360°**, spaced evenly on the timeline. For example, use frames **1, 13, 25, 37, 49** and tween between them. Intermediate quarter turns avoid the shortest-angle interpolation treating 0° and 360° as the same pose. Use linear easing for constant speed.
 
-Save as **.stkz** for a reusable figure or **.rigs** for an animation. PNG, SVG and video preserve the rendered appearance. Pivot's .stk/.piv formats cannot store these rig relationships or one-sided fills.
+Save as **.stkz** for a reusable figure or **.rigs** for an animation. PNG, SVG and video preserve the rendered appearance. the .piv format's .stk/.piv formats cannot store these rig relationships or one-sided fills.
 
 ## Verification
 

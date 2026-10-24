@@ -14,13 +14,13 @@ actual evaluated arc, in either direction; other pairs form straight edges.
 The closing edge follows the same rule. An unfinished two-handle draft stays
 open and unfilled. Edge lookup is cached per evaluated geometry object, and
 neither source poses nor segment samples are mutated. The root overlay uses
-these samples only for its boundary; connection markers remain on actual joints. Selected connections use Pivot red;
+these samples only for its boundary; connection markers remain on actual joints. Selected connections use .piv red;
 the first connection has a black center dot.
 
 Duplicate polygons are compared by their ordered connection cycles, modulo
 rotation and reversal. A different edge order using the same set of vertices
 is allowed. This distinction follows the [native cycle audit](../artifacts/native-static/polygon-duplicate-predicate.md);
-[Pivot's manual](https://pivotanimator.net/help5-2/polygon_fill.htm) describes
+the .piv format's manual describes
 connection groups, closure, local undo and how consecutive bent segments shape
 the polygon boundary.
 

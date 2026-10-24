@@ -235,7 +235,7 @@ dark colour.
 Use sentence case and plain words. Prefer "Add track" to "Track", and name the
 result of a setting, not its mechanism ("Keep audio in sync with frame edits"
 rather than "Ripple"). Count words must agree with their numbers ("1 figure").
-In the Simple timeline, a *frame* is a Pivot-style timeline frame; wherever
+In the Simple timeline, a *frame* is a .piv-style timeline frame; wherever
 playback frames differ, say so ("plays as 47 frames").
 
 ## Changing the editor markup

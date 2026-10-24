@@ -10,7 +10,7 @@ discovers Visual Studio C++ tools using `vswhere`, selects the newest complete
 installed Windows SDK, and retains explicit `--msvc`, `--sdk`, and `--sdk-version`
 overrides. The helpers use the static C runtime. `native/bin/build-info.json`
 records source and binary SHA256 values for packaging verification. Windows x86
-and x64 codec registrations can differ; the original Pivot 5.2 executable is x86.
+and x64 codec registrations can differ; the original .piv 5.2 executable is x86.
 
 The trusted desktop service owns process arguments, output paths, configuration
 state files, and opaque renderer tokens. A renderer selects an enumerated codec

@@ -62,7 +62,7 @@ Native Scene, Camera, and layer pose descriptors are requested lazily only when
 their keys are needed. Merely displaying them does not author or bake animation.
 Summary diamonds refer to the exact underlying channel/key identities. A drag
 previews a snapped offset, then calls `moveAnimationKeys` once on release. First
-editing a native track adopts it within that same undo command. No global Pivot
+editing a native track adopts it within that same undo command. No global .piv
 frame is moved when a single layer key is moved.
 
 | Input | Independent-track behavior |
@@ -201,7 +201,7 @@ and its Timing action can restore a positive duration. Output-tick navigation
 continues to use `editor.seek(tick)`.
 
 Ctrl/Shift frame selection and comma/period navigation follow the supplied
-[Pivot frame-control conventions](https://pivotanimator.net/help5-2/animation_frame_controls.htm).
+.piv frame-control conventions.
 Frame operations are undoable in this application. Zero-selection copy/delete
 are no-ops and preserve the clipboard. Sparse clipboard, reverse, timing and bake
 commands receive the exact sorted index set. Painting uses cached selection runs
@@ -212,7 +212,7 @@ one continuous selection.
 
 The Timing dialog synchronizes exposure frames with inbetweens, handles mixed
 values, and applies the chosen duration to the selected keys in one history
-command. Duration zero hides a key. The model retains Pivot's terminal-frame rule.
+command. Duration zero hides a key. The model retains the .piv format's terminal-frame rule.
 Blank insertion preserves the current camera/background. Duplication preserves
 the frame clipboard.
 

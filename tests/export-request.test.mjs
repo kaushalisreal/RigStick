@@ -408,8 +408,8 @@ test('format states follow today\'s buttons before and after the capability prob
   const opening = exportFormatStates({totalFrames: 48, vfw: {listed: false}});
   assert.deepEqual(formatChoices('video', opening).map(choice => [choice.id, choice.disabled]), [['mp4', true], ['webm', false], ['avi', true], ['wmv', true]]);
   assert.equal(defaultExportFormat(opening), 'webm');
-  assert.deepEqual(formatChoices('editable', opening).map(choice => [choice.type, choice.reason]), [['Pivot animation (.piv)', ''],
-    ['RigStick figure (.stkz) · Unavailable', 'Select a figure to export it.'], ['Pivot figure (.stk) · Unavailable', 'Select a figure to export it.'],
+  assert.deepEqual(formatChoices('editable', opening).map(choice => [choice.type, choice.reason]), [['Classic animation (.piv)', ''],
+    ['RigStick figure (.stkz) · Unavailable', 'Select a figure to export it.'], ['Classic figure (.stk) · Unavailable', 'Select a figure to export it.'],
     ['RigStick movieclip (.rigsmov) · Unavailable', 'Select a figure to export it.']]);
   const probed = exportFormatStates({capabilities: CAPABILITIES, totalFrames: 48, hasObject: true, movieclip: true, vfw: {listed: true, ready: true}, codecs: {avi: 'rawvideo'}});
   assert.deepEqual(probed.get('mp4'), {id: 'mp4', label: 'MP4 video', listed: true, pending: false, disabled: false, reason: '', provider: 'FFmpeg', codec: 'h264', codecLabel: 'H.264', padded: null});

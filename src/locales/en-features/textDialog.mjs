@@ -40,7 +40,7 @@ export default Object.freeze({
   "textDialog.applyChanges": "Apply changes",
   "textDialog.theTextWorkerStoppedReopenTheTextEditor": "The text worker stopped. Reopen the text editor.",
   "textDialog.scale": "Scale · %",
-  "textDialog.pivotStoresOutlinesWithoutTheOriginalFontSize": "Pivot stores outlines without the original font size. ",
+  "textDialog.pivotStoresOutlinesWithoutTheOriginalFontSize": ".piv stores outlines without the original font size. ",
   "textDialog.notoSans4BundledStylesNoFontInstallation": "Noto Sans · 4 bundled styles. No font installation required.",
   "textDialog.newSpacingIsEstimatedFromTheEmbeddedGlyphs": "New spacing is estimated from the embedded glyphs. Choose the original font for exact spacing.",
   "textDialog.fontAccessWasNotGrantedYouCanStill": "Font access was not granted. You can still open a TTF or OTF file.",

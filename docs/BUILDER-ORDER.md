@@ -43,7 +43,7 @@ Verification:
   PIV/STK Export/reopen. The [inspector screenshot](../artifacts/builder-order/inspector.png)
   was visually inspected.
 
-The [native Builder manual](https://pivotanimator.net/help5-2/creating_figure_types.htm)
-and [polygon manual](https://pivotanimator.net/help5-2/polygon_fill.htm) describe
+The native Builder manual
+and polygon manual describe
 these editing operations. Broader construction and render equivalence remain in
 the full compatibility contract.

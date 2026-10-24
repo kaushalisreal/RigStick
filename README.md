@@ -18,7 +18,7 @@
 
 - **Pose stick figures** with fixed-length joints, IK for arms and legs, stretchy nodes and 3D figures with depth.
 - **Build your own figures** from lines, circles, polygons, text and images, with a shared rig and per-part styles.
-- **Two timelines:** a Simple, Pivot-style frame strip and an Advanced timeline with layers, folders, keys and easing.
+- **Two timelines:** a Simple, classic frame strip and an Advanced timeline with layers, folders, keys and easing.
 - **Motion paths, onion skins and camera moves,** including camera follow.
 - **Particle effects** (explosions, auras, beams, smoke) and brushes for drawing.
 - **Export** MP4, WebM (with transparency), GIF, APNG, PNG/JPEG/SVG frames, and editable `.piv`/`.stk`.
@@ -41,7 +41,7 @@ npm start
 ```
 
 No Git? Use **Code → Download ZIP** on this page, unzip it, and run the last three commands inside the folder.
-Projects save as `.rigs` files; RigStick also opens `.styk`, `.piv`, `.stk` and Stick Nodes files.
+Projects save as `.rigs` files; RigStick also opens `.styk`, `.piv`, `.stk` and .nodes files.
 
 ## Build from source
 
@@ -75,7 +75,7 @@ npm test             # unit tests
 python -m unittest discover -s backend -p "test_*.py"
 ```
 
-Browser tests (`tests/*.browser.mjs`) run against `npm run serve` with Chrome or Playwright Chromium, for example `node tests/timeline.browser.mjs`. Some tests read a local corpus of Pivot projects that is not distributed; they skip and name the missing file. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) shows what runs on every pull request.
+Browser tests (`tests/*.browser.mjs`) run against `npm run serve` with Chrome or Playwright Chromium, for example `node tests/timeline.browser.mjs`. Some tests read a local corpus of .piv projects that is not distributed; they skip and name the missing file. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) shows what runs on every pull request.
 
 ## How the code is organized
 
@@ -84,7 +84,7 @@ Browser tests (`tests/*.browser.mjs`) run against `npm run serve` with Chrome or
 | `src/editor*.mjs`, `src/pivot/` | Document model, commands, undo/redo, rigs, native evaluation and validation |
 | `src/renderer*.mjs`, `src/prepared-frames.mjs` | WebGPU rendering, incremental edits, GPU playback packets |
 | `src/playback*.mjs`, `src/document-transport.mjs` | Worker evaluation, playback caches, bounded document snapshots |
-| `src/import-*.mjs`, `backend/`, `codecs/`, `native/` | Pivot and Stick Nodes decoding, the Python codec service, native helpers |
+| `src/import-*.mjs`, `backend/`, `codecs/`, `native/` | .piv and .nodes decoding, the Python codec service, native helpers |
 | `src/document-export*.mjs`, `src/image-*.mjs`, `src/video-export.mjs` | Saving, recovery and image/video export |
 | `src/app.mjs`, `src/shell/`, `src/ui/`, `src/styles/` | Interface, workspaces, timelines and styles |
 | `src/locales/`, `src/localization*.mjs` | Translations |

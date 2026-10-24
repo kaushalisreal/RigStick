@@ -57,7 +57,7 @@ for the complete property list and compatibility behavior.
   native paint order. History and range edits remain atomic. The canvas toolbar
   provides Bring to front and Send to back for the current selection. Holding
   Shift while clicking moves the selection one step forward or backward instead.
-- Worker playback and export use the same evaluator. Pivot materialization
+- Worker playback and export use the same evaluator. .piv materialization
   writes the resulting native draw order and removes the depth extension.
 
 Regression coverage lives in `tests/figure-z-index.test.mjs` and

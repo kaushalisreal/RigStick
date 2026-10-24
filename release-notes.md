@@ -32,9 +32,3 @@ Faster exports, preset files and a Hardware tab
 ### Performance
 
 - Animations with large background images export several times faster, with or without motion blur.
-
-Free to create. Powered by your support.
-
-RigStick is completely free. If it helps bring your ideas to life, a donation helps keep development moving. [Support development on Ko-fi](https://ko-fi.com/Q5Q41WY7QC).
-
-Install the **Setup** version for automatic updates. Portable copies require manual updates.

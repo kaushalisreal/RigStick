@@ -119,7 +119,7 @@ export default Object.freeze({
   "chrome.returnToAnimation": "Return to animation →",
   "chrome.scene01": "Scene 01",
   "chrome.fps": "— fps",
-  "chrome.dropARigStickPivotOrStickNodesFileHere": "Drop a RigStick, Pivot or Stick Nodes file here",
+  "chrome.dropARigStickPivotOrStickNodesFileHere": "Drop a Rigstick, .piv, .stk or .nodes file here",
   "chrome.vfx": "VFX",
   "chrome.library": "Library",
   "chrome.libraryView": "Library view",

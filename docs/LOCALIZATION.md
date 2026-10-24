@@ -125,13 +125,13 @@ unverified; catalog completion and AI context review do not certify those result
 
 ## Native baseline and supplied languages
 
-Pivot 5.2 selects a language in Options and retains preferences across restarts.
+.piv 5.2 selects a language in Options and retains preferences across restarts.
 Its extension mechanism uses translated INI values in the installation languages
 directory; Unicode files use UTF-16LE BOM. Its manual asks translators to inspect
-every window for caption fit. [Language files](https://pivotanimator.net/help5-2/language_files.htm),
-[Options](https://pivotanimator.net/help5-2/options.htm).
+every window for caption fit. Language files,
+Options.
 
-The supplied Pivot 5.2.11 contains 27 language files, including English. All 27
+The supplied .piv 5.2.11 contains 27 language files, including English. All 27
 are registered as selectable locales. The [source inventory](../artifacts/localization-native-inventory.json)
 records exact bytes, SHA-256, BOM/codepage decoding, key counts, mapped app keys
 and the explicit semantic mapping used by the generator.

@@ -86,7 +86,7 @@ test('model, rig, editor, range, text, SVG and font failures localize human labe
  assert.throws(()=>editor.seek(NaN),capture('Timeline tick must be finite.','errors.validationLabels.timelineTick'));
  assert.throws(()=>planFigureFrameOperation(editor.report,editor.frame,[editor.frame.objects[0].unique_id],{kind:'appearance',opacity:NaN}),capture('Opacity must be finite and within the native numeric range.','errors.validationLabels.opacity'));
  assert.throws(()=>textOptionsWithDefaults({text:'Hello',fontSize:NaN}),capture('Font size must be between 1 and 2048.','errors.validationLabels.fontSize'));
- assert.throws(()=>validateSticknodesObject({_sticknodesSprite:{ratio:NaN,pivotX:0,pivotY:0}},editor.figure),capture('Invalid Stick Nodes sprite ratio.','errors.validationLabels.spriteField','ratio'));
+ assert.throws(()=>validateSticknodesObject({_sticknodesSprite:{ratio:NaN,pivotX:0,pivotY:0}},editor.figure),capture('Invalid .nodes sprite ratio.','errors.validationLabels.spriteField','ratio'));
  await assert.rejects(exportSVG({report:editor.report,frame:editor.frame,width:0}),capture('SVG width must be an integer from 1 to 65535.','errors.validationLabels.svgWidth'));
  assert.throws(()=>new fontService.FontService({maxFonts:0}),capture('Invalid font limit.','desktop.fontService.labels.limit'));
  assert.throws(()=>validateAudioAsset({id:'audio',name:'Recording',size:NaN}),error=>{

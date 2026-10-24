@@ -3,9 +3,7 @@ import {messageError} from './localized-error.mjs';
 /** Pure, copy-on-write plans for figure controls applied to native frame ranges.
  * Slots address joins; UIDs identify the same figure across different frames.
  * Numeric scale affects selected instances only, whereas flip includes their
- * joined descendants. Pivot documents those distinctions here:
- * https://www.pivotanimator.net/help5-2/joining_figures.htm
- * https://www.pivotanimator.net/help5-1/multi_figure_selection.htm
+ * joined descendants.
  */
 import {buildGeometry} from './pivot/geometry.mjs';
 import {validateRecolor, recolorObject} from './figure-colors.mjs';

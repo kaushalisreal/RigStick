@@ -126,7 +126,7 @@ test('joined figures follow sliding joints, and combining preserves live relatio
 test('IK drives ordinary anchors; derived controls reject conflicting IK and unsupported Pivot exports',()=>{
   const e=editorFor('flexing-muscle');select(e,2);e.setNodeIK({enabled:true});e.poseJoint(400,180);const c=g(e).segments[2];point(c.end,g(e).joints.get(2));
   select(e,3);assert.throws(()=>e.setNodeIK({enabled:true}),/derived|driving/);
-  assert.throws(()=>materializePivotDocument(e.serialize()),/Pivot cannot preserve/);
+  assert.throws(()=>materializePivotDocument(e.serialize()),/\.piv cannot preserve/);
 });
 test('deep dependency chains compile and evaluate without recursive stack growth',()=>{
   const doc=rigExampleDocument('nested-curve-controls'),fig=doc.figure_types[0],template=fig.segments[3],count=5000;

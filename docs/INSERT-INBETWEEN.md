@@ -4,9 +4,9 @@ The command inserts one chosen pose immediately before every selected native
 source key. The dialog previews that pose in a worker; dragging its ratio slider
 does not change the document. Insert prepares the entire selection asynchronously and applies it in one undo.
 
-The interaction follows Pivot's [frame controls](https://pivotanimator.net/help5-2/animation_frame_controls.htm).
+The interaction follows the .piv format's frame controls.
 The more specific easing and exposure rules were verified by read-only inspection
-of the supplied Pivot 5.2.11 binary, with source hash, RTTI names, disassembly and
+of the supplied .piv 5.2.11 binary, with source hash, RTTI names, disassembly and
 a reproducer in [the native evidence](../artifacts/native-static/insert-inbetween.md).
 
 | Chosen ratio | Inserted pose | Inserted exposure |

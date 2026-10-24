@@ -146,7 +146,7 @@ export function createAiTools({editor, importer, desktop = null, importImage = n
   }
 
   function edit(label, run) {
-    if (!editor.report._rigs?.layerSheet) fail('This document uses the old Pivot frame list; open it in Advanced mode once to convert it, then try again.');
+    if (!editor.report._rigs?.layerSheet) fail('This document uses the old frame list; open it in Advanced mode once to convert it, then try again.');
     const autoKey = editor.autoKey; let result;
     try {
       editor.autoKey = true;

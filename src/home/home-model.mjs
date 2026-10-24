@@ -14,7 +14,7 @@ export const PINNED_PROJECTS = Object.freeze({kind: 'pinned'});
 export const folderScope = name => Object.freeze({kind: 'folder', name});
 export const sameScope = (a, b) => a?.kind === b?.kind && (a?.kind !== 'folder' || a.name === b.name);
 
-/** Where a project came from, by its file's extension: the app's own format, Pivot or Stick Nodes. */
+/** Where a project came from, by its file's extension: the app's own format, Pivot or .nodes. */
 export function projectOrigin(extension = '') {
   const kind = String(extension).toLowerCase();
   return kind === 'piv' ? 'pivot' : kind === 'stknds' ? 'sticknodes' : 'rigs';

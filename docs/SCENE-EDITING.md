@@ -191,7 +191,7 @@ Hit testing lives in canvas-interactions.mjs; selection membership stays in
 editor-selection.mjs. Origin selection does not measure artwork, clone frames
 or allocate a cache. Bounds selection preserves the four projected-corner test
 without temporary arrays. Pending modified clicks reuse the existing pointer
-gesture owner. Pivot feedback draws a constant number of overlay primitives.
+gesture owner. .piv feedback draws a constant number of overlay primitives.
 
 Regression coverage: tests/selection-workflow.browser.mjs,
 tests/canvas-interactions.test.mjs, tests/hotkeys.test.mjs, and the existing
@@ -236,14 +236,14 @@ definitions, and form one history step. Reset colors restores definition colors.
 An open palette picker retains its original segment/stop membership after colors
 merge. Opacity-only edits do not recolor the figure.
 
-Pivot 2–4 absolute COLORREF values and negative black differ from Pivot 5's mix
+.piv 2–4 absolute COLORREF values and negative black differ from .piv 5's mix
 byte. On the first local color edit, an active legacy/modern figure override is
 baked into per-instance `_rigsStyle` colors before clearing it. Legacy instances
 carry `_rigs.colorMode: 'segments'`; resolution exposes the existing definition
 color-mode contract without mutating shared definitions. Full native overrides
 suppress secondary alpha as well as RGB, so baking preserves the displayed solid.
 Clipboard conversion preserves the instance mode, and native export materializes
-style variants and converts untouched legacy COLORREF values to Pivot 5 too.
+style variants and converts untouched legacy COLORREF values to .piv 5 too.
 
 Layer-sheet edits use the existing held-key/interpolated-boundary policy and range
 history. Legacy scalar timelines keep independent color/paint channels and native

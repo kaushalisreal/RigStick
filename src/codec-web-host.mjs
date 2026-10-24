@@ -17,7 +17,7 @@ export class BrowserCodecHost {
   #createWorker;
 
   constructor({createWorker = () => new Worker(new URL('./codec-web-worker.mjs', import.meta.url),
-    {type: 'module', name: 'RigStick Pivot codec'})} = {}) {
+    {type: 'module', name: 'RigStick .piv codec'})} = {}) {
     this.#createWorker = createWorker;
   }
 
@@ -67,7 +67,7 @@ export class BrowserCodecHost {
     const failed = event => {
       if (this.#worker !== worker) return;
       event?.preventDefault?.();
-      this.#emit({state: 'failed', message: event?.message || 'The Pivot converter stopped unexpectedly.'});
+      this.#emit({state: 'failed', message: event?.message || 'The .piv converter stopped unexpectedly.'});
       this.#stop('failed');
     };
     worker.addEventListener('error', failed);

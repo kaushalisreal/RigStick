@@ -49,7 +49,7 @@ independently. The integration agent owns English keys, UI bindings, shared code
 generated diagnostic block in `desktop/preload.cjs`, scripts, tests and
 documentation. It merges pack edits, regenerates once, validates, runs relevant
 UI checks and commits the reviewed result. Do not edit `native-catalogs.mjs`: it records the original imported
-Pivot captions, while the independent packs own current translations.
+.piv captions, while the independent packs own current translations.
 
 Development layout checks can call `rigs.localization.localization.setPseudo('long')`
 or `setPseudo('rtl')`, then `setPseudo(null)` to restore normal text. These modes

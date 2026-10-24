@@ -765,8 +765,8 @@ Every row again at the tier sizes (1440×900 at 125% and 150% UI scale are 1152�
 | FI-12 | Import background image… | L | 2 · no | File › Import background… (the menubar); Scene › Background | 2 | no | = |
 | FI-13 | Export… | M | 1–2 · yes (button) | Band Export | 1 | yes | = |
 | FI-14 | "Save your changes?": Cancel, Discard or Save project | L | contextual · contextual | Dialogs | ctx | ctx | = |
-| FI-15 | Pick one asset from a multi-asset Stick Nodes file | L | contextual · contextual | Dialogs | ctx | ctx | = |
-| FI-16 | List of Pivot / Stick Nodes conversion warnings | L | contextual · contextual | Dialogs | ctx | ctx | = |
+| FI-15 | Pick one asset from a multi-asset .nodes file | L | contextual · contextual | Dialogs | ctx | ctx | = |
+| FI-16 | List of .piv / .nodes conversion warnings | L | contextual · contextual | Dialogs | ctx | ctx | = |
 | ED-01 | Undo | H | 1 (toolbar) / 2 · yes (canvas toolbar) | Band Undo, Redo | 1 | yes | = |
 | ED-02 | Redo | H | 1 / 2 · yes (canvas toolbar) | Band Undo, Redo | 1 | yes | = |
 | ED-03 | Copy: figures, or frames when the timeline has focus | H | 2 · no | Context menus (Edit is their index) | 2 | no | = |
@@ -845,8 +845,8 @@ Every row again at the tier sizes (1440×900 at 125% and 150% UI scale are 1152�
 | EX-14 | GIF sequence | L | 3 · no | Export › Type | 3 | no | = |
 | EX-15 | SVG sequence | L | 3 · no | Export › Type | 3 | no | = |
 | EX-16 | RigStick figure (`.stkz` / `.rigsmov`) | L | 3 · no | Export › Project › RigStick figure (a choice in the Type list, shown for Project) | 3 | no | = |
-| EX-17 | Pivot animation (.piv) | M | 3 · no | Export › Project (Pivot animation is the first Type) | 2 | no | −1 |
-| EX-18 | Pivot figure (.stk) | L | 3 · no | Export › Project › Pivot figure (a choice in the Type list) | 3 | no | = |
+| EX-17 | .piv animation (.piv) | M | 3 · no | Export › Project (.piv animation is the first Type) | 2 | no | −1 |
+| EX-18 | .piv figure (.stk) | L | 3 · no | Export › Project › .piv figure (a choice in the Type list) | 3 | no | = |
 | EX-19 | Resolution preset: Original · W×H, HD 720p, Full HD 1080p, 4K 2160p, Custom size | M | 3 · no | Export › Size presets: 1080p, 720p, 4K, Original, Custom… | 3 | no | = |
 | EX-20 | Custom output size | L | 3 · no | Export › Size › Custom… | 3 | no | = |
 | EX-21 | "Use entire animation", or first and last frame | M | 3 · no | Export › the trim strip and its From and To fields | 2 | no | −1 |

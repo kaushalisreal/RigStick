@@ -44,7 +44,7 @@ pose-local fixed-point editor. Applying the camera into figures with authored
 camera/figure/layer channels still needs a composed-transform baking operation
 and rejects before mutation. Applying a native camera to figures preserves the
 played figure appearance, but cannot preserve a moved image/gradient background:
-native Pivot has the same limitation.
+native .piv has the same limitation.
 
 Verification: `tests/editor-camera.test.mjs` and `tests/background-angle.test.mjs`
 (with the camera inspector's command availability in
@@ -53,6 +53,6 @@ sparse/reordered handle IDs, hidden neighboring keys, authored inbetween editing
 range semantics, undo/cancel, and the actual native PIV writer/reimport. These
 model and view-helper checks do not replace the final integrated UI walkthrough.
 
-Native references: [virtual camera](https://pivotanimator.net/help5-2/virtual_camera.htm),
-[neighbor alignment](https://pivotanimator.net/help5-2/alignment_to_neighbouring_frames.htm),
-[numeric values](https://pivotanimator.net/help5-2/value_input.htm).
+Native references: virtual camera,
+neighbor alignment,
+numeric values.

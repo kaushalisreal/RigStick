@@ -43,7 +43,7 @@ The Simple frame bar sits in the label column's place: "Frame 6 of 8 · holds 0.
 
 Apply camera to figures preserves the projected pose at the selected sheet keys.
 Those new poses participate in the layer's interpolation, so neighboring tweens
-can change. Native save and Pivot export reproduce the resulting sheet animation.
+can change. Native save and .piv export reproduce the resulting sheet animation.
 
 ## Document and compatibility
 
@@ -63,7 +63,7 @@ Imported spans are evaluated through an immutable compatibility baseline, retain
 
 The former property-row Advanced component, per-figure movieclip bars, old Simple component, and separate authored-key navigation strip have been removed. The public timeline module names now export the replacement components. Legacy reader/projection regression fixtures live under tests and are not loaded by the app.
 
-Every edit plans and validates its result before publication, then records one undoable change. Clipboard transfers and movieclip commands group their constituent changes. Rendering, playback, thumbnails, SVG/image/video export and Pivot materialization sample `evaluatedFrame`. Native RIGS files retain editable layer data. Pivot export samples the resulting scene in the export worker because Pivot has one scene-wide frame sequence.
+Every edit plans and validates its result before publication, then records one undoable change. Clipboard transfers and movieclip commands group their constituent changes. Rendering, playback, thumbnails, SVG/image/video export and .piv materialization sample `evaluatedFrame`. Native RIGS files retain editable layer data. .piv export samples the resulting scene in the export worker because .piv has one scene-wide frame sequence.
 
 The grid renders visible rows and columns only. Pose history stores affected sources and shares unchanged tracks. Imported source evaluation is shared between layers sampling the same time. The Fig 107 diagnostic (`scripts/verify-layer-import.mjs`, using the local decoded fixture) checks duplicate identities, geometry evaluation and exact undo on 194 imported native frames / 3,782 historical instance IDs.
 
@@ -87,11 +87,11 @@ The timeline uses the studio's icons, fields, menus and color tokens. Figure and
 
 The browser test performs real cell/keyboard interactions, mode switches, and binary RIGS/PIV export-import comparisons. Model tests cover ownership, connected figures, blank spans, easing, history, clipboard assets, scene/camera editing, movieclip clocks and legacy import.
 
-The browser also checks key and cross-layer dragging, layer reordering, rename, locks and compact layouts. Regression cases cover exact-cell inspector ranges, imported segment-style repair after rig edits, blank Camera/Scene cells, camera baking, and Stick Nodes projects containing nested movieclips.
+The browser also checks key and cross-layer dragging, layer reordering, rename, locks and compact layouts. Regression cases cover exact-cell inspector ranges, imported segment-style repair after rig edits, blank Camera/Scene cells, camera baking, and .nodes projects containing nested movieclips.
 
 The polish checks exercise the duration bars, multi-frame inbetweens, preset and custom easing, menu contents and keyboard dismissal, opening-frame insertion, cut, exact undo, and keeping the current scene frame selected when earlier timing changes.
 
-Behavior references: [Adobe frames](https://helpx.adobe.com/animate/desktop/animation/frames-keyframes.html), [Pivot frames](https://www.pivotanimator.net/help5-2/animation_frame_controls.htm), [Stick Nodes movieclips](https://sticknodes.com/new-version-3-0-0-the-movieclip-update/).
+Behavior references: [Adobe frames](https://helpx.adobe.com/animate/desktop/animation/frames-keyframes.html), .piv frames, [.nodes movieclips](https://sticknodes.com/new-version-3-0-0-the-movieclip-update/).
 
 ## Timeline organization and compact layout
 

@@ -1,4 +1,4 @@
-# RigStick-webapp: Pivot compatibility contract
+# RigStick-webapp: .piv compatibility contract
 
 This is the acceptance contract for the requested first slice, not a claim that
 all these features exist in the new application. An unchecked item is **not
@@ -8,12 +8,12 @@ artifact from RigStick-webapp. Reusing a decoder does not transfer the older
 editor's rendering, interaction, or performance results to WebGPU.
 
 **Verification updated 2026-09-09.** The application now has a working WebGPU
-editor, real Pivot import/export, multiselection, a virtualized timeline, portable
+editor, real .piv import/export, multiselection, a virtualized timeline, portable
 text and image authoring, native project persistence, and a Windows desktop shell.
 Checked boxes below sign off the **whole stated acceptance item**. Many unchecked
 items contain verified, implemented behavior; their progress annotations identify
 both that behavior and the remaining verification or feature gap. This document
-does not assert complete 1:1 Pivot parity.
+does not assert complete 1:1 .piv parity.
 
 The [finite release gates](GOAL-ACCEPTANCE.md#current-finite-release-gates) identify
 current blocking work. Broad unchecked combinations below are coverage limits,
@@ -37,27 +37,27 @@ final integrated rerun after all concurrent changes.
 The [full-goal ledger](GOAL-ACCEPTANCE.md) distinguishes implemented earlier gaps
 from remaining requirements. It records current source and retained evidence;
 existing Windows 0.2.0 package artifacts predate several of these changes.
-Neither this update nor a passing focused test asserts full Pivot parity.
+Neither this update nor a passing focused test asserts full .piv parity.
 
-Baseline: the supplied Pivot Animator **5.2.11**, dated 2025-02-11 in
+Baseline: the supplied .piv **5.2.11**, dated 2025-02-11 in
 ReadMe.txt. Its `pivot.exe` SHA-256 was
 verified on 2026-09-08:
 `2c7911d3303cc28de2ac016c3f7575082aa47680e63a0fe8930ce8799de3df98`.
-The [official Pivot 5.2 manual](https://pivotanimator.net/help5-2/index.htm)
+The official .piv 5.2 manual
 and the feature pages linked below were inspected on the same date. The earlier
 RigStick contract supplied additional
 edge cases; its Windows-native architecture is not the architecture requested here.
 
 ## Preserve the animation philosophy
 
-Pivot's central operation is direct posing: drag an origin to move a figure,
+the .piv format's central operation is direct posing: drag an origin to move a figure,
 drag a joint to rotate a branch while retaining its proportions, then store a
 pose in the timeline. A figure **definition** holds reusable topology and visual
 assets. An **instance** has an identity, a pose, appearance, and ordering within
 a frame. An animation connects poses across frames using identities and timing.
 These distinctions must survive the modern interface.
-[Positioning figures](https://pivotanimator.net/help5-2/positioning_figures.htm),
-[figure controls](https://pivotanimator.net/help5-2/figure_controls.htm).
+Positioning figures,
+figure controls.
 
 The requested Figma-inspired interface should make the canvas primary, with a
 compact tool strip, searchable figures/layers, a contextual properties panel,
@@ -106,7 +106,7 @@ silently simplifying imported animation is not.
 - [ ] F05 Export edited PIV copies; reopen them in the decoder and original
   Pivot. Route unsupported legacy structural edits through explicit V5 migration.
   **Progress:** edited PIVs, including source-bearing projects with newly authored
-  text, reopen in the supplied decoder. Original Pivot reopen and the complete
+  text, reopen in the supplied decoder. Original .piv reopen and the complete
   user-facing migration workflow are not signed off.
 - [ ] F06 Save/reopen native RigStick projects with timing, assets, editing
   metadata, organization, and constraints when present; do not depend on cache URLs.
@@ -140,7 +140,7 @@ References: corpus,
 document/API contract,
 full writer,
 migration,
-[figure controls](https://pivotanimator.net/help5-2/figure_controls.htm).
+figure controls.
 
 ## Posing, selection, and attachments
 
@@ -221,8 +221,8 @@ migration,
   Advanced timeline workflows record one undo per completed gesture and exact
   cancellation. Range/model tests add sparse multi-key edits and structural
   assets. Complete topology/multi-frame/media/source combinations remain open.
-References: [posing](https://pivotanimator.net/help5-2/positioning_figures.htm),
-[joining](https://pivotanimator.net/help5-2/joining_figures.htm),
+References: posing,
+joining,
 local native join/static rules,
 style findings.
 
@@ -244,7 +244,7 @@ style findings.
   interchange and persistence across desktop processes. Authored source/destination
   remapping and [actual range controls](../artifacts/range-actions-app.json) are
   verified. [19 actual application upgrade checks](../artifacts/clipboard-legacy-app/report.json)
-  now prove Pivot 5 paste into real V2/V3/V4 destinations, exact Undo/Redo and
+  now prove .piv 5 paste into real V2/V3/V4 destinations, exact Undo/Redo and
   native PIV/RIGS Save/reopen. Conversion retains legacy holds, source bytes and
   Simple working copies; Advanced selects only pasted keys. Dedicated cancellable worker planning and cooperative staging now replace UI
   synchronous planning. The [compact sparse CPU diagnostic](../artifacts/clipboard-akane-flat-sparse-cpu.json)
@@ -304,14 +304,14 @@ style findings.
   output ticks. Sampled playback causes zero grid redraws. These are structural
   and input-path checks, not a guarantee for arbitrary scene-rendering workloads.
 - [ ] T10 Visibility/lock controls state whether they are editor aids or affect
-  output. Organizational tracks must not silently change imported Pivot draw order.
+  output. Organizational tracks must not silently change imported .piv draw order.
   **Progress:** User layer visibility affects composed playback/export; locking is an
   editing constraint. Permanent Scene/Camera visibility has Canvas/WebGPU/prepared/SVG
   color checks. Layer order remains native within unmodified imported layers;
   sampled independent source order and cross-layer joins have model regressions.
   [Advanced UI roundtrips](../artifacts/advanced-track-app.json) preserve tested
   layer blanks and channels exactly. Full visibility/order/media matrix remains open.
-- [ ] T11 Simple Pivot filmstrip, real thumbnails, native inbetween sliders,
+- [ ] T11 Simple .piv filmstrip, real thumbnails, native inbetween sliders,
   multi-selection, Add/Update and keyboard workflow, selectable in Settings.
   **Progress:** [18 component checks](../artifacts/simple-timeline-verification.json)
   verify thumbnail rendering, selection, inbetween counts, frame clipboard,
@@ -331,8 +331,8 @@ style findings.
   no long tasks and nine complete-scene geometry samples preserved after undo/redo.
   Broader membership/deletion/cancellation and limit cases remain G15.
 
-References: [frame controls](https://pivotanimator.net/help5-2/animation_frame_controls.htm),
-[inbetweening](https://pivotanimator.net/help5-2/frame_inbetweening.htm),
+References: frame controls,
+inbetweening,
 reference evaluator,
 native easing tests, local 5.2.9 release notes.
 
@@ -413,7 +413,7 @@ native easing tests, local 5.2.9 release notes.
   branch discovery and duplication up to the native capacity. Whole-editor
   interaction at this limit is not implied by these model-level checks.
 
-References: [figure building](https://pivotanimator.net/help5-2/creating_figure_types.htm),
+References: figure building,
 local release notes, polygon paths,
 stroke rules.
 
@@ -424,7 +424,7 @@ stroke rules.
   **Progress:** the current WebGPU corpus run compares 101 sampled frames across
   37 projects against the existing Canvas renderer. Two edge-heavy samples exceed
   the conservative pixel threshold; none exceeds 0.1% interior mismatch. This is
-  not an exhaustive native-Pivot pixel comparison at arbitrary zoom.
+  not an exhaustive native-.piv pixel comparison at arbitrary zoom.
 - [ ] R02 Figure opacity composites the completed figure as a group. Source
   alpha and segment opacity compose correctly; transparent primitives cannot
   be reordered merely to increase batching.
@@ -497,11 +497,11 @@ stroke rules.
   verify previous-frame and selected-figure insertion order. Settings defaults
   and controls have UI evidence. Final integrated UID-transition/filter/output
   exclusion cases remain unsigned.
-References: [sprites](https://pivotanimator.net/help5-2/sprites.htm),
-[text](https://pivotanimator.net/help5-2/text_objects.htm),
-[backgrounds](https://pivotanimator.net/help5-2/backgrounds.htm),
-[camera](https://pivotanimator.net/help5-2/virtual_camera.htm),
-[onion skins](https://pivotanimator.net/help5-2/onion_skins.htm),
+References: sprites,
+text,
+backgrounds,
+camera,
+onion skins,
 image/text details,
 bent media,
 bitmap sampling,
@@ -516,14 +516,14 @@ background coverage.
   verify GIF/SVG numbering, CRC/timing, independent pixels/alpha, editable vectors,
   cancellation and subsequent export. The [28 native export workflows](../artifacts/native-video-renderer/report.json)
   include both sequence buttons and native Save with authored Scene changes at
-  each output tick. Broader original-Pivot media equivalence remains tracked in X05.
+  each output tick. Broader original-.piv media equivalence remains tracked in X05.
 - [ ] X02 Animated GIF/APNG with expected frame timing, looping, and alpha.
   **Progress:** GIF/APNG frames, timing, alpha and representative pixels pass
   browser and independent Pillow decoding. [Native-style GIF palette/dithering](gif-export.md)
   adds seven unit, eleven worker, nine root and 32 independent decoded checks,
   including repeat/loop behavior, alpha, 24 fps delay rounding and cancellation.
-  Full original-Pivot pixel equivalence remains unsigned.
-- [x] X03 WebM, MP4 (Pivot baseline: MPEG-4 Part 2), WMV, FFV1 AVI, and
+  Full original-.piv pixel equivalence remains unsigned.
+- [x] X03 WebM, MP4 (.piv baseline: MPEG-4 Part 2), WMV, FFV1 AVI, and
   uncompressed AVI. Track the Windows installed-codec AVI workflow separately
   from portable encoder support; a container extension is not a verified codec.
   **Evidence:** VP8/WebM output has independent decoding. [Native export checks](../artifacts/native-video-renderer/report.json)
@@ -551,7 +551,7 @@ background coverage.
   and representative pixels against the same evaluated viewport scene.
   **Progress:** Image/SVG/WebM and six native codec choices have independent
   decoding, including exact frame timestamps and lossless RGB. A complete
-  original-Pivot same-scene comparison across all media/styles remains open.
+  original-.piv same-scene comparison across all media/styles remains open.
 - [ ] D01 A launchable desktop shell, native file dialogs, filesystem access
   through a bounded bridge, useful import/export errors, and recovery/autosave.
   **Progress:** Windows shell, file read/write bridge, dirty-close flow and native
@@ -600,8 +600,8 @@ background coverage.
   and native language restart remains queued. Full RTL/custom installers are
   optional extensions unless established by the supplied native baseline.
 
-References: [image export](https://pivotanimator.net/help5-2/separate_images.htm),
-[video export](https://pivotanimator.net/help5-2/video.htm), local release notes.
+References: image export,
+video export, local release notes.
 
 ## Reuse and architecture boundaries
 
@@ -617,7 +617,7 @@ mock data. The following inventory was inspected for this task:
 | studio/background.mjs | Native camera/background/blending semantics. |
 | studio/structure.mjs | Stable identities, ordering, add/duplicate/delete, and rotation propagation. |
 | studio/definitions.mjs | Existing definition/project editor behavior; its DOM form implementation can be replaced. |
-| tools/pivot_ik_solver.js | Optional existing IK solver. IK and foot locking are extensions, not features attributed to Pivot 5.2.11. |
+| tools/pivot_ik_solver.js | Optional existing IK solver. IK and foot locking are extensions, not features attributed to .piv 5.2.11. |
 
 For this desktop application, a portable web UI plus a WebGPU canvas should be
 hosted by a desktop shell. Decoding/export can use a persistent native/Python
@@ -642,7 +642,7 @@ The user's requirement is fluent interaction on large scenes. A universal promis
 of zero latency on every GPU, driver, operating system, and unbounded file is not
 measurable. Record workload and hardware alongside observed timings; do not
 equate `requestAnimationFrame`, GPU use, or an FPS badge with proof of no stalls.
-Pivot 5 already advertises GPU rendering in its supplied release notes.
+.piv 5 already advertises GPU rendering in its supplied release notes.
 
 - [ ] Q01 Import measurements separate file read, decompression, decode,
   validation, scene compilation, asset upload, and first editable presentation.
@@ -673,7 +673,7 @@ Pivot 5 already advertises GPU rendering in its supplied release notes.
   every output tick in the supplied corpus, and inspect representative images.
   Record source/build/fixture hashes and pixel metrics; classify fidelity gaps.
   **Progress:** current results cover 101 sampled ticks from 37 files against
-  the existing Canvas evaluator. They do not cover every native Pivot output tick.
+  the existing Canvas evaluator. They do not cover every native .piv output tick.
 - [x] Q05 Run actual UI flows: PIV/STK import → selection/posing → frame edit →
   undo/redo → playback/scrub → save/reopen → export. A decoder unit test cannot
   verify this flow.

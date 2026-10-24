@@ -1,5 +1,5 @@
 import {messageError} from '../localized-error.mjs';
-/** Stick Nodes -> authoritative RigStick document. No source bytes or runtime
+/** .nodes -> authoritative RigStick document. No source bytes or runtime
  * decoder objects enter editor history. Definitions and clip timelines stay shared. */
 import {openDocument} from './decoder/project.mjs';
 import {unpackZip,isZip} from './decoder/archive.mjs';
@@ -57,7 +57,7 @@ export async function importStickNodes(input,{filename='project.stknds',signal,o
  const warn=(code,message)=>warnings.set(code,message),definitions=[],figureInfo=[],spriteFigures=new Map(),clipFigures=[],textFigures=new Map();
  const layoutGuesses=new Map(),rememberGuesses=issues=>{for(const issue of issues??[])if(issue.code==='UNVERIFIED_LAYOUT')layoutGuesses.set(`${issue.format}:${issue.profile}`,{format:issue.format,profile:issue.profile,assumption:issue.assumption});};
  rememberGuesses(doc.issues);
- if(doc.format!=='nodes')warn('SOURCE_TIMING','Stored poses are imported with source FPS, delays and available tween settings; exact Stick Nodes solvers/effects are not reproduced.');
+ if(doc.format!=='nodes')warn('SOURCE_TIMING','Stored poses are imported with source FPS, delays and available tween settings; exact .nodes solvers/effects are not reproduced.');
  if(doc.sounds.length)warn('EXTERNAL_AUDIO',`${doc.sounds.length} sound references need their external audio files; names are retained in import metadata.`);
  for(const meta of doc.figures){check();const source=doc.getFigure(meta.index),info=convertedFigure(source,meta.index,meta.name);figureInfo.push(info);definitions.push(info.figure);
   rememberGuesses(source.diagnostics);
@@ -84,7 +84,7 @@ export async function importStickNodes(input,{filename='project.stknds',signal,o
 
  let fontPromise;
  async function font(){if(textFont)return textFont;if(!fontPromise)fontPromise=typeof process!=='undefined'&&process.versions?.node?import('node:fs/promises').then(async fs=>parseTextFont(await fs.readFile(new URL('../../vendor/text/NotoSans-Regular.ttf',import.meta.url))).font):loadTextFont();return fontPromise;}
- async function textFigure(t){const key=JSON.stringify([t.text,t.fontIndex]);if(textFigures.has(key))return textFigures.get(key);const chosenFont=await font(),text=[...t.text].map(c=>c==='\n'||c==='\r'||(c.codePointAt(0)<=65535&&chosenFont.charToGlyphIndex(c))?c:'?').join('').slice(0,16000);if(text!==t.text)warn('TEXT_GLYPHS','Unavailable font glyphs use question-mark placeholders; the original text is preserved in asset metadata.');const figure=await createTextFigure({text,fontSize:48,color:[0,0,0],name:t.text.slice(0,50),figureTypeId:nextType++},{font:chosenFont});figure._rigs={...figure._rigs,sticknodesText:{text:t.text,fontIndex:t.fontIndex}};definitions.push(figure);textFigures.set(key,figure);warn('TEXT_FONT','Text remains editable with bundled Noto Sans outlines; the original Stick Nodes font metrics may differ.');return figure;}
+ async function textFigure(t){const key=JSON.stringify([t.text,t.fontIndex]);if(textFigures.has(key))return textFigures.get(key);const chosenFont=await font(),text=[...t.text].map(c=>c==='\n'||c==='\r'||(c.codePointAt(0)<=65535&&chosenFont.charToGlyphIndex(c))?c:'?').join('').slice(0,16000);if(text!==t.text)warn('TEXT_GLYPHS','Unavailable font glyphs use question-mark placeholders; the original text is preserved in asset metadata.');const figure=await createTextFigure({text,fontSize:48,color:[0,0,0],name:t.text.slice(0,50),figureTypeId:nextType++},{font:chosenFont});figure._rigs={...figure._rigs,sticknodesText:{text:t.text,fontIndex:t.fontIndex}};definitions.push(figure);textFigures.set(key,figure);warn('TEXT_FONT','Text remains editable with bundled Noto Sans outlines; the original .nodes font metrics may differ.');return figure;}
  const clipDurations=doc.movieclips.map(c=>durations(c.frames,c)),clipStarts=clipDurations.map(ds=>{let tick=0;return ds.map(n=>{const start=tick;tick+=n;return start;});});
  // Allocate containers before timelines; local documents use only their asset closure.
  for(const c of doc.movieclips){const duration=Math.max(1,clipDurations[c.index].reduce((a,b)=>a+b,0)),local=nativeDocument(c.name,c.fps,[],[]);const figure=movieclipFigure(nextType++,c.name,local,{duration,pivot:{x:960,y:540}});clipFigures.push(figure);definitions.push(figure);}
@@ -111,7 +111,7 @@ export async function importStickNodes(input,{filename='project.stknds',signal,o
      if(['Tl','Tr','Bl','Br'].some(c=>instance['distort'+c+'X']||instance['distort'+c+'Y']))warn('SPRITE_DISTORTION','Sprite corner distortion is retained in import metadata; the imported sprite uses its affine transform.');
     }
     object.object_slot=objects.length;object.field28=Math.round((1-clamp(instance.style?.opacity??1,0,1))*255);object._rigs={...(instance.isLocked?{locked:true}:{}),sticknodes:{style:compact(instance.style)}};
-    if(instance.style?.blur||instance.style?.glow||instance.style?.motionBlur||instance.style?.pixelation>1||instance.style?.dropShadowAlpha)warn('EFFECTS','Some Stick Nodes GPU effects differ; source effect settings remain recorded in import metadata.');
+    if(instance.style?.blur||instance.style?.glow||instance.style?.motionBlur||instance.style?.pixelation>1||instance.style?.dropShadowAlpha)warn('EFFECTS','Some .nodes GPU effects differ; source effect settings remain recorded in import metadata.');
     usedTypes.add(object.figure_type_id);sourceSlots.set(sourceSlot,objects.length);objects.push(object);
    }
    for(const join of frame.joins){const child=sourceSlots.get(join.child),parent=sourceSlots.get(join.parentIndex);if(child==null||parent==null)continue;const pi=frame.instances[join.parentIndex],handle=pi.type===0?figureInfo[pi.assetIndex].handles.get(join.nodeId):0;

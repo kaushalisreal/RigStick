@@ -1,6 +1,5 @@
 import {messageError} from './localized-error.mjs';
 /** Current-pose Handle Edit Mode; distinct from reusable figure-definition edits.
- * https://www.pivotanimator.net/help5-2/handle_edit_mode.htm
  */
 import {shortest} from './pivot/geometry.mjs';
 

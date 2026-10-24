@@ -105,7 +105,7 @@ old pose effects or guesses correspondence between unrelated effects.
 
 `vfxScope` is a figure-only discrete property stored as `_rigsVfxScope: 1` on its
 saved pose. Missing/zero preserves figure-only behavior. RIGS roundtrips retain
-the setting; the existing rejection of lossy VFX Pivot export still applies.
+the setting; the existing rejection of lossy VFX .piv export still applies.
 
 `vfx-connected.mjs` creates cached render views over the native geometry. It
 reuses movieclip isolation and bounded raster caches, without mutating geometry
@@ -126,7 +126,7 @@ one command. Pose snapshots exclude runtime sampling metadata. Geometry receives
 composed effect values without writing them into poses, and scene values are
 explicitly carried in worker packets. Validation bounds clips, keys, per-group
 stacks, and simultaneous effects. Saved clips retain their source time inside
-captured movieclips. Legacy Pivot export continues to reject unsupported effects.
+captured movieclips. Legacy .piv export continues to reject unsupported effects.
 
 Timeline key projection uses binary searches and skips dense keys by pixel bucket.
 Its weak cache retains only the latest viewport projection per immutable key table;

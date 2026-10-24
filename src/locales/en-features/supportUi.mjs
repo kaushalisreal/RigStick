@@ -6,7 +6,7 @@ export default Object.freeze({
   "supportUi.releaseVersion": "Release version",
   "supportUi.recentReleases": "Recent releases",
   "supportUi.releaseNotes": "Release notes",
-  "supportUi.supportOnKoFi": "Support on Ko-fi",
+  "supportUi.supportOnKoFi": "Support development",
   "supportUi.startAnimating": "Start animating",
   "supportUi.versionInstalled": "Version {version} installed",
   "supportUi.installed": "Installed",
@@ -15,6 +15,6 @@ export default Object.freeze({
   "supportUi.installed2": " · Installed",
   "supportUi.couldnTLoadReleasesTryAgain": "Couldn’t load releases. Try again.",
   "supportUi.couldnTOpenTheMicrosoftStore": "Couldn’t open the Microsoft Store. Try again.",
-  "supportUi.couldnTOpenKoFiTryAgain": "Couldn’t open Ko-fi. Try again.",
+  "supportUi.couldnTOpenKoFiTryAgain": "Couldn’t open the support page. Try again.",
   "supportUi.rigstickVersion": "RigStick {version}"
 });

@@ -6,12 +6,12 @@ names of the formats first called `.rigs` and `.rigsmov`: the bytes are the same
 place keeps its name. File → Save figure, or Export →
 Project → RigStick figure, writes a `.stkz` of the selected figure at
 the current tick. Opening a `.stkz` adds it to the current animation and keeps
-the project's save destination. Pivot `.piv` and `.stk` import/export remains
+the project's save destination. .piv `.piv` and `.stk` import/export remains
 available.
 
 Both native formats are lossless compressed containers. Projects keep authored
 animation, working poses, layers, camera, unknown metadata and embedded assets.
-Imported Pivot source bytes and their fingerprints remain embedded in projects
+Imported .piv source bytes and their fingerprints remain embedded in projects
 to preserve exact source exports across restarts. Figure files contain one
 definition, its assets and one evaluated pose, including precise style overlays;
 they omit other figures, project animation, backgrounds and original project

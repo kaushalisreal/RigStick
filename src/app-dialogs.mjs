@@ -8,7 +8,7 @@ import {messageError} from './localized-error.mjs';
 /**
  * The app's own prompts (architecture.md §3.8): Save changes? before a
  * document is replaced, the project's name, Recent files, Performance, the
- * import notes, the Stick Nodes pack picker and Discard frame changes?. Each
+ * import notes, the .nodes pack picker and Discard frame changes?. Each
  * is its own dialog from the kit (src/ui/ui-dialog.mjs): a form, so Enter
  * runs the primary action and Escape or × cancels; focus starts on the
  * primary (or the first choice) and returns to where it was; a prompt can
@@ -118,7 +118,7 @@ export function createAppDialogs(ctx) {
     const choice = await dialog.showModal();
     return choice === "save" || choice === "discard";
   }
-  /** The source features a Pivot or Stick Nodes import may show differently. */
+  /** The source features a Pivot or .nodes import may show differently. */
   function showImportNotes(warnings, { pivot = false, report } = {}) {
     const list = document.createElement("ul");
     list.className = "import-notes";
@@ -137,7 +137,7 @@ export function createAppDialogs(ctx) {
     });
     void dialog.showModal();
   }
-  /** Which asset of a Stick Nodes pack to import: its index, or null when the dialog closes. */
+  /** Which asset of a .nodes pack to import: its index, or null when the dialog closes. */
   async function chooseSticknodesEntry(entries) {
     const dialog = dialogOf({
       size: "sm",

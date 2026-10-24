@@ -44,7 +44,7 @@ export function createCodecEngine({loadRuntime, loadBundle, onStatus = () => {}}
       let engine;
       try { engine = await runtime(); }
       catch (error) {
-        return failure(503, 'codec_unavailable', `The Pivot converter could not be loaded (${error?.message || 'unknown error'}). Check your connection and try again.`);
+        return failure(503, 'codec_unavailable', `The .piv converter could not be loaded (${error?.message || 'unknown error'}). Check your connection and try again.`);
       }
       const {py, handle} = engine;
       const proxies = [];

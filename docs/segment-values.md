@@ -6,7 +6,7 @@ Drag a numeric label, type an exact value, or use arrow keys. Shift scales a scr
 
 The dialog starts one native model gesture. Individual fields preview into that gesture; only Apply commits history. Escape during a field gesture restores that field, and Escape outside the field gesture cancels the entire dialog. Cancel restores the exact original pose. Invalid lengths and nonfinite values do not enter the native model.
 
-Copy/Paste uses Pivot’s `Angle:Bend:Length` text format. The relative toggle is a receiving UI option, not part of the clipboard payload. Native parsing accepts decimal points or commas, ignores malformed tokens, and compacts the first three numeric tokens into angle, bend and length. Partial input leaves the remaining values unchanged. Text is capped at 100 characters. If browser clipboard access is unavailable, the dialog exposes a manual text field for standard copy/paste.
+Copy/Paste uses .piv’s `Angle:Bend:Length` text format. The relative toggle is a receiving UI option, not part of the clipboard payload. Native parsing accepts decimal points or commas, ignores malformed tokens, and compacts the first three numeric tokens into angle, bend and length. Partial input leaves the remaining values unchanged. Text is capped at 100 characters. If browser clipboard access is unavailable, the dialog exposes a manual text field for standard copy/paste.
 
 The desktop dialog uses the native text clipboard bridge. Both reads and writes enforce the 100-character limit; invalid writes are rejected before replacing the OS clipboard. This does not require browser clipboard permissions.
 
@@ -19,4 +19,4 @@ Verification:
 - `node scripts/smoke-simple-native.mjs`: [9 native desktop checks](../artifacts/simple-native-smoke.json), including the actual Segment Values Copy/Paste buttons, a `45:0:50` OS clipboard roundtrip, and rejection of 101-character reads/writes. The harness restores the prior supported clipboard formats.
 - `node --test tests/editor-handle-commands.test.mjs`: native model semantics. The [static executable audit](../artifacts/native-static/capslock-and-segment-values.md) records the native relative-angle and clipboard behavior.
 
-Right-button dragging on a node retains Pivot’s bend gesture. The verified context-menu route uses the canvas while the desired segment remains selected.
+Right-button dragging on a node retains .piv’s bend gesture. The verified context-menu route uses the canvas while the desired segment remains selected.

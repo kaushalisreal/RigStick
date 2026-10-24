@@ -4,7 +4,7 @@ The integrated Builder provides three display preferences without changing the d
 
 ## Native behavior and scope
 
-The [Pivot 5.2 manual](https://pivotanimator.net/help5-2/creating_figure_types.htm) describes F10 for static handles, F12 for highlighting, and F9 for the Builder canvas color. The supplied executable's [static evidence](../artifacts/native-static/builder-aids.md) resolves details that the manual does not specify:
+The .piv 5.2 manual describes F10 for static handles, F12 for highlighting, and F9 for the Builder canvas color. The supplied executable's [static evidence](../artifacts/native-static/builder-aids.md) resolves details that the manual does not specify:
 
 - Static handles are shown by default. Hiding them preserves the selected static endpoint and a selected branch's static endpoints. Connecting a polygon or sprite, setting a pivot, and placing a duplicate need their endpoints visible.
 - Highlighting defaults to off. RigStick draws a 1.5-screen-pixel guide in blue (`#0000ff`) for dynamic segments and `#4444cc` for static segments. Lines follow their evaluated centerline, including bends; circles, text and images receive a straight pivot connection. Artwork keeps its original color, thickness, transparency and draw order.

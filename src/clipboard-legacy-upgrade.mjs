@@ -68,7 +68,7 @@ export function planLegacyDestinationUpgrade(report, nextFrameIdentity) {
     draft.index=indexes[draft.index];
     if (draft.baseline) {draft.baseline=modernizeLegacyFrame(draft.baseline, segmentColorTypes);draft.baseline.duration_raw=upgraded.keyframes[draft.index].duration_raw;}
   }
-  upgraded._rigs.nativeUpgrade={version:1,sourceVersion:report.version,reason:'Paste Pivot 5 keyframes',
+  upgraded._rigs.nativeUpgrade={version:1,sourceVersion:report.version,reason:'Paste .piv 5 keyframes',
     sourceFrameDelayMs:report.frame_delay_ms ?? null,targetFrameDelayMs:1000/report.fps};
   // Imported native easing remains a compatibility fallback. Explicit authored constant keys
   // remain unchanged; identical hold endpoints retain legacy integer poses.
@@ -127,7 +127,7 @@ export function pasteWithLegacyUpgrade(editor, index, paste) {
   // Any preflight failure above leaves current gestures and all history intact.
   if (editor._drag) editor.commitDrag();
   const beforeSelection=editor._selectionState(),before=stateOf(editor),after=stateOf(staged);
-  const command={kind:'clipboard-upgrade',label:'Paste keyframes · upgrade to Pivot 5',structural:true,timing:true,
+  const command={kind:'clipboard-upgrade',label:'Paste keyframes · upgrade to .piv 5',structural:true,timing:true,
     beforeSelection,afterSelection:staged._selectionState()};
   Object.defineProperty(command,'clipboardUpgrade',{value:{before,after}});
   command.sourceBytes=bytesOf(before)+bytesOf(after);

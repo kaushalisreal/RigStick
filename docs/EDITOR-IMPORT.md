@@ -1,6 +1,6 @@
 # Editor import preparation
 
-`await editor.loadAsync(document, name, options)` validates an incoming decoded Pivot report, prepares its UID/layer/timeline indices in cooperative tasks, and publishes it with one `document` event. Native Pivot imports can use `initialFrameIndex: 'last'`; `initialTick` optionally seeks before that event. The synchronous `load` method retains the same report schema and uses the same validators and preparation code.
+`await editor.loadAsync(document, name, options)` validates an incoming decoded .piv report, prepares its UID/layer/timeline indices in cooperative tasks, and publishes it with one `document` event. Native .piv imports can use `initialFrameIndex: 'last'`; `initialTick` optionally seeks before that event. The synchronous `load` method retains the same report schema and uses the same validators and preparation code.
 
 Options are `signal`, `sliceMs` (default 4; greater than zero and at most 16), `onProgress`, `initialFrameIndex`, `initialTick`, and `prepareScene`. Tests can inject `yieldControl`; production uses the browser scheduler with a MessageChannel fallback. Checkpoints cover native figure topology, all object poses and joins, camera/background/style fields, layer assignments, authored keys, retained frame sources, source identities, and index construction. Async loading does not trust a decoder to have validated the editor's semantic constraints.
 
@@ -10,7 +10,7 @@ The caller transfers exclusive ownership of the incoming report. Preparation may
 
 `editor.lastLoadTimings` records preparation work/slice durations, optional `sceneMs`, and publication/listener durations. A time-slice budget is a scheduling target rather than a hardware-independent latency guarantee: garbage collection, a single unusually large pose and synchronous event listeners can take longer. Actual file profiling remains part of import acceptance.
 
-Native Pivot permits zero stored keyframes. Such imports normalize to one internal editable placeholder with `_rigs.simpleFrameDraft.empty: true`. When Simple mode is enabled, `editor.timeline` is empty and `totalTicks` is zero. Stored-frame export excludes the placeholder; the first Add promotes it. Normal Simple Add drafts likewise expose the stored baseline's duration while edits continue in the working pose.
+Native .piv permits zero stored keyframes. Such imports normalize to one internal editable placeholder with `_rigs.simpleFrameDraft.empty: true`. When Simple mode is enabled, `editor.timeline` is empty and `totalTicks` is zero. Stored-frame export excludes the placeholder; the first Add promotes it. Normal Simple Add drafts likewise expose the stored baseline's duration while edits continue in the working pose.
 
 Tests: `tests/editor-load.test.mjs`, `tests/editor-load-scene.test.mjs`, `tests/animation-validation-steps.test.mjs`, and `tests/editor-frame-draft.test.mjs` cover equivalent sync/async results, single-event publication at the requested frame, prepublication scene cache adoption, late invalid fields, cancellation and replacement races, and stored/empty timeline semantics.
 

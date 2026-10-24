@@ -36,7 +36,7 @@ npm ci
 uv venv .venv --python 3.12.9          # or: python3.12 -m venv .venv
 uv pip install --python .venv/bin/python -r scripts/requirements-build.txt
 npm run build:frame-scan               # needs a C++17 compiler (g++ or clang)
-npm run build:sidecar                  # freezes the Pivot codec with PyInstaller
+npm run build:sidecar                  # freezes the .piv codec with PyInstaller
 npm run verify:sidecar
 npm run build:video-encoder            # stages the bundled ffmpeg
 version=$(node -p 'require("./package.json").version')
@@ -121,7 +121,7 @@ command line (they are merged with the app's) and Settings → Graphics mode →
 
 Many profiling scripts need private sample projects. `corpusPath()` finds them under
 your home directory (`Downloads/…`) or in the folder `RIGS_CORPUS_DIR` names, and a
-missing file fails at once with that instruction. Tests that need the Pivot sample
+missing file fails at once with that instruction. Tests that need the .piv sample
 corpus beside the repository skip with the reason unless it is there or
 `RIGS_REQUIRE_FIXTURES=1`.
 

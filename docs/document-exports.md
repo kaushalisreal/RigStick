@@ -61,7 +61,7 @@ additional contiguous whole-file buffer. The layout, compression settings and
 output bytes are unchanged.
 
 An imported layer sheet whose tracks still map exactly to the original native
-times does not require Pivot baking. The materializer checks current track
+times does not require .piv baking. The materializer checks current track
 contents, durations and known controls on every export, including after Undo
 or native-save reopen. Authored or retimed tracks retain the full evaluator.
 The private PIV snapshot omits editor frame-reference IDs while retaining
@@ -175,7 +175,7 @@ Native `.rigs` and `.stkz` results use the versioned compressed container
 described in [Native file format](native-file-format.md). Do not parse a saved
 file directly as JSON; reopen it through `ImportClient`.
 
-Pivot text gradients are vertical within each glyph. Modern gradient fills span
+.piv text gradients are vertical within each glyph. Modern gradient fills span
 the complete text run, so `.piv` and `.stk` export rejects them even when they are
 linear with two stops. Save as `.rigs` to retain editable fills, export SVG/images
 or video to preserve their appearance, or choose a solid text fill for Pivot.

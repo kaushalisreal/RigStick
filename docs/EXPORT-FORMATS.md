@@ -38,7 +38,7 @@ saved 4K MP4/WebM files. Screenshots and requests are under
 | ID | Output | Encoder and controls |
 | --- | --- | --- |
 | `webm` | Video-only WebM | Desktop VP9 with transparency, quality and bitrate controls; portable WebCodecs VP8/VP9 fallback is opaque, with Opus sound where the browser encodes it. |
-| `mp4` | Video-only MP4 | Native H.264 or Pivot-compatible MPEG-4 Part 2; quality or bitrate control. Without a desktop encoder, the browser's WebCodecs H.264 (High, else Main, else Baseline profile at the lowest level that fits) in a local muxer; opaque, black matte, an odd width or height padded by one pixel, bitrate from the same target as browser WebM. Sound is AAC where the browser encodes it. |
+| `mp4` | Video-only MP4 | Native H.264 or .piv-compatible MPEG-4 Part 2; quality or bitrate control. Without a desktop encoder, the browser's WebCodecs H.264 (High, else Main, else Baseline profile at the lowest level that fits) in a local muxer; opaque, black matte, an odd width or height padded by one pixel, bitrate from the same target as browser WebM. Sound is AAC where the browser encodes it. |
 | `avi` | Video-only AVI | Native MPEG-4 Part 2/Xvid tag, FFV1 lossless RGB, or uncompressed RGB. Quality/bitrate applies to MPEG-4. |
 | `vfw` | Windows AVI | Genuine installed 32-bit/64-bit Windows compressors and codec-specific configuration, plus native uncompressed AVI. See [Windows codec integration](WINDOWS-CODECS.md). |
 | `wmv` | Video-only ASF with `.wmv` extension | Native Windows Media Video 8; quality or bitrate control. |
@@ -58,7 +58,7 @@ are odd; capabilities expose the encoded dimensions and a notice for the UI.
 FFV1 and uncompressed RGB preserve exact input dimensions and RGB values,
 including odd sizes. Desktop VP9 WebM preserves alpha and exact dimensions.
 The remaining FFmpeg video formats and Windows VFW use a black matte, matching
-Pivot's video behavior. Browser WebM capabilities explicitly report `alpha: false`.
+the .piv format's video behavior. Browser WebM capabilities explicitly report `alpha: false`.
 
 `exportAnimation({...options,format:'gif-sequence'})` uses the existing canvas
 `renderFrame(index)` callback. SVG sequences use `renderSVGFrame(index)` returning
@@ -147,7 +147,7 @@ MP4 H.264, AVI FFV1 and WMV2 transparent corners and partial-opacity colors over
 black; odd-dimension padding matches its black-edge notice. WebM still retains
 alpha 0/127 and exact odd dimensions. Capabilities expose `matte: "black"` for
 opaque native codecs and `matte: null` for alpha-preserving WebM. This follows
-[Pivot's documented video transparency](https://pivotanimator.net/help5-2/video.htm).
+the .piv format's documented video transparency.
 
 GIF dithering adds [11 worker checks](../artifacts/gif-dithering/report.json),
 [nine actual root checkbox/download checks](../artifacts/gif-dithering-app/report.json),
@@ -155,7 +155,7 @@ GIF dithering adds [11 worker checks](../artifacts/gif-dithering/report.json),
 seven quantizer unit tests. Source-alpha policy, delays, Loop and GIF-sequence
 behavior remain intact. The color-rich fixtures show reduced low-frequency
 banding with Dither; the custom palette is not claimed pixel-identical to
-Pivot's FFmpeg 4.4 or the desktop's FFmpeg 7.1. [GIF verification](gif-export.md)
+the .piv format's FFmpeg 4.4 or the desktop's FFmpeg 7.1. [GIF verification](gif-export.md)
 records the measured image differences and reproducible commands.
 
 The platform-specific encoder is staged in `build/video-encoder`, with license,

@@ -5,7 +5,7 @@ GIF frames. It defaults on when the document contains a sprite image asset or a
 non-solid background, including an unused library asset. A segment gradient
 alone does not enable it automatically. Edge smoothing remains a separate
 control. This follows the supplied executable's asset predicate and the intent
-of [Pivot's GIF options](https://pivotanimator.net/help5-2/animated_gif.htm).
+of the .piv format's GIF options.
 
 Animated GIF uses one adaptive palette collected from every rendered frame.
 The worker then encodes a second rendering pass using that palette. It reserves
@@ -63,7 +63,7 @@ these tests do not establish large-animation export throughput.
 ## Native compatibility boundary
 
 The [binary audit](../artifacts/native-static/gif-dithering.md) confirms that
-Pivot's bundled FFmpeg 4.4 uses a full-animation palette, rectangle mapping and
+the .piv format's bundled FFmpeg 4.4 uses a full-animation palette, rectangle mapping and
 Sierra Lite when Dither is checked. The algorithm references are the matching
 [palettegen](https://ffmpeg.org/doxygen/4.4/vf__palettegen_8c_source.html) and
 [paletteuse](https://ffmpeg.org/doxygen/4.4/vf__paletteuse_8c_source.html) sources.
@@ -73,12 +73,12 @@ palette ordering and RGB tie-breaking can differ. It retains the application's
 white matte and stops color error at transparent pixels; native paletteuse can
 diffuse hidden RGB error through transparent entries.
 
-The shipped desktop CLI is FFmpeg **7.1**, which also differs from Pivot's
+The shipped desktop CLI is FFmpeg **7.1**, which also differs from .piv's
 **4.4** DLL. A [separate codec comparison](../artifacts/gif-dithering/ffmpeg-comparison.json)
 uses identical RGBA inputs and explicit palette/dither options with that CLI.
 Custom-versus-7.1 RGB mean absolute differences were 4.37/5.37 out of 255 for the
 gradient and 3.09/4.01 for the sprite (off/on). Binary alpha matched exactly.
-This comparison is not a native Pivot pixel oracle. Both render useful GIFs;
+This comparison is not a native .piv pixel oracle. Both render useful GIFs;
 these two custom fixtures had slightly lower RGB error than the shipped CLI.
 The [comparison sheet](../artifacts/gif-dithering/ffmpeg-comparison.png) was
 visually inspected. No additional native GIF pipeline is used.

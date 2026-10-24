@@ -27,7 +27,7 @@ Absence claims below mean that a dedicated feature was not identified in the ins
 
 **Lessons from comparable applications**
 
-Pivot’s inbetweening workflow already separates compact authored frames from generated output frames, with an explicit operation to materialize the generated frames. RigStick already has substantial corresponding functionality. The next gain should come from controlling selected parts of the pose and revising motion without unnecessary materialization. [Pivot: adding inbetween frames](https://w.pivotanimator.net/help5-2/adding_inbetween_frames_to_the_timeline.htm).
+.piv’s inbetweening workflow already separates compact authored frames from generated output frames, with an explicit operation to materialize the generated frames. RigStick already has substantial corresponding functionality. The next gain should come from controlling selected parts of the pose and revising motion without unnecessary materialization. .piv: adding inbetween frames.
 
 Blender documents a family of pose tools—pose library, breakdown, blend to neighbor, push/relax, copying, and propagation. Spine similarly provides a Favor slider for intermediate poses. The useful lesson is that interpolation is also an interactive authoring operation, rather than solely an automatic transition between keys. [Blender: editing bone poses](https://docs.blender.org/manual/en/4.5/animation/armatures/posing/editing/index.html), [Spine: Graph](https://esotericsoftware.com/spine-graph).
 
@@ -39,7 +39,7 @@ Moho documents relative animation transfer between similar skeletons and Smart B
 
 Harmony’s Shift and Trace temporarily repositions reference drawings without modifying the animation. Spine’s ghost offset can help reveal sliding feet in cycles. Better comparison tools can improve posing without introducing a new animation evaluator. [Harmony 25: Shift and Trace](https://docs.toonboom.com/help/harmony-25/advanced/paperless-animation/about-shift-trace.html), [Spine: Ghosting](https://esotericsoftware.com/spine-ghosting).
 
-The current Stick Nodes developer page emphasizes quick controls, selection fixes, sample projects, and onboarding alongside features such as sprite distortion. This supports including tool accessibility in competitive analysis, but does not establish that any particular feature is demanded by RigStick users. [Stick Nodes: current developer updates](https://sticknodes.com/).
+The current .nodes developer page emphasizes quick controls, selection fixes, sample projects, and onboarding alongside features such as sprite distortion. This supports including tool accessibility in competitive analysis, but does not establish that any particular feature is demanded by RigStick users. [.nodes: current developer updates](https://sticknodes.com/).
 
 **Priorities**
 
@@ -179,7 +179,7 @@ Official product documentation establishes feature precedents, not independent e
 
 | Publisher | Source | Version/date context | Used for |
 | --- | --- | --- | --- |
-| Pivot Animator | [Adding Inbetween Frames to the Timeline](https://w.pivotanimator.net/help5-2/adding_inbetween_frames_to_the_timeline.htm) | 5.2 guide; undated | Compact versus materialized inbetweens |
+| .piv | Adding Inbetween Frames to the Timeline | 5.2 guide; undated | Compact versus materialized inbetweens |
 | Blender Foundation | [Editing Bone Poses](https://docs.blender.org/manual/en/4.5/animation/armatures/posing/editing/index.html) | 4.5 LTS manual | Pose tool family and library precedent |
 | Blender Foundation | [In-Betweens](https://docs.blender.org/manual/en/latest/animation/in_betweens.html) | Indexed 5.2 LTS manual | Breakdown, push/relax and neighbor blending |
 | Esoteric Software | [Graph](https://esotericsoftware.com/spine-graph) | Live user guide; undated | Favor controls, curves and timing handles |
@@ -192,6 +192,6 @@ Official product documentation establishes feature precedents, not independent e
 | Lost Marble | [Moho 14.4 export update](https://moho.lostmarble.com/blogs/news/free-update-export-to-video-game-engines-with-the-moho-14-4-side-quest) | 14.4 update | Reusable animation actions |
 | Toon Boom | [About Shift and Trace](https://docs.toonboom.com/help/harmony-25/advanced/paperless-animation/about-shift-trace.html) | Harmony 25; updated March 26, 2026 | Temporary reference-pose transforms |
 | Toon Boom | [Drawing Substitutions](https://docs.toonboom.com/help/harmony-25/essentials/cut-out-animation/swap-drawing-picker-view.html) | Harmony 25 | Variant picker precedent |
-| ForTheLoss Games | [Stick Nodes developer updates](https://sticknodes.com/) | Includes August–September 2026 updates | Quick tools and onboarding context |
+| ForTheLoss Games | [.nodes developer updates](https://sticknodes.com/) | Includes August–September 2026 updates | Quick tools and onboarding context |
 
 Local evidence includes `README.md`, `CHANGELOG.md`, `docs/ARCHITECTURE.md`, `docs/layer-timeline.md`, `docs/animation-modes.md`, `docs/TIMELINE.md`, `docs/SCENE-EDITING.md`, `docs/MOTION-PATHS.md`, `docs/movieclips.md`, `docs/camera-motion.md`, `docs/AUDIO-UX.md`, and the owning source modules identified in the capability table. Older acceptance reports were treated as historical evidence, not fresh verification.

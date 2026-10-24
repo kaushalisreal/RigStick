@@ -146,7 +146,7 @@ Brand blue `#ff6a1a` is 2.99:1 on white, so each job has its own token.
 | Effects (rose) | The effect dot in VFX; effect keys in the timeline | Clip outlines |
 | Camera (today's blue) | The camera key and the camera frame line in a session, as today (`--sheet-camera-*`, `--tint-camera` resolve to the brand blue) | Spans (system rows are neutral) |
 
-**Layer tags.** The six `LAYER_COLORS` keys map to `--layer-blue`, `-violet`, `-rose`, `-orange`, `-green`, `-teal`; `layers.mjs` is not edited. **Onion skin** uses the colours saved in settings; the defaults are today's. **Joint handles** are renderer-owned Pivot colours and are not part of this system.
+**Layer tags.** The six `LAYER_COLORS` keys map to `--layer-blue`, `-violet`, `-rose`, `-orange`, `-green`, `-teal`; `layers.mjs` is not edited. **Onion skin** uses the colours saved in settings; the defaults are today's. **Joint handles** are renderer-owned .piv colours and are not part of this system.
 
 ### 3.5 Colour rules
 

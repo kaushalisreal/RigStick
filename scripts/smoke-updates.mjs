@@ -20,12 +20,9 @@ try {
   const splash = page.locator('.release-splash');
   await splash.waitFor({ state: 'visible' });
   assert.ok((await splash.innerText()).includes(`Version ${version}`));
-  assert.equal(await splash.locator('.support-donate').getAttribute('href'), 'https://ko-fi.com/Q5Q41WY7QC');
+  assert.equal(await splash.locator('.support-donate').count(), 0, 'No donation link until Rigstick has its own support page');
   await page.screenshot({ path: path.join(output, 'startup.png') });
   evidence.startup = true;
-  await application.evaluate(({ shell }) => { globalThis.openedLinks = []; shell.openExternal = async url => { globalThis.openedLinks.push(url); }; });
-  await splash.locator('.support-donate').click();
-  assert.deepEqual(await application.evaluate(() => globalThis.openedLinks), ['https://ko-fi.com/Q5Q41WY7QC']);
   await splash.getByRole('button', { name: 'Close welcome screen' }).click();
   await page.reload();
   await page.waitForFunction(() => window.rigs?.ready, undefined, { timeout: 30000 });
@@ -38,8 +35,8 @@ try {
   await page.screenshot({ path: path.join(output, 'export.png') });
   evidence.exportPanel = true;
   await page.keyboard.press('Escape');
-  await (await openAppMenu(page, 'help')).locator('[data-action="donate"]').click();
-  assert.equal((await application.evaluate(() => globalThis.openedLinks)).at(-1), 'https://ko-fi.com/Q5Q41WY7QC');
+  assert.equal(await (await openAppMenu(page, 'help')).locator('[data-action="donate"]').count(), 0);
+  await page.keyboard.press('Escape');
   evidence.helpDonation = true;
 
   // Capture the production service through its public status operation. Only

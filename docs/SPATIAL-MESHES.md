@@ -53,7 +53,7 @@ nested or partly transparent clips use the shared WebGL2 depth compositor
 
 Build Figure keeps mesh bones and reference joints: deleting one is rejected, as
 are branch copies, figure combination and origin changes, which would require
-rebinding. Definition snapshots and history share the immutable mesh. Pivot
+rebinding. Definition snapshots and history share the immutable mesh. .piv
 .stk/.piv export rejects meshes, like other one-sided fills; images and video
 preserve their appearance.
 
@@ -77,7 +77,7 @@ exclusive: turning a mesh never switches drawings or interpolates silhouettes.
 An attachment to a spatial bone evaluates its vertices through that bone's
 existing spatial frame, then applies figure transforms and perspective. The bone
 alone owns the attachment's orientation: the attached object's own angle, which
-Pivot-style joins rotate along with a bending parent, is not applied again. Rotation,
+.piv-style joins rotate along with a bending parent, is not applied again. Rotation,
 tilt, roll, stretch and part proportions stay in the rig's existing pose channels.
 Only the container handle belongs to the editable joint graph. Geometry is authored
 offline; entering an empty movieclip editor is rejected with posing guidance.

@@ -4,11 +4,11 @@ Build → Add sprite part opens an image picker and the Sprite Placement dialog.
 
 Choose attachment closes the placement dialog, then clicking an existing unlocked figure handle attaches the sprite to that definition. The target can belong to a different figure than the one initially selected. The canvas shows the precise attachment target. Escape, a tool change, or a document change cancels the pending image. Ordinary Import Sprite continues to create a separate figure immediately.
 
-This follows the native [Adding Sprite Images](https://pivotanimator.net/help5-2/adding_sprite_images.htm) workflow. The existing image worker preserves source colors and transparency by default, with explicit API opt-in for bottom-left color-key removal. Native anchor records contain signed 32-bit integer coordinates and can lie outside the image; the dialog fits both the image and handles into its preview.
+This follows the native Adding Sprite Images workflow. The existing image worker preserves source colors and transparency by default, with explicit API opt-in for bottom-left color-key removal. Native anchor records contain signed 32-bit integer coordinates and can lie outside the image; the dialog fits both the image and handles into its preview.
 
 `SpritePlacementDialog.open(spriteFigure)` resolves a private placed figure or `null`. It changes no document data. `Editor.addSpriteSegment(spriteFigure, {parentId, angle})` adds its asset and segment within one topology command. It remaps existing sparse image indexes, preserves the independent text table, updates native and retained poses plus the Simple working-frame baseline, and retains external joins. Existing combined drawable order is normalized stably before the new sprite is placed in front, including imports with orders near 65535. Undo restores the original assets, order, poses, selection, and joins together.
 
-The dialog guards queued close events and shared-dialog replacement so canceled sessions cannot close a newer dialog. Its preview uses the shared exact Pivot orange/red colors. It renders the decoded image once per requested preview frame, coalescing pointer updates through requestAnimationFrame.
+The dialog guards queued close events and shared-dialog replacement so canceled sessions cannot close a newer dialog. Its preview uses the shared exact .piv orange/red colors. It renders the decoded image once per requested preview frame, coalescing pointer updates through requestAnimationFrame.
 
 Verification:
 

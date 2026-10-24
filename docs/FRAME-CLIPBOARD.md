@@ -1,6 +1,6 @@
 # Frame clipboard
 
-Frame copy/cut/paste now survives document replacement and desktop restart. This follows Pivot's separate application clipboard, including append and insert, as described in the [native frame controls](https://pivotanimator.net/help5-2/animation_frame_controls.htm).
+Frame copy/cut/paste now survives document replacement and desktop restart. This follows the .piv format's separate application clipboard, including append and insert, as described in the native frame controls.
 
 `Editor.copyFrames(indices)` captures selected rows in chronological order. It stores only the figures and backgrounds those frames reference, including embedded image data, font outlines, joins, camera, paint order, hidden exposures and source layer properties. Authored source rows capture their composed pose at the row start. Clipboard snapshots do not share mutable figure or pose objects with the source project, and contain neither the complete original PIV source nor unused library assets.
 
@@ -54,9 +54,9 @@ For the entire document, 850 of 881 definitions are relevant, so asset preflight
 
 ## Legacy destinations
 
-Pasting Pivot 5 content into a Pivot 2, 3 or 4 destination now upgrades that destination as part of the same undo command. The conversion preserves legacy integer-tick holds with identical endpoint keys, converts legacy colors and keyed sprites, retains frame identities used by authored channels and leaves the original PIV bytes available for RIGS and exact Undo. The Advanced timeline selects only the newly pasted keys even when conversion expands old holds. Simple working copies, including a document with zero stored frames, remain separate from stored keys.
+Pasting .piv 5 content into a .piv 2, 3 or 4 destination now upgrades that destination as part of the same undo command. The conversion preserves legacy integer-tick holds with identical endpoint keys, converts legacy colors and keyed sprites, retains frame identities used by authored channels and leaves the original PIV bytes available for RIGS and exact Undo. The Advanced timeline selects only the newly pasted keys even when conversion expands old holds. Simple working copies, including a document with zero stored frames, remain separate from stored keys.
 
-The backend builds a fresh Pivot 5 scaffold when the document has been upgraded but its retained source is legacy. It validates the original source version and fingerprint rather than trusting metadata. Undo restores the original report, counters and version; Redo restores the complete modern paste. Conversion and paste preflight run in an isolated editor before publication. UI conversion runs in the dedicated worker. Main history stores private before/after report references and prepared indices behind a small command, so publication/Undo/Redo avoid a full-report clone. This full-report route is separate from the ordinary native sparse path.
+The backend builds a fresh .piv 5 scaffold when the document has been upgraded but its retained source is legacy. It validates the original source version and fingerprint rather than trusting metadata. Undo restores the original report, counters and version; Redo restores the complete modern paste. Conversion and paste preflight run in an isolated editor before publication. UI conversion runs in the dedicated worker. Main history stores private before/after report references and prepared indices behind a small command, so publication/Undo/Redo avoid a full-report clone. This full-report route is separate from the ordinary native sparse path.
 
 ## Verification and open limits
 

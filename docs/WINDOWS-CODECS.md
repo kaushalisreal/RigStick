@@ -1,10 +1,10 @@
 # Installed Windows AVI codecs
 
-RigStick's Windows AVI bridge uses genuine installed Video for Windows compressors. This is a separate provider from the bundled FFmpeg AVI presets. Pivot's equivalent is **Windows AVI → Compress**, which opens codec-specific settings for codecs installed under Windows. [Pivot 5.2 Video manual](https://pivotanimator.net/help5-2/video.htm).
+RigStick's Windows AVI bridge uses genuine installed Video for Windows compressors. This is a separate provider from the bundled FFmpeg AVI presets. the .piv format's equivalent is **Windows AVI → Compress**, which opens codec-specific settings for codecs installed under Windows. .piv 5.2 Video manual.
 
 ## Platform and codec selection
 
-Two native helpers enumerate the 32-bit and 64-bit compressor registries using `ICInfo`, open a selected compressor with `ICOpen`, and test the requested canvas with `ICCompressQuery`. The original Pivot executable supplied in this workspace is 32-bit; the dual-helper implementation also exposes compatible 64-bit compressors. [Microsoft ICInfo documentation](https://learn.microsoft.com/en-us/windows/win32/api/vfw/nf-vfw-icinfo).
+Two native helpers enumerate the 32-bit and 64-bit compressor registries using `ICInfo`, open a selected compressor with `ICOpen`, and test the requested canvas with `ICCompressQuery`. The original .piv executable supplied in this workspace is 32-bit; the dual-helper implementation also exposes compatible 64-bit compressors. [Microsoft ICInfo documentation](https://learn.microsoft.com/en-us/windows/win32/api/vfw/nf-vfw-icinfo).
 
 Each result has a stable `vfw:<architecture>:<registered-handler-hex>` identity. Registered aliases retain their identities even when the opened driver reports a canonical handler. A separate **Full frames (uncompressed)** entry uses Windows' uncompressed AVI path and is explicitly identified as built-in, rather than an installed compressor.
 
@@ -12,7 +12,7 @@ The bridge accepts bottom-up RGB24 DIB frames at the requested dimensions. Insta
 
 ## Data and configuration
 
-[vfw-video-export.mjs](../src/vfw-video-export.mjs) takes a frame-rendering callback and returns an AVI Blob. Its worker converts each frame into bottom-up BGR bytes with DWORD row padding. Transparent pixels use a black matte, matching Pivot's documented Windows AVI behavior. Each IPC message carries at most 256 KiB and the next frame waits for native encoding acknowledgement.
+[vfw-video-export.mjs](../src/vfw-video-export.mjs) takes a frame-rendering callback and returns an AVI Blob. Its worker converts each frame into bottom-up BGR bytes with DWORD row padding. Transparent pixels use a black matte, matching the .piv format's documented Windows AVI behavior. Each IPC message carries at most 256 KiB and the next frame waits for native encoding acknowledgement.
 
 [vfw-export-service.cjs](../desktop/vfw-export-service.cjs) owns helper selection, temporary output files and opaque configuration tokens. The renderer supplies neither executable paths nor driver DLL paths. Vendor codec code runs in a separate helper process. Cancellation terminates that owned process and removes its temporary output. The finished AVI moves disk-to-disk into the chosen destination — staging beside the target so a failed copy never leaves a truncated file — with bounded chunked readback as the fallback. Output is capped at 256 MiB, individual raw frames at 64 MiB, and total pixels at 67 million per frame (the frame byte limit binds first, at roughly 22 million pixels of BGR data).
 

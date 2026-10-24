@@ -1,7 +1,7 @@
-# Stick Nodes rigging study
+# .nodes rigging study
 
 Studied 2026-09-13 to improve RigStick's native rigging. This is a behavioral
-study and an independent implementation, not a claim of full Stick Nodes compatibility.
+study and an independent implementation, not a claim of full .nodes compatibility.
 
 ## Evidence inspected
 
@@ -12,7 +12,7 @@ study and an independent implementation, not a claim of full Stick Nodes compati
   and [combined rigging demonstration](https://sticknodes.com/images/420_rigging.mp4).
   Inspected the clips in the browser, including the bow/string attachment,
   absolute/relative lock explanation, floaty tween comparison, and mechanical rig.
-- Local `Desktop/sticknodes-project-lab/research/private/Stick Nodes Pro_v4_3_2.apk`.
+- Local `Desktop/sticknodes-project-lab/research/private/.nodes Pro_v4_3_2.apk`.
   SHA-256: `76a1dc2ca38817caa681f139629851ae85ef9cb055507c3dad1a39acf6adaecb`.
   Read its bundled `assets/i18n/SNBundle.properties`, the existing targeted
   decompilations, and independently decoded `R2.h` and `R2.a` using the supplied JADX 1.5.6
@@ -101,7 +101,7 @@ from a true angle lock, which also survives ancestor pose edits.
 
 These are construction recipes, not claims that arbitrary rigs solve general IK.
 The native dependency graph rejects cycles. A full IK solver, floaty tweening,
-Stick Nodes absolute-distance/reversed slider modes, and translation of every
+.nodes absolute-distance/reversed slider modes, and translation of every
 imported `.nodes` constraint are outside this change. Connectors retain the
 existing normalized slide channel and curve support.
 

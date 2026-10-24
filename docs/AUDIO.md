@@ -89,7 +89,7 @@ Prepared animation and raster-export snapshots omit audio entirely. Audio-only
 commands advance the saved revision without discarding prepared animation
 pixels. Saving/recovery still use the existing worker snapshots and atomic file
 replacement. Audio is portable inside `.rigs`; external source files are not
-needed after import. Figure/Pivot/image/GIF exports contain no soundtrack.
+needed after import. Figure/.piv/image/GIF exports contain no soundtrack.
 
 Limits are explicit: 32 MiB per original recording, 96 MiB embedded audio per
 project, one hour per recording/timeline, 64 tracks, 4,096 clips, and 32 audible

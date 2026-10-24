@@ -1,4 +1,4 @@
-# Local Pivot codec service
+# Local .piv codec service
 
 Run `python backend/server.py --port 47831` from the app directory. Python 3.10+
 and its standard library are sufficient. Install the optional compiled encoder
@@ -36,7 +36,7 @@ same image/text objects, avoiding a second JSON copy of sprites and glyph paths.
 The full writer accepts the canonical `image_assets` and `text_assets` arrays.
 `.json` uploads are accepted as native projects. The early web save wrapper
 `{format:"rigstick",version:1,name,document}` also imports; current native
-saves embed original Pivot source data directly in the document.
+saves embed original .piv source data directly in the document.
 
 `timings` contains `decode_ms`, `total_ms`, `cache_hit`, `source_bytes`, and
 `document_bytes`. Timings describe codec/transport preparation, not GPU frame
@@ -64,7 +64,7 @@ working allocations. Shared owners count one original once.
 
 `/api/source` and source-based exports resolve a leased original after its decoded
 entry is evicted. Fingerprints remain deferred until export and are computed once
-from the validated original, including STK definition names and opaque Pivot data.
+from the validated original, including STK definition names and opaque .piv data.
 Retaining a new source for an existing owner replaces its old lease only when the
 new lease fits; a failed or cancelled retain leaves the old lease intact. A native
 source retain returns `retained:false`. The editor adopts successful project

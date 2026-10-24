@@ -1,6 +1,6 @@
 # Export sampling
 
-Pixel exports share three native Pivot choices. **Smooth edges** is the default:
+Pixel exports share three native .piv choices. **Smooth edges** is the default:
 vector edges have coverage antialiasing and sprites use nearest-neighbor sampling.
 **No smoothing** uses hard shape edges while retaining figure, segment, gradient
 and background opacity. **Smooth sprites** renders at twice the requested width
@@ -9,8 +9,8 @@ size. It affects the rendered pixels before GIF palette conversion, image
 compression or video encoding. Transparent GIF and JPEG/video matte behavior
 still belongs to the selected encoder.
 
-The [official image export guide](https://pivotanimator.net/help5-2/separate_images.htm)
-and [video export guide](https://pivotanimator.net/help5-2/video.htm) describe these
+The official image export guide
+and video export guide describe these
 three choices. Read-only inspection of the supplied executable independently
 confirms factor two, its specialized four-pixel average, the default choice,
 and the disabled smoothing control for SVG. See

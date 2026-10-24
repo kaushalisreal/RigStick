@@ -6,7 +6,7 @@ corner. All background imports also preserve their pixels. The image's actual
 byte signature is used for format validation, even when its filename or MIME
 label disagrees. No additional import dialog is required.
 
-Pivot-style bottom-left color-key removal is available only through explicit API
+.piv-style bottom-left color-key removal is available only through explicit API
 opt-in. It removes every exact RGB match across an opaque image, including artwork
 inside the sprite; any existing transparency disables that removal.
 
@@ -58,5 +58,5 @@ Verification:
   was visually inspected.
 
 These checks cover the specified import behavior and byte preservation. They do
-not establish every original-Pivot sprite deformation, reflection or sampling
+not establish every original-.piv sprite deformation, reflection or sampling
 combination.

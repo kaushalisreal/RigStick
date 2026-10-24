@@ -441,7 +441,7 @@ testing if its graphics context is unavailable or lost. Native files retain all
 editable joints and colors; rendered exports preserve intersections. SVG embeds
 the rendered frame as an image when depth-tested fills are present.
 Ordinary polygons remain double-sided. Native saving, Canvas, WebGPU, playback
-and SVG share the same visibility decision. Pivot export rejects one-sided fills
+and SVG share the same visibility decision. .piv export rejects one-sided fills
 instead of silently discarding them. Partial branch copies requiring outside
 face references are rejected; copying the whole figure retains them.
 
@@ -521,11 +521,11 @@ and retain external anchors as appropriate. Derived joints reject conflicting IK
 ordinary skeleton anchors can still be driven by IK. Shared geometry supplies
 Canvas, WebGPU, prepared playback, polygons, joins and rendered exports.
 
-Native `.rigs`/`.stkz` saving preserves editable relationships. Pivot `.piv`/`.stk`
+Native `.rigs`/`.stkz` saving preserves editable relationships. .piv `.piv`/`.stk`
 export rejects them with an actionable message rather than silently losing them.
-Use native formats or rendered exports. Existing Stick Nodes imports remain
+Use native formats or rendered exports. Existing .nodes imports remain
 pose-only adaptations with their existing warnings; this implementation does not
-claim to translate every imported Stick Nodes constraint. Setting a new figure
+claim to translate every imported .nodes constraint. Setting a new figure
 origin and splitting configured segments are guarded where their existing native
 operations cannot preserve these relationships. Set the origin and split parts
 before configuring them. Deleting an externally referenced anchor is rejected;
@@ -611,11 +611,11 @@ are reported as diagnostics, not a proof of leak absence. Reproduce with
 ## Reference behavior
 
 See [the guide/video/APK study](research/STICK-NODES-RIGGING-RESEARCH.md) for the inspected
-Stick Nodes formulas, behavioral differences, setup recipes and the latest
+.nodes formulas, behavioral differences, setup recipes and the latest
 Smart Stretch/angle-lock verification, including 69 focused tests and 14 rendered
 comparisons. Measurements above record the earlier connector work.
 
-Stick Nodes' [connector update](https://sticknodes.com/new-version-4-2-0-the-connector-joint-update/)
+.nodes' [connector update](https://sticknodes.com/new-version-4-2-0-the-connector-joint-update/)
 establishes two-anchor connectors and their middle attachment joint. Its
 [Smart Stretch update](https://sticknodes.com/new-version-2-4-8-the-one-stretchy-boi-update/comment-page-5/)
 describes deformation of attached parts. RigStick uses its own native dependency
